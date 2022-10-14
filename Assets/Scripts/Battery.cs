@@ -6,6 +6,7 @@ public class Battery : MonoBehaviour
 {
     
     private Rigidbody rigidbodyComponent;
+    public SpiceSharp.Components.VoltageSource voltageSource;
 
     // Start is called before the first frame update
     void Start()
