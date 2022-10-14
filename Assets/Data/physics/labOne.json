@@ -33,6 +33,26 @@
         "Length of the given wire, l = _ m"
     ],
     "Objects": [
-        
+        {
+            "objectName": "V1",
+            "objectType": "VoltageSource",
+            "pos": "in",
+            "neg": "0",
+            "val": 3.0
+        },
+        {
+            "objectName": "R1",
+            "objectType": "Resistor",
+            "pos": "in",
+            "neg": "out",
+            "val": 1.0e4
+        },
+        {
+            "objectName": "R2",
+            "objectType": "Resistor",
+            "pos": "out",
+            "neg": "0",
+            "val": 2.0e4
+        }
     ]
 }
