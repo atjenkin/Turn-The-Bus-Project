@@ -36,23 +36,50 @@
         {
             "objectName": "V1",
             "objectType": "VoltageSource",
-            "pos": "in",
-            "neg": "0",
-            "val": 3.0
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "interface": {
+                "pos": "in",
+                "neg": "0"
+            },
+            "parameters": {
+                "voltage": 3.0
+            }
         },
         {
             "objectName": "R1",
             "objectType": "Resistor",
-            "pos": "in",
-            "neg": "out",
-            "val": 1.0e4
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "interface": {
+                "pos": "in",
+                "neg": "out"
+            },
+            "parameters": {
+                "resistance": 1.0e4
+            } 
         },
         {
             "objectName": "R2",
             "objectType": "Resistor",
-            "pos": "out",
-            "neg": "0",
-            "val": 2.0e4
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "interface": {
+                "pos": "out",
+                "neg": "0"
+            },
+            "parameters": {
+                "resistance": 2.0e4
+            } 
         }
     ]
 }
