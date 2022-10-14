@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 
 public class Circuit : MonoBehaviour
@@ -14,6 +15,12 @@ public class Circuit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        string[] prefabNames = AssetDatabase.FindAssets("t:prefab", new string[] {"Assets/Prefabs"});
+        //GameObject componentPrefab = null;
+        Debug.Log(prefabNames);
+
+
+        //componentPrefab = (GameObject)Resources.Load("")
         batteries = GetComponentsInChildren<Battery>();
         wires = GetComponentsInChildren<Wire>();
         resistors = GetComponentsInChildren<Resistor>();
