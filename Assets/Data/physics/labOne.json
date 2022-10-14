@@ -1,0 +1,85 @@
+{
+    "labTitle": "To determine resistivity of two / three wires by plotting a graph between potential difference versus current.",
+    "aim": "To determine the resistance per cm of a given wire by plotting a graph for potential difference versus current.",
+    "background": "We know that resistance is a measure of the opposition to the flow of electricity in a circuit. The potential difference helps to understand the amount of energy transferred between two points in a circuit. In this session, let us learn to determine the resistance per cm of a given wire by plotting a graph for potential difference versus current.",
+    "Materials Required": [
+        "A wire of unknown resistance",
+        "Battery",
+        "Voltmeter",
+        "Milliammeter",
+        "Rheostat",
+        "Plug key",
+        "Connecting wires",
+        "Piece of sandpaper"
+    ],
+    "Theory": "",
+    "Diagram": "labDiagrams/labOne.png",
+    "Procedure": [
+        "Clean the ends of the connecting wire with the help of sandpaper to remove any insulating coating on them.",
+        "Connect the resistance, rheostat, battery, key, voltmeter, and ammeter as shown in the figure.",
+        "Make sure that the pointers in the voltmeter and milliammeter coincide with the zero mark on the measuring scale. If not, adjust the pointer to coincide with the zero mark by adjusting the screw provided at the base using a screwdriver.",
+        "Note the range and the least count of the given voltmeter and milliammeter.",
+        "Insert the key K and slide the rheostat to the end where the current flow is minimum.",
+        "Note the voltmeter and the milliammeter reading.",
+        "Remove the key K and allow the wire to cool. Again insert the key and slightly increase the voltage by moving the rheostat. Note down the milliammeter and voltmeter reading.",
+        "Repeat step 7 for four different adjustments of the rheostat. Document the readings in a tabular column."
+    ],
+    "Observations": [
+        "Range of ammeters = _ mA to _ mA",
+        "The Least count of ammeter = _ mA",
+        "Range of voltmeter = _ V to _ V",
+        "The Least count of voltmeter = _ V",
+        "The Least count of meter-scale = _ m",
+        "Length of the given wire, l = _ m"
+    ],
+    "Objects": [
+        {
+            "objectName": "V1",
+            "objectType": "VoltageSource",
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "interface": {
+                "pos": "in",
+                "neg": "0"
+            },
+            "parameters": {
+                "voltage": 3.0
+            }
+        },
+        {
+            "objectName": "R1",
+            "objectType": "Resistor",
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "interface": {
+                "pos": "in",
+                "neg": "out"
+            },
+            "parameters": {
+                "resistance": 1.0e4
+            } 
+        },
+        {
+            "objectName": "R2",
+            "objectType": "Resistor",
+            "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+            },
+            "interface": {
+                "pos": "out",
+                "neg": "0"
+            },
+            "parameters": {
+                "resistance": 2.0e4
+            } 
+        }
+    ]
+}
