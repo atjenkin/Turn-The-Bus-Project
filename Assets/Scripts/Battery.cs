@@ -19,4 +19,9 @@ public class Battery : MonoBehaviour
     {
         // Berkeley Spice
     }
+
+    public void InitSpiceComponent(Dictionary<string, string> kwargs)
+    {
+        voltageSource = new SpiceSharp.Components.VoltageSource(kwargs["id"], kwargs["interface1"], kwargs["interface2"], 3.0);
+    }
 }
