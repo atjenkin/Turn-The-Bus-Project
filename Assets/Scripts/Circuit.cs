@@ -83,7 +83,7 @@ public class Circuit : MonoBehaviour
         var currentExport = new SpiceSharp.Simulations.RealPropertyExport(dc, "R1", "i");
         dc.ExportSimulationData += (sender, args) =>
         {
-            Debug.Log(string.Format("voltage: {0:0.##}; current: {1:0.####}", voltageExport.Value, currentExport.Value));
+            Debug.Log(string.Format("voltage on output node: {0:0.##}; current through R2: {1:0.####}", voltageExport.Value, currentExport.Value));
         };
         dc.Run(ckt);
     }
