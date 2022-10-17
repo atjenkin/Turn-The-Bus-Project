@@ -1,29 +1,16 @@
 {
     "Labs": [
         {
-            "labTitle": "Test Lab",
-            "aim": "Test aim",
-            "Materials Required": [
-                "Test Tool 1",
-                "Test Tool 2",
-                "Test Tool 3"
-            ],
-            "Theory": "",
-            "Diagram": "Image file",
-            "Procedure": [
-                "Step 1",
-                "Step 2",
-                "Step 3"
-            ],
-            "Observations": [
-                "Observation 1",
-                "Observation 2",
-                "Observation 3"
-            ],
-            "Objects": [
-                "Object 1",
-                "Object 2"
-            ]
+            "labCategory": "Biology",
+            "labCategoryScene": "BiologyUI"
+        },
+        {
+            "labCategory": "Chemistry",
+            "labCategoryScene": "ChemistryUI"
+        },
+        {
+            "labCategory": "Physics",
+            "labCategoryScene": "PhysicsUI"
         }
     ]
 }
