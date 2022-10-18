@@ -1,0 +1,9 @@
+{
+    "Labs": [
+        {
+            "labNum": 1,
+            "labTitle": "To determine resistivity of two / three wires by plotting a graph between potential difference versus current.",
+            "labScene": "LabOneScene"
+        }
+    ]
+}
