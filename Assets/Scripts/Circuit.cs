@@ -2,76 +2,62 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-
+using System.Linq;
 
 public class Circuit : MonoBehaviour
 {
-    public Battery[] batteries;
-    public Wire[] wires;
-    public Resistor[] resistors;
+    public TextAsset textJSON;
+
+    public List<CircuitComponent> circuitComponents;
 
     private SpiceSharp.Circuit ckt;
     private SpiceSharp.Simulations.DC dc;
+    
+    [System.Serializable]
+    public class ComponentMeta
+    {
+        public string name;
+        public string type;
+        public float[] position;
+        public string[] interfaces;
+        public float[] parameters;
+    }
+
+    [System.Serializable]
+    public class ComponentMetaList
+    {
+        public ComponentMeta[] Components;
+    }
+
+    public ComponentMetaList componentMetaList = new ComponentMetaList();
 
     // Start is called before the first frame update
     void Start()
     {
-        generateComponents();
-
-        batteries = GetComponentsInChildren<Battery>();
-        wires = GetComponentsInChildren<Wire>();
-        resistors = GetComponentsInChildren<Resistor>();
+        circuitComponents = new List<CircuitComponent>();
+        componentMetaList = JsonUtility.FromJson<ComponentMetaList>(textJSON.text);
 
         initCircuit();
         runCircuit();
     }
 
-    private void generateComponents() 
-    {
-        // Hardcode for now
-        Dictionary<string, int> numPrefabs = new Dictionary<string, int>();
-        numPrefabs.Add("Assets/Prefabs/Resistor.prefab", 2);
-        //numPrefabs.Add("Assets/Prefabs/Wire.prefab", 3);
-        numPrefabs.Add("Assets/Prefabs/Battery.prefab", 1);
-
-        Dictionary<string, List<string>> namePrefabs = new Dictionary<string, List<string>>();
-        namePrefabs.Add("Assets/Prefabs/Resistor.prefab", new List<string>(){"Resistor1", "Resistor2"});
-        //namePrefabs.Add("Assets/Prefabs/Wire.prefab", new List<string>(){"Wire1", "Wire2", "Wire3"});
-        namePrefabs.Add("Assets/Prefabs/Battery.prefab", new List<string>(){"Battery1"});
-
-        Dictionary<string, List<Vector3>> posPrefabs = new Dictionary<string, List<Vector3>>();
-        posPrefabs.Add("Assets/Prefabs/Resistor.prefab", new List<Vector3>(){new Vector3(2.18f, 2.3f, -0.204f), new Vector3(2.18f, 2.3f, -3f)});
-        //posPrefabs.Add("Assets/Prefabs/Wire.prefab", new List<Vector3>(){new Vector3(), new Vector3(), new Vector3()});
-        posPrefabs.Add("Assets/Prefabs/Battery.prefab", new List<Vector3>(){new Vector3(0.5f, 2.3f, -1.5f)});
-
-        //Dictionary<string, >
-
-        string[] prefabGUIDs = AssetDatabase.FindAssets("t:prefab", new string[] {"Assets/Prefabs"});
-        foreach(string guid in prefabGUIDs)
-        { 
-            string prefabPath = AssetDatabase.GUIDToAssetPath(guid);
-            if(!numPrefabs.ContainsKey(prefabPath)) {
-                continue;
-            }
-            GameObject prefabObject = AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
-            for(int i=0; i<numPrefabs[prefabPath]; i++) {
-                var instance = Instantiate(prefabObject, this.transform, true);
-                instance.name = namePrefabs[prefabPath][i];
-                instance.transform.position = posPrefabs[prefabPath][i];
-            }
-        }
-    }
-
     private void initCircuit() 
     {
-        // dummy circuit initialization
-        batteries[0].voltageSource = new SpiceSharp.Components.VoltageSource("V1", "in", "0", 3.0);
-        resistors[0].resistor = new SpiceSharp.Components.Resistor("R1", "in", "out", 1.0e4);
-        resistors[1].resistor = new SpiceSharp.Components.Resistor("R2", "out", "0", 2.0e4);
+        foreach(ComponentMeta meta in componentMetaList.Components) 
+        {
+            string guid = AssetDatabase.FindAssets(meta.type, new string[] {"Assets/Prefabs"})[0];
+            string prefabPath = AssetDatabase.GUIDToAssetPath(guid);
+            GameObject prefabObject = AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
+            var instance = Instantiate(prefabObject, this.transform, true);
+            instance.name = meta.name;
+            instance.transform.position = new Vector3(meta.position[0], meta.position[1], meta.position[2]);
+
+            CircuitComponent thisComponent = instance.GetComponent<CircuitComponent>();
+            thisComponent.InitSpiceEntity(meta.name, meta.interfaces, meta.parameters);
+            circuitComponents.Add(thisComponent);
+        }
         ckt = new SpiceSharp.Circuit(
-            batteries[0].voltageSource,
-            resistors[0].resistor,
-            resistors[1].resistor
+            ((IEnumerable<CircuitComponent>)circuitComponents).Select(c => c.GetSpiceEntity())
         );
     }
 
@@ -83,7 +69,7 @@ public class Circuit : MonoBehaviour
         var currentExport = new SpiceSharp.Simulations.RealPropertyExport(dc, "R1", "i");
         dc.ExportSimulationData += (sender, args) =>
         {
-            Debug.Log(string.Format("voltage: {0:0.##}; current: {1:0.####}", voltageExport.Value, currentExport.Value));
+            Debug.Log(string.Format("voltage on output node: {0:0.##}; current through R1: {1:0.####}", voltageExport.Value, currentExport.Value));
         };
         dc.Run(ckt);
     }

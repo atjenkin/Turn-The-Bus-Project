@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Resistor : MonoBehaviour
-{
-    
+public abstract class CircuitComponent : MonoBehaviour
+{   
     private Rigidbody rigidbodyComponent;
-    public SpiceSharp.Components.Resistor resistor;
-
+    public SpiceSharp.Entities.IEntity spiceEntity;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +15,13 @@ public class Resistor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Berkeley Spice
+        
     }
+
+    public SpiceSharp.Entities.IEntity GetSpiceEntity()
+    {
+        return spiceEntity;
+    }
+
+    public abstract void InitSpiceEntity(string name, string[] interfaces, float[] parameters);
 }
