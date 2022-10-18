@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5391563418257687536}
   - component: {fileID: 5391563418257687537}
   - component: {fileID: 3286750207413235122}
-  - component: {fileID: 1063015555902231648}
+  - component: {fileID: 3125243488825204592}
   m_Layer: 0
-  m_Name: Battery
+  m_Name: VoltageSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -116,7 +116,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1063015555902231648
+--- !u!114 &3125243488825204592
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,6 +125,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5391563418257687538}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a38e5a2ab205e17428f90a0db7babdff, type: 3}
+  m_Script: {fileID: 11500000, guid: 45d7b4c90fa086a49989a187a358dbd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1342106173153762164}
   - component: {fileID: 1342106173153762187}
   - component: {fileID: 1342106173153762186}
-  - component: {fileID: -1651639361627362312}
+  - component: {fileID: 4523881557885192500}
   m_Layer: 0
   m_Name: Resistor
   m_TagString: Untagged
@@ -116,7 +116,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-1651639361627362312
+--- !u!114 &4523881557885192500
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

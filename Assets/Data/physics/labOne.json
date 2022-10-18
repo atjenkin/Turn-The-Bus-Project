@@ -32,54 +32,27 @@
         "The Least count of meter-scale = _ m",
         "Length of the given wire, l = _ m"
     ],
-    "Objects": [
+    "Components": [
         {
-            "objectName": "V1",
-            "objectType": "VoltageSource",
-            "position": {
-                "x": 0,
-                "y": 0,
-                "z": 0
-            },
-            "interface": {
-                "pos": "in",
-                "neg": "0"
-            },
-            "parameters": {
-                "voltage": 3.0
-            }
+            "name": "V1",
+            "type": "VoltageSource",
+            "position": [0.5, 2.3, -1.5],
+            "interfaces": ["in", "0"],
+            "parameters": [3.0]
         },
         {
-            "objectName": "R1",
-            "objectType": "Resistor",
-            "position": {
-                "x": 0,
-                "y": 0,
-                "z": 0
-            },
-            "interface": {
-                "pos": "in",
-                "neg": "out"
-            },
-            "parameters": {
-                "resistance": 1.0e4
-            } 
+            "name": "R1",
+            "type": "Resistor",
+            "position": [2.18, 2.3, -0.204],
+            "interfaces": ["in", "out"],
+            "parameters": [1.0e4]
         },
         {
-            "objectName": "R2",
-            "objectType": "Resistor",
-            "position": {
-                "x": 0,
-                "y": 0,
-                "z": 0
-            },
-            "interface": {
-                "pos": "out",
-                "neg": "0"
-            },
-            "parameters": {
-                "resistance": 2.0e4
-            } 
+            "name": "R2",
+            "type": "Resistor",
+            "position": [2.18, 2.3, -3],
+            "interfaces": ["out", "0"],
+            "parameters": [2.0e4] 
         }
     ]
 }
