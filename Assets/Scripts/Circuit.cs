@@ -6,13 +6,7 @@ using System.Linq;
 
 public class Circuit : MonoBehaviour
 {
-    public TextAsset textJSON;
-
-    public List<CircuitComponent> circuitComponents;
-
-    private SpiceSharp.Circuit ckt;
-    private SpiceSharp.Simulations.DC dc;
-    
+    /**************** JSON fields definition ****************/
     [System.Serializable]
     public class ComponentMeta
     {
@@ -28,9 +22,19 @@ public class Circuit : MonoBehaviour
     {
         public ComponentMeta[] Components;
     }
+    
+    /**************** Members ****************/
+    public TextAsset textJSON;
+
+    public List<CircuitComponent> circuitComponents;
+
+    private SpiceSharp.Circuit ckt;
+    private SpiceSharp.Simulations.BiasingSimulation simulation;
 
     public ComponentMetaList componentMetaList = new ComponentMetaList();
+    
 
+    /**************** Methods ****************/
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +42,12 @@ public class Circuit : MonoBehaviour
         componentMetaList = JsonUtility.FromJson<ComponentMetaList>(textJSON.text);
 
         initCircuit();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        runCircuit();
     }
 
     private void initCircuit() 
@@ -59,21 +69,15 @@ public class Circuit : MonoBehaviour
             ckt.Add(thisComponent.GetSpiceEntity());
         }
 
-        dc = new SpiceSharp.Simulations.DC("Sim", "V1", 3.0, 3.0, 0.1);
+        simulation = new SpiceSharp.Simulations.OP("Sim");
         foreach(CircuitComponent comp in circuitComponents) 
         {
-            comp.RegisterSimulation(dc);
+            comp.RegisterSimulation(simulation);
         }
     }
 
     private void runCircuit()
     {
-        dc.Run(ckt);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        runCircuit();
+        simulation.Run(ckt);
     }
 }

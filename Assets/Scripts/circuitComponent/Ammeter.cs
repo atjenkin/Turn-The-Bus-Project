@@ -15,7 +15,7 @@ public class Ammeter : CircuitComponent
         this.Parameters = parameters;
 
         this.Scale = parameters[0];
-        // A ideal voltmeter can be treated as a resistor with 0 resistance in a circuit
+        // An ideal ammeter can be treated as a resistor with 0 resistance in a circuit
         spiceEntity = new SpiceSharp.Components.Resistor(name, interfaces[0], interfaces[1], 1.0e-6);
     }
 
