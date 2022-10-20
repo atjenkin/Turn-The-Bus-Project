@@ -34,25 +34,39 @@
     ],
     "Components": [
         {
-            "name": "V1",
-            "type": "VoltageSource",
-            "position": [0.5, 2.3, -1.5],
-            "interfaces": ["in", "0"],
-            "parameters": [3.0]
+            "Name": "V1",
+            "Type": "VoltageSource",
+            "Position": [0.5, 2.3, -1.5],
+            "Interfaces": ["pos", "0"],
+            "Parameters": [3.0]
         },
         {
-            "name": "R1",
-            "type": "Resistor",
-            "position": [2.18, 2.3, -0.204],
-            "interfaces": ["in", "out"],
-            "parameters": [1.0e4]
+            "Name": "Vm",
+            "Type": "Voltmeter",
+            "Position": [2.18, 2.3, -0.2],
+            "Interfaces": ["pos", "am_in"],
+            "Parameters": [1]
         },
         {
-            "name": "R2",
-            "type": "Resistor",
-            "position": [2.18, 2.3, -3],
-            "interfaces": ["out", "0"],
-            "parameters": [2.0e4] 
+            "Name": "R1",
+            "Type": "Resistor",
+            "Position": [1.5, 2.3, -0.2],
+            "Interfaces": ["pos", "am_in"],
+            "Parameters": [1.0e4]
+        },
+        {
+            "Name": "Am",
+            "Type": "Ammeter",
+            "Position": [1.5, 2.3, -1.5],
+            "Interfaces": ["am_in", "am_out"],
+            "Parameters": [1.0e3]
+        },
+        {
+            "Name": "R2",
+            "Type": "Resistor",
+            "Position": [1.5, 2.3, -3],
+            "Interfaces": ["am_out", "0"],
+            "Parameters": [2.0e4] 
         }
     ]
 }

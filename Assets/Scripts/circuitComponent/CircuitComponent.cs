@@ -4,8 +4,13 @@ using UnityEngine;
 
 public abstract class CircuitComponent : MonoBehaviour
 {   
+    public string Name;
+    public string[] Interfaces;
+    public float[] Parameters;
+
     private Rigidbody rigidbodyComponent;
-    public SpiceSharp.Entities.IEntity spiceEntity;
+    protected SpiceSharp.Entities.IEntity spiceEntity;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,4 +29,8 @@ public abstract class CircuitComponent : MonoBehaviour
     }
 
     public abstract void InitSpiceEntity(string name, string[] interfaces, float[] parameters);
+    public virtual void RegisterSimulation(SpiceSharp.Simulations.IBiasingSimulation sim)
+    {
+
+    }
 }
