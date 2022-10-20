@@ -463,8 +463,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textJSON: {fileID: 4900000, guid: f1f0b34c0cfa66f4891c17a13169b278, type: 3}
-  Button: {fileID: 6947061338129257224, guid: 89f79d83bfcc3c7459bcbbebc12a17ed, type: 3}
-  labButton: {fileID: 0}
+  labButton: {fileID: 6947061338129257230, guid: 89f79d83bfcc3c7459bcbbebc12a17ed, type: 3}
+  parent: {fileID: 649421442}
   labs:
     Labs: []
 --- !u!1 &793672219
@@ -658,7 +658,7 @@ GameObject:
   - component: {fileID: 1632387677}
   - component: {fileID: 1632387676}
   m_Layer: 5
-  m_Name: Lab One
+  m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
