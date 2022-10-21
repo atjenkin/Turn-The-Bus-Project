@@ -20,14 +20,14 @@ public class PlugKey : CircuitComponent
         this.Parameters = parameters;
 
         // A klug key can be treated as a resistor with infinite resistance
-        spiceEntity = new SpiceSharp.Components.Resistor(name, interfaces[0], interfaces[1], Double.MaxValue);
+        spiceEntity = new SpiceSharp.Components.Resistor(name, interfaces[0], interfaces[1], PlugOutResistance);
     }
 
-    public override void RegisterSimulation(SpiceSharp.Simulations.IBiasingSimulation sim, SpiceSharp.Circuit ckt) 
+    public override void RegisterComponent(Circuit circuit) 
     {
         OnCircuitChanged += (sender, args) => 
         {
-            sim.Run(ckt);
+            circuit.RunCircuit();
         };
     }
     

@@ -28,8 +28,8 @@ public class Circuit : MonoBehaviour
 
     public List<CircuitComponent> circuitComponents;
 
-    private SpiceSharp.Circuit ckt;
-    private SpiceSharp.Simulations.BiasingSimulation simulation;
+    public SpiceSharp.Circuit Ckt;
+    public SpiceSharp.Simulations.BiasingSimulation Sim;
 
     public ComponentMetaList componentMetaList = new ComponentMetaList();
     
@@ -41,8 +41,8 @@ public class Circuit : MonoBehaviour
         circuitComponents = new List<CircuitComponent>();
         componentMetaList = JsonUtility.FromJson<ComponentMetaList>(textJSON.text);
 
-        initCircuit();
-        simulation.Run(ckt);
+        InitCircuit();
+        RunCircuit();
     }
 
     // Update is called once per frame
@@ -51,10 +51,10 @@ public class Circuit : MonoBehaviour
 
     }
 
-    private void initCircuit() 
+    public void InitCircuit() 
     {
-        ckt = new SpiceSharp.Circuit();
-        simulation = new SpiceSharp.Simulations.OP("Sim");
+        Ckt = new SpiceSharp.Circuit();
+        Sim = new SpiceSharp.Simulations.OP("Sim");
         foreach(ComponentMeta meta in componentMetaList.Components) 
         {
             string guid = AssetDatabase.FindAssets(meta.Type, new string[] {"Assets/Prefabs"})[0];
@@ -68,8 +68,13 @@ public class Circuit : MonoBehaviour
             thisComponent.InitSpiceEntity(meta.Name, meta.Interfaces, meta.Parameters);
 
             circuitComponents.Add(thisComponent);
-            ckt.Add(thisComponent.GetSpiceEntity());
-            thisComponent.RegisterSimulation(simulation, ckt);
+            Ckt.Add(thisComponent.GetSpiceEntity());
+            thisComponent.RegisterComponent(this);
         }
+    }
+
+    public void RunCircuit()
+    {
+        Sim.Run(Ckt);
     }
 }
