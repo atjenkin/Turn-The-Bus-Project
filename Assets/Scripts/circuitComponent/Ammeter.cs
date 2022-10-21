@@ -19,10 +19,10 @@ public class Ammeter : CircuitComponent
         spiceEntity = new SpiceSharp.Components.Resistor(name, interfaces[0], interfaces[1], parameters[1]);
     }
 
-    public override void RegisterSimulation(SpiceSharp.Simulations.IBiasingSimulation sim, SpiceSharp.Circuit ckt) 
+    public override void RegisterComponent(Circuit circuit) 
     {
-        var currentExport = new SpiceSharp.Simulations.RealPropertyExport(sim, this.Name, "i");
-        sim.ExportSimulationData += (sender, args) =>
+        var currentExport = new SpiceSharp.Simulations.RealPropertyExport(circuit.Sim, this.Name, "i");
+        circuit.Sim.ExportSimulationData += (sender, args) =>
         {
             this.Indicator = currentExport.Value;
             Debug.Log(string.Format("Ammeter: {0:0.##}", this.Indicator * this.Scale));

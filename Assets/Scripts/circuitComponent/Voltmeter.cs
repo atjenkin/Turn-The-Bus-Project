@@ -19,10 +19,10 @@ public class Voltmeter : CircuitComponent
         spiceEntity = new SpiceSharp.Components.Resistor(name, interfaces[0], interfaces[1], parameters[1]);
     }
 
-    public override void RegisterSimulation(SpiceSharp.Simulations.IBiasingSimulation sim, SpiceSharp.Circuit ckt) 
+    public override void RegisterComponent(Circuit circuit) 
     {
-        var voltageExport = new SpiceSharp.Simulations.RealVoltageExport(sim, this.Interfaces[0], this.Interfaces[1]);
-        sim.ExportSimulationData += (sender, args) =>
+        var voltageExport = new SpiceSharp.Simulations.RealVoltageExport(circuit.Sim, this.Interfaces[0], this.Interfaces[1]);
+        circuit.Sim.ExportSimulationData += (sender, args) =>
         {
             this.Indicator = voltageExport.Value;
             Debug.Log(string.Format("Voltmeter: {0:0.##}", this.Indicator * this.Scale));
