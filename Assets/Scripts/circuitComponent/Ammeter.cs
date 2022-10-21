@@ -15,21 +15,21 @@ public class Ammeter : CircuitComponent
         this.Parameters = parameters;
 
         this.Scale = parameters[0];
-        // An ideal ammeter can be treated as a resistor with 0 resistance in a circuit
-        spiceEntity = new SpiceSharp.Components.Resistor(name, interfaces[0], interfaces[1], 1.0e-6);
+        // A ammeter can be treated as a resistor with extremely low resistance
+        spiceEntity = new SpiceSharp.Components.Resistor(name, interfaces[0], interfaces[1], parameters[1]);
     }
 
-    public override void RegisterSimulation(SpiceSharp.Simulations.IBiasingSimulation sim) 
+    public override void RegisterSimulation(SpiceSharp.Simulations.IBiasingSimulation sim, SpiceSharp.Circuit ckt) 
     {
         var currentExport = new SpiceSharp.Simulations.RealPropertyExport(sim, this.Name, "i");
         sim.ExportSimulationData += (sender, args) =>
         {
             this.Indicator = currentExport.Value;
+            Debug.Log(string.Format("Ammeter: {0:0.##}", this.Indicator * this.Scale));
         };
     }
 
     void Update() 
     {
-        Debug.Log(string.Format("Am shown on the Ammeter: {0:0.##}", this.Indicator * this.Scale));
     }
 }
