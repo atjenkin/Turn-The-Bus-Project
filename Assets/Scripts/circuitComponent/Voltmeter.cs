@@ -15,21 +15,21 @@ public class Voltmeter : CircuitComponent
         this.Parameters = parameters;
 
         this.Scale = parameters[0];
-        // A ideal voltmeter can be treated as a resistor with infinite resistance in a circuit
-        spiceEntity = new SpiceSharp.Components.Resistor(name, interfaces[0], interfaces[1], Double.MaxValue);
+        // A voltmeter can be treated as a resistor with extremely high resistance
+        spiceEntity = new SpiceSharp.Components.Resistor(name, interfaces[0], interfaces[1], parameters[1]);
     }
 
-    public override void RegisterSimulation(SpiceSharp.Simulations.IBiasingSimulation sim) 
+    public override void RegisterSimulation(SpiceSharp.Simulations.IBiasingSimulation sim, SpiceSharp.Circuit ckt) 
     {
         var voltageExport = new SpiceSharp.Simulations.RealVoltageExport(sim, this.Interfaces[0], this.Interfaces[1]);
         sim.ExportSimulationData += (sender, args) =>
         {
             this.Indicator = voltageExport.Value;
+            Debug.Log(string.Format("Voltmeter: {0:0.##}", this.Indicator * this.Scale));
         };
     }
 
     void Update() 
     {
-        Debug.Log(string.Format("Voltage shown on the Voltmeter: {0:0.##}", this.Indicator * this.Scale));
     }
 }

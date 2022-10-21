@@ -29,7 +29,7 @@ public abstract class CircuitComponent : MonoBehaviour
     }
 
     public abstract void InitSpiceEntity(string name, string[] interfaces, float[] parameters);
-    public virtual void RegisterSimulation(SpiceSharp.Simulations.IBiasingSimulation sim)
+    public virtual void RegisterSimulation(SpiceSharp.Simulations.IBiasingSimulation sim, SpiceSharp.Circuit ckt)
     {
 
     }
