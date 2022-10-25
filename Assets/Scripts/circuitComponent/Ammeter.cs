@@ -15,7 +15,7 @@ public class Ammeter : CircuitComponent
         this.Parameters = parameters;
 
         this.Scale = parameters[0];
-        // A ammeter can be treated as a resistor with extremely low resistance
+        // An ammeter can be treated as a resistor with extremely low resistance
         spiceEntity = new SpiceSharp.Components.Resistor(name, interfaces[0], interfaces[1], parameters[1]);
     }
 
