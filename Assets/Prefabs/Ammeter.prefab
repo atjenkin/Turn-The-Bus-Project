@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 1201525224984006125}
   - component: {fileID: 6445922265559682212}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Ammeter Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -246,7 +246,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 9.03814, y: 1.8217926, z: 10.497445, w: 3.0354877}
+  m_margin: {x: 9.03814, y: 1.8217926, z: 10.739242, w: 3.1049266}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
@@ -1174,8 +1174,9 @@ GameObject:
   - component: {fileID: 4726905733620773187}
   - component: {fileID: 5427882853593399845}
   - component: {fileID: 8210623222940985861}
+  - component: {fileID: 4006292730744904496}
   m_Layer: 0
-  m_Name: Text (TMP) (1)
+  m_Name: Ammeter Current Value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1335,3 +1336,16 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 5427882853593399845}
   m_maskType: 0
+--- !u!114 &4006292730744904496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9063691396542734780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aa90c0247eca2f489a1f1acc1ae2080, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mAmmeterValue: {fileID: 0}

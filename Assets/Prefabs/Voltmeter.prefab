@@ -177,8 +177,9 @@ GameObject:
   - component: {fileID: 511655521285118040}
   - component: {fileID: 7405703493687902409}
   - component: {fileID: 7848685300018493359}
+  - component: {fileID: 2275078772471787955}
   m_Layer: 0
-  m_Name: Text (TMP) (1)
+  m_Name: Voltage value
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -338,6 +339,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 7405703493687902409}
   m_maskType: 0
+--- !u!114 &2275078772471787955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970054984457863780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25883fed084dd1140ad577fb0c26e292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mVoltageValue: {fileID: 0}
 --- !u!1 &1049089282984999318
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,7 +613,7 @@ GameObject:
   - component: {fileID: 5957253992929963811}
   - component: {fileID: 7219637923752992074}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: Voltmeter text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -687,7 +701,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Volt meter
+  m_text: Voltmeter
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -750,7 +764,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 9.03814, y: 1.8217926, z: 10.497445, w: 3.0354877}
+  m_margin: {x: 9.03814, y: 1.8217926, z: 10.72167, w: 3.097788}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0
