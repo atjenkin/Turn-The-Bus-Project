@@ -494,7 +494,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.01
+  m_Radius: 0
   m_Height: 0
   m_Direction: 1
   m_Center: {x: 0, y: 0.002, z: 0}
@@ -513,7 +513,6 @@ MonoBehaviour:
   Name: 
   Interfaces: []
   Parameters: []
-  mAmmeterValue: {fileID: 0}
   Indicator: 0
   Scale: 1000
 --- !u!1 &3140249185841185014
@@ -1367,4 +1366,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aa90c0247eca2f489a1f1acc1ae2080, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mAmmeterValue: {fileID: 0}
+  AmmeterValue: {fileID: 0}
