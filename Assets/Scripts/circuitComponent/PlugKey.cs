@@ -5,13 +5,12 @@ using System;
 
 public class PlugKey : CircuitComponent
 {
-    public const double PlugOutResistance = Double.MaxValue;
-    public const double PlugInResistance = 1.0e-6;
+    public const double MaxResistance = Double.MaxValue;
+    public const double MinResistance = 1.0e-6;
 
     public bool PlugIn = false;
-    public delegate void CircuitEvent(object sender, EventArgs args);
-    public event CircuitEvent OnCircuitChanged;
 
+    private event EventHandler OnComponentChanged;
 
     public override void InitSpiceEntity(string name, string[] interfaces, float[] parameters)
     {
@@ -19,13 +18,13 @@ public class PlugKey : CircuitComponent
         this.Interfaces = interfaces;
         this.Parameters = parameters;
 
-        // A klug key can be treated as a resistor with infinite resistance
-        spiceEntity = new SpiceSharp.Components.Resistor(name, interfaces[0], interfaces[1], PlugOutResistance);
+        // A Plug key can be treated as a resistor with infinite resistance
+        spiceEntity = new SpiceSharp.Components.Resistor(name, interfaces[0], interfaces[1], MaxResistance);
     }
 
     public override void RegisterComponent(Circuit circuit) 
     {
-        OnCircuitChanged += (sender, args) => 
+        OnComponentChanged += (sender, args) => 
         {
             circuit.RunCircuit();
         };
@@ -34,8 +33,8 @@ public class PlugKey : CircuitComponent
     void OnMouseDown() {
         plugSwitch();
 
-        if(OnCircuitChanged != null) {
-            OnCircuitChanged(this, new EventArgs());
+        if(OnComponentChanged != null) {
+            OnComponentChanged(this, new EventArgs());
         }
     }
 
@@ -44,13 +43,13 @@ public class PlugKey : CircuitComponent
         if(PlugIn) 
         {
             PlugIn = false;
-            spiceEntity.SetParameter<double>("resistance", PlugOutResistance);
+            spiceEntity.SetParameter<double>("resistance", MaxResistance);
             Debug.Log("Plug key plugged out!");
         }
         else 
         {
             PlugIn = true;
-            spiceEntity.SetParameter<double>("resistance", PlugInResistance);
+            spiceEntity.SetParameter<double>("resistance", MinResistance);
             Debug.Log("Plug key plugged in!");
         }
     }

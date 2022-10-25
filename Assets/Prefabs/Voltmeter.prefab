@@ -1033,6 +1033,7 @@ GameObject:
   - component: {fileID: 5890394924101923918}
   - component: {fileID: -614065809314700343}
   - component: {fileID: 2456155442136694596}
+  - component: {fileID: -8931712881070454174}
   m_Layer: 0
   m_Name: Voltmeter
   m_TagString: Untagged
@@ -1098,6 +1099,23 @@ CapsuleCollider:
   m_Height: 0
   m_Direction: 1
   m_Center: {x: 0, y: 0.002, z: 0}
+--- !u!114 &-8931712881070454174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6554200173754167028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 279f68580f1419a4c8c3dad9db610426, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: 
+  Interfaces: []
+  Parameters: []
+  Indicator: 0
+  Scale: 1
 --- !u!1 &7132194842299189162
 GameObject:
   m_ObjectHideFlags: 0
