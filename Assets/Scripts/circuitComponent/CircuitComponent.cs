@@ -8,7 +8,7 @@ public abstract class CircuitComponent : MonoBehaviour
     public string[] Interfaces;
     public float[] Parameters;
 
-    private Rigidbody rigidbodyComponent;
+    protected Rigidbody rigidbodyComponent;
     protected SpiceSharp.Entities.IEntity spiceEntity;
 
     // Start is called before the first frame update

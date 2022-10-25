@@ -7,16 +7,20 @@ public class VoltmeterText : MonoBehaviour
 {
     // Start is called before the first frame update
     
-    [SerializeField] TextMeshPro mVoltageValue;
+    [SerializeField] TextMeshPro VoltageValue;
 
 
-    public void updateVoltageValue(double voltage){
-        mVoltageValue.text = voltage + " mV";
+    public void UpdateVoltageValue(double voltage){
+        VoltageValue.text = string.Format("{0:0.##}", voltage) + "V";
+    }
+    
+    public void InitVoltageValue()
+    {
+        VoltageValue = GetComponent<TextMeshPro>();   
     }
     
     void Start()
     {
-        mVoltageValue = GetComponent<TextMeshPro>();
     }
 
     // Update is called once per frame

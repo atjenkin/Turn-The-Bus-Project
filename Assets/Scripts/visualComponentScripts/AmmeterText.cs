@@ -6,17 +6,22 @@ using TMPro;
 public class AmmeterText : MonoBehaviour
 {
    
-     [SerializeField] TextMeshPro mAmmeterValue;
+    [SerializeField]
+    TextMeshPro AmmeterValue;
 
 
-    public void updateAmmeterValue(double ammeterValue){
-        mAmmeterValue.text = ammeterValue + " mA";
+    public void UpdateAmmeterValue(double ammeterValue){
+        AmmeterValue.text = string.Format("{0:0.##}", ammeterValue) + " mA";
+    }
+
+    public void InitAmmeterValue()
+    {
+        AmmeterValue = GetComponent<TextMeshPro>();
     }
     
     // Start is called before the first frame update
     void Start()
     {
-        mAmmeterValue = GetComponent<TextMeshPro>();
     }
 
     // Update is called once per frame

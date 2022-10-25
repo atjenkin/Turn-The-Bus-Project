@@ -21,11 +21,13 @@ public class Voltmeter : CircuitComponent
 
     public override void RegisterComponent(Circuit circuit) 
     {
+        gameObject.GetComponentInChildren<VoltmeterText>().InitVoltageValue();
         var voltageExport = new SpiceSharp.Simulations.RealVoltageExport(circuit.Sim, this.Interfaces[0], this.Interfaces[1]);
         circuit.Sim.ExportSimulationData += (sender, args) =>
         {
             this.Indicator = voltageExport.Value;
-            Debug.Log(string.Format("Voltmeter: {0:0.##}", this.Indicator * this.Scale));
+
+            gameObject.GetComponentInChildren<VoltmeterText>().UpdateVoltageValue(this.Indicator * this.Scale);
         };
     }
 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using TMPro;
 
 public class Ammeter : CircuitComponent
 {
@@ -21,11 +22,13 @@ public class Ammeter : CircuitComponent
 
     public override void RegisterComponent(Circuit circuit) 
     {
+        gameObject.GetComponentInChildren<AmmeterText>().InitAmmeterValue();
         var currentExport = new SpiceSharp.Simulations.RealPropertyExport(circuit.Sim, this.Name, "i");
         circuit.Sim.ExportSimulationData += (sender, args) =>
         {
             this.Indicator = currentExport.Value;
-            Debug.Log(string.Format("Ammeter: {0:0.##}", this.Indicator * this.Scale));
+            
+            gameObject.GetComponentInChildren<AmmeterText>().UpdateAmmeterValue(this.Indicator * this.Scale);
         };
     }
 
