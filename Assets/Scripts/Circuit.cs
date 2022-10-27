@@ -24,7 +24,7 @@ public class Circuit : MonoBehaviour
     }
     
     /**************** Members ****************/
-    public TextAsset textJSON;
+    public static string labJSON;
 
     public List<CircuitComponent> circuitComponents;
 
@@ -38,6 +38,7 @@ public class Circuit : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        TextAsset textJSON = Resources.Load<TextAsset>(labJSON);
         circuitComponents = new List<CircuitComponent>();
         componentMetaList = JsonUtility.FromJson<ComponentMetaList>(textJSON.text);
 
