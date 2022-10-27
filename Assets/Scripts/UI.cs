@@ -15,7 +15,7 @@ public class UI : MonoBehaviour
     [System.Serializable]
     public class Lab {
         public string labTitle;
-        public string labScene;
+        public string labJSON;
     }
 
     [System.Serializable]
@@ -35,20 +35,20 @@ public class UI : MonoBehaviour
         labs = JsonUtility.FromJson<LabList>(textJSON.text);
         int height = 450;
         foreach (Lab lab in labs.Labs) {
-            // GameObject btn = (GameObject)Instantiate(Button);
             Button btn = Instantiate(labButton);
             btn.transform.parent = parent;
             btn.transform.position = new Vector3(Screen.width / 2, height, 0);
             btn.GetComponent<RectTransform>().sizeDelta = new Vector2(480, 50);
-            height -= 50;
-            btn.onClick.AddListener(() => loadScene(lab.labScene));
+            height -= 120;
+            btn.onClick.AddListener(() => loadScene("labScene", lab.labJSON));
             TextMeshProUGUI buttonText = btn.GetComponentsInChildren<TextMeshProUGUI>()[0];
             buttonText.text = lab.labTitle;
             buttonText.fontSize = 10;
         }
     }
 
-    void loadScene(string sceneName) {
+    void loadScene(string sceneName, string json) {
+        Circuit.labJSON = json;
         SceneManager.LoadScene(sceneName);
     }
 
