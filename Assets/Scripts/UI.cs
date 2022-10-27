@@ -37,7 +37,7 @@ public class UI : MonoBehaviour
             // GameObject btn = (GameObject)Instantiate(Button);
             Button btn = Instantiate(labButton);
             btn.transform.parent = parent;
-            btn.transform.position = new Vector3(0, 100, 0);
+            btn.transform.position = new Vector3(500, 100, 0);
             btn.onClick.AddListener(() => loadScene(lab.labScene));
             TextMeshProUGUI buttonText = btn.GetComponentsInChildren<TextMeshProUGUI>()[0];
             buttonText.text = lab.labTitle;
