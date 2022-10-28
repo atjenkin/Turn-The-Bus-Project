@@ -48,18 +48,18 @@
             "Parameters": [3.0]
         },
         {
-            "Name": "Vm",
-            "Type": "Voltmeter",
-            "Position": [2.18, 2.3, -0.2],
-            "Interfaces": ["key_out", "am_in"],
-            "Parameters": [1, 1.0e8]
-        },
-        {
             "Name": "R1",
             "Type": "Resistor",
             "Position": [1.5, 2.3, -0.2],
             "Interfaces": ["key_out", "am_in"],
             "Parameters": [1.0e4]
+        },
+        {
+            "Name": "Vm",
+            "Type": "Voltmeter",
+            "Position": [2.18, 2.3, -0.2],
+            "Interfaces": ["key_out", "am_in"],
+            "Parameters": [1, 1.0e8]
         },
         {
             "Name": "Am",

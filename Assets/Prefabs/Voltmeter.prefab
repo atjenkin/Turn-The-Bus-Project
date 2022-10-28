@@ -351,7 +351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25883fed084dd1140ad577fb0c26e292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mVoltageValue: {fileID: 0}
+  VoltageValue: {fileID: 0}
 --- !u!1 &1049089282984999318
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,8 +363,9 @@ GameObject:
   - component: {fileID: 6524466466210698402}
   - component: {fileID: 8351600038915930768}
   - component: {fileID: 6748972511608768167}
+  - component: {fileID: 8796965917221617804}
   m_Layer: 0
-  m_Name: ammeter04
+  m_Name: interface0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -435,6 +436,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8796965917221617804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049089282984999318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa6ff369c735604a933c4114cc63a24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  group: {fileID: 0}
+  wireType: {fileID: 11400000, guid: b2faac7da32ed9f428d875564a6748d6, type: 2}
+  wires: []
 --- !u!1 &1176922989716260205
 GameObject:
   m_ObjectHideFlags: 0
@@ -1048,7 +1064,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6554200173754167028}
-  m_LocalRotation: {x: -0, y: 0.60758764, z: -0, w: 0.79425263}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 1.3710777, y: 2.229, z: -3.0741103}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
@@ -1068,7 +1084,7 @@ Transform:
   - {fileID: 511655521285118040}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 74.831, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!54 &-614065809314700343
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1212,8 +1228,9 @@ GameObject:
   - component: {fileID: 6822884704522736485}
   - component: {fileID: 8778362538430611653}
   - component: {fileID: 4240926118156570688}
+  - component: {fileID: 8405378563910284956}
   m_Layer: 0
-  m_Name: ammeter07
+  m_Name: interface1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1284,6 +1301,21 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &8405378563910284956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7308587797119223600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa6ff369c735604a933c4114cc63a24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  group: {fileID: 0}
+  wireType: {fileID: 11400000, guid: b2faac7da32ed9f428d875564a6748d6, type: 2}
+  wires: []
 --- !u!1 &8788869305370941413
 GameObject:
   m_ObjectHideFlags: 0

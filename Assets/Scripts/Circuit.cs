@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using System.Linq;
+using WireBuilder;
 
 public class Circuit : MonoBehaviour
 {
@@ -43,6 +44,7 @@ public class Circuit : MonoBehaviour
         componentMetaList = JsonUtility.FromJson<ComponentMetaList>(textJSON.text);
 
         InitCircuit();
+        GenerateWires();
         RunCircuit();
     }
 
@@ -69,8 +71,31 @@ public class Circuit : MonoBehaviour
             thisComponent.InitSpiceEntity(meta.Name, meta.Interfaces, meta.Parameters);
 
             circuitComponents.Add(thisComponent);
-            Ckt.Add(thisComponent.GetSpiceEntity());
+            Ckt.Add(thisComponent.spiceEntity);
             thisComponent.RegisterComponent(this);
+
+            thisComponent.InitInterfaces(meta.Interfaces);
+        }
+    }
+
+    public void GenerateWires()
+    {
+        Dictionary<string, List<WireConnector>> interfaces = new Dictionary<string, List<WireConnector>>();
+        foreach(CircuitComponent thisComponent in circuitComponents) 
+        {
+            foreach(var item in thisComponent.connectors)
+            {
+                if(!interfaces.ContainsKey(item.Key)) interfaces.Add(item.Key, new List<WireConnector>());
+                interfaces[item.Key].Add(item.Value);
+            }
+        }
+        foreach(var item in interfaces)
+        {
+            for(int i=1; i<item.Value.Count; i++) 
+            {
+                Wire wire = WireManager.CreateWireObject(item.Value[i-1], item.Value[i], item.Value[i].wireType);
+                wire.transform.SetParent(this.transform);
+            }
         }
     }
 
