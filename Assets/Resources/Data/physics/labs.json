@@ -3,7 +3,12 @@
         {
             "labNum": 1,
             "labTitle": "To determine resistivity of two / three wires by plotting a graph between potential difference versus current.",
-            "labScene": "LabOneScene"
+            "labJSON": "Data/physics/labOne"
+        },
+        {
+            "labNum": 2,
+            "labTitle": "Arbitrary test lab",
+            "labJSON": "Data/physics/labTwo"
         }
     ]
 }
