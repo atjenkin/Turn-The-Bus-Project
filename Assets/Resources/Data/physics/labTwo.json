@@ -1,0 +1,32 @@
+{
+    "labTitle": "N/A",
+    "aim": "N/A",
+    "background": "N/A",
+    "Materials Required": [
+        "N/A",
+        "N/A",
+        "N/A",
+        "N/A",
+        "N/A",
+        "N/A",
+        "N/A",
+        "N/A"
+    ],
+    "Theory": "",
+    "Diagram": "N/A",
+    "Procedure": [
+        ""
+    ],
+    "Observations": [
+        ""
+    ],
+    "Components": [
+        {
+            "Name": "V1",
+            "Type": "VoltageSource",
+            "Position": [0.5, 2.3, -1.5],
+            "Interfaces": ["pos", "0"],
+            "Parameters": [3.0]
+        }
+    ]
+}
