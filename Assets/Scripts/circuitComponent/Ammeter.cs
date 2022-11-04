@@ -31,8 +31,4 @@ public class Ammeter : CircuitComponent
             gameObject.GetComponentInChildren<AmmeterText>().UpdateAmmeterValue(this.Indicator * this.Scale);
         };
     }
-
-    void Update() 
-    {
-    }
 }
