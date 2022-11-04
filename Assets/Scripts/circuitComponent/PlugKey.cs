@@ -8,9 +8,10 @@ public class PlugKey : CircuitComponent
     public const double MaxResistance = Double.MaxValue;
     public const double MinResistance = 1.0e-6;
 
-    public bool PlugIn = false;
+    public bool PlugState = false;
 
     private event EventHandler OnComponentChanged;
+    private SwitchButton button;
 
     public override void InitSpiceEntity(string name, string[] interfaces, float[] parameters)
     {
@@ -30,27 +31,29 @@ public class PlugKey : CircuitComponent
         };
     }
     
-    void OnMouseDown() {
-        plugSwitch();
-
-        if(OnComponentChanged != null) {
-            OnComponentChanged(this, new EventArgs());
-        }
+    protected override void Start() 
+    {
+        base.Start();
+        button = gameObject.GetComponentInChildren<SwitchButton>();
     }
 
-    private void plugSwitch()
+    void Update() 
     {
-        if(PlugIn) 
+        bool plugIn = button.PlugIn;
+        if(!plugIn && PlugState)
         {
-            PlugIn = false;
             spiceEntity.SetParameter<double>("resistance", MaxResistance);
-            Debug.Log("Plug key plugged out!");
+            if(OnComponentChanged != null) {
+                OnComponentChanged(this, new EventArgs());
+            }
         }
-        else 
+        else if(plugIn && !PlugState)
         {
-            PlugIn = true;
             spiceEntity.SetParameter<double>("resistance", MinResistance);
-            Debug.Log("Plug key plugged in!");
+            if(OnComponentChanged != null) {
+                OnComponentChanged(this, new EventArgs());
+            }
         }
+        PlugState = plugIn;
     }
 }
