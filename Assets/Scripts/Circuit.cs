@@ -23,7 +23,35 @@ public class Circuit : MonoBehaviour
     {
         public ComponentMeta[] Components;
     }
-    
+
+    [System.Serializable]
+    public class LabInfo
+    {
+        public string LabTitle;
+        public string Aim;
+        public string Background;
+        public string Theory;
+        public string Diagram;
+    }
+
+    [System.Serializable]
+    public class LabMaterials
+    {
+        public string[] MaterialsRequired;
+    }
+
+    [System.Serializable]
+    public class LabProcedure
+    {
+        public string[] Procedure;
+    }
+
+    [System.Serializable]
+    public class LabObservations
+    {
+        public string[] Observations;
+    }
+
     /**************** Members ****************/
     public static string labJSON;
 

@@ -1,8 +1,8 @@
 {
-    "labTitle": "To determine resistivity of two / three wires by plotting a graph between potential difference versus current.",
-    "aim": "To determine the resistance per cm of a given wire by plotting a graph for potential difference versus current.",
-    "background": "We know that resistance is a measure of the opposition to the flow of electricity in a circuit. The potential difference helps to understand the amount of energy transferred between two points in a circuit. In this session, let us learn to determine the resistance per cm of a given wire by plotting a graph for potential difference versus current.",
-    "Materials Required": [
+    "LabTitle": "To determine resistivity of two / three wires by plotting a graph between potential difference versus current.",
+    "Aim": "To determine the resistance per cm of a given wire by plotting a graph for potential difference versus current.",
+    "Background": "We know that resistance is a measure of the opposition to the flow of electricity in a circuit. The potential difference helps to understand the amount of energy transferred between two points in a circuit. In this session, let us learn to determine the resistance per cm of a given wire by plotting a graph for potential difference versus current.",
+    "MaterialsRequired": [
         "A wire of unknown resistance",
         "Battery",
         "Voltmeter",
