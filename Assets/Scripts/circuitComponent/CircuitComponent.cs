@@ -10,22 +10,30 @@ public abstract class CircuitComponent : MonoBehaviour
     public float[] Parameters;
 
     protected Rigidbody rigidbodyComponent;
-    public SpiceSharp.Entities.IEntity spiceEntity;
-    public Dictionary<string, WireConnector> connectors;
+    protected Collider colliderComponent;
+    public List<SpiceSharp.Entities.IEntity> spiceEntitys;
+    public List<WireConnector> connectors;
 
     // Start is called before the first frame update
     protected virtual void Start()
     {
         rigidbodyComponent = GetComponent<Rigidbody>(); // shorthand for rigidbody component
+        colliderComponent = GetComponent<Collider>();
     }
 
     public abstract void InitSpiceEntity(string name, string[] interfaces, float[] parameters);
 
-    public virtual void RegisterComponent(Circuit circuit) {}
+    public virtual void RegisterComponent(Circuit circuit) 
+    {
+        foreach(SpiceSharp.Entities.IEntity entity in spiceEntitys)
+        {
+            circuit.Ckt.Add(entity);
+        }
+    }
 
     public virtual void InitInterfaces(string[] interfaces)
     {
-        connectors = new Dictionary<string, WireConnector>();
+        connectors = new List<WireConnector>();
         for(int i=0; i<interfaces.Length; i++)
         {
             var childObject = gameObject.transform.Find(string.Format("interface{0}", i));
@@ -33,7 +41,7 @@ public abstract class CircuitComponent : MonoBehaviour
                 Debug.Log(string.Format("{0} has no interface{1}", Name, i));
                 continue;
             } else {
-                connectors.Add(interfaces[i], childObject.GetComponent<WireConnector>());
+                connectors.Add(childObject.GetComponent<WireConnector>());
             }
         }
     }

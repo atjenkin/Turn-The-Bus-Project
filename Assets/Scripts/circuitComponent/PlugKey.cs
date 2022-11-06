@@ -20,11 +20,14 @@ public class PlugKey : CircuitComponent
         this.Parameters = parameters;
 
         // A Plug key can be treated as a resistor with infinite resistance
-        spiceEntity = new SpiceSharp.Components.Resistor(name, interfaces[0], interfaces[1], MaxResistance);
+        spiceEntitys = new List<SpiceSharp.Entities.IEntity>();
+        spiceEntitys.Add(new SpiceSharp.Components.Resistor(name, interfaces[0], interfaces[1], MaxResistance));
     }
 
     public override void RegisterComponent(Circuit circuit) 
     {
+        base.RegisterComponent(circuit);
+
         OnComponentChanged += (sender, args) => 
         {
             circuit.RunCircuit();
@@ -42,14 +45,14 @@ public class PlugKey : CircuitComponent
         bool plugIn = button.PlugIn;
         if(!plugIn && PlugState)
         {
-            spiceEntity.SetParameter<double>("resistance", MaxResistance);
+            spiceEntitys[0].SetParameter<double>("resistance", MaxResistance);
             if(OnComponentChanged != null) {
                 OnComponentChanged(this, new EventArgs());
             }
         }
         else if(plugIn && !PlugState)
         {
-            spiceEntity.SetParameter<double>("resistance", MinResistance);
+            spiceEntitys[0].SetParameter<double>("resistance", MinResistance);
             if(OnComponentChanged != null) {
                 OnComponentChanged(this, new EventArgs());
             }

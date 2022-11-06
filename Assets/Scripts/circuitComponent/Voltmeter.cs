@@ -15,12 +15,15 @@ public class Voltmeter : CircuitComponent
         this.Parameters = parameters;
 
         this.Scale = parameters[0];
+        spiceEntitys = new List<SpiceSharp.Entities.IEntity>();
         // A voltmeter can be treated as a resistor with extremely high resistance
-        spiceEntity = new SpiceSharp.Components.Resistor(name, interfaces[0], interfaces[1], parameters[1]);
+        spiceEntitys.Add(new SpiceSharp.Components.Resistor(name, interfaces[0], interfaces[1], parameters[1]));
     }
 
     public override void RegisterComponent(Circuit circuit) 
     {
+        base.RegisterComponent(circuit);
+        
         gameObject.GetComponentInChildren<VoltmeterText>().InitVoltageValue();
         var voltageExport = new SpiceSharp.Simulations.RealVoltageExport(circuit.Sim, this.Interfaces[0], this.Interfaces[1]);
         circuit.Sim.ExportSimulationData += (sender, args) =>
