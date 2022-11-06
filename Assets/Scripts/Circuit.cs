@@ -96,10 +96,10 @@ public class Circuit : MonoBehaviour
             instance.transform.position = new Vector3(meta.Position[0], meta.Position[1], meta.Position[2]);
 
             CircuitComponent thisComponent = instance.GetComponent<CircuitComponent>();
+            Debug.Log(thisComponent);
             thisComponent.InitSpiceEntity(meta.Name, meta.Interfaces, meta.Parameters);
 
             circuitComponents.Add(thisComponent);
-            Ckt.Add(thisComponent.spiceEntity);
             thisComponent.RegisterComponent(this);
 
             thisComponent.InitInterfaces(meta.Interfaces);
@@ -111,10 +111,12 @@ public class Circuit : MonoBehaviour
         Dictionary<string, List<WireConnector>> interfaces = new Dictionary<string, List<WireConnector>>();
         foreach(CircuitComponent thisComponent in circuitComponents) 
         {
-            foreach(var item in thisComponent.connectors)
+            for(int i=0; i<thisComponent.connectors.Count; i++)
             {
-                if(!interfaces.ContainsKey(item.Key)) interfaces.Add(item.Key, new List<WireConnector>());
-                interfaces[item.Key].Add(item.Value);
+                string interfaceName = thisComponent.Interfaces[i];
+                WireConnector connector = thisComponent.connectors[i];
+                if(!interfaces.ContainsKey(interfaceName)) interfaces.Add(interfaceName, new List<WireConnector>());
+                interfaces[interfaceName].Add(connector);
             }
         }
         foreach(var item in interfaces)

@@ -6,7 +6,7 @@ using System;
 public class RheostatSlider : MonoBehaviour
 {
     private Camera mainCamera;
-    public const float SLIDINGRANGE = 0.36f;
+    public const float SLIDINGRANGE = 0.18f;
     private Vector3 originPostion;
     public float Ratio = 0.5f;
     // Start is called before the first frame update
@@ -23,13 +23,16 @@ public class RheostatSlider : MonoBehaviour
         Vector3 screenPostion = new Vector3(Input.mousePosition.x, Input.mousePosition.y, cameraZDistance);
         Vector3 newWorldPostion = mainCamera.ScreenToWorldPoint(screenPostion);
 
+        newWorldPostion.x = originPostion.x;
         newWorldPostion.y = originPostion.y;
-        newWorldPostion.z = originPostion.z;
-        newWorldPostion.x = Math.Max(originPostion.x-SLIDINGRANGE, newWorldPostion.x);
-        newWorldPostion.x = Math.Min(originPostion.x+SLIDINGRANGE, newWorldPostion.x);
+        newWorldPostion.z = Math.Max(originPostion.z-SLIDINGRANGE, newWorldPostion.z);
+        newWorldPostion.z = Math.Min(originPostion.z+SLIDINGRANGE, newWorldPostion.z);
 
         transform.position = newWorldPostion;
-
-        Ratio = 1 - (newWorldPostion.x-originPostion.x+SLIDINGRANGE) / (2*SLIDINGRANGE);
+        
+        float newRatio = 1 - (newWorldPostion.z-originPostion.z+SLIDINGRANGE) / (2*SLIDINGRANGE);
+        newRatio = Math.Max(newRatio, 0);
+        newRatio = Math.Min(newRatio, 1);
+        Ratio = newRatio;
     }
 }

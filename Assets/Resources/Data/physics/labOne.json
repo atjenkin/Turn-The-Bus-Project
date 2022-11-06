@@ -69,11 +69,11 @@
             "Parameters": [1.0e3, 1.0e-6]
         },
         {
-            "Name": "R2",
-            "Type": "Resistor",
-            "Position": [1.5, 2.3, -3],
-            "Interfaces": ["am_out", "0"],
-            "Parameters": [2.0e4] 
+            "Name": "RS",
+            "Type": "Rheostat",
+            "Position": [1.5, 3, -3],
+            "Interfaces": ["am_out", "am_out", "0"],
+            "Parameters": [4.0e4] 
         }
     ]
 }

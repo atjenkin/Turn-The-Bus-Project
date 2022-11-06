@@ -17,11 +17,14 @@ public class Ammeter : CircuitComponent
 
         this.Scale = parameters[0];
         // An ammeter can be treated as a resistor with extremely low resistance
-        spiceEntity = new SpiceSharp.Components.Resistor(name, interfaces[0], interfaces[1], parameters[1]);
+        spiceEntitys = new List<SpiceSharp.Entities.IEntity>();
+        spiceEntitys.Add(new SpiceSharp.Components.Resistor(name, interfaces[0], interfaces[1], parameters[1]));
     }
 
     public override void RegisterComponent(Circuit circuit) 
     {
+        base.RegisterComponent(circuit);
+
         gameObject.GetComponentInChildren<AmmeterText>().InitAmmeterValue();
         var currentExport = new SpiceSharp.Simulations.RealPropertyExport(circuit.Sim, this.Name, "i");
         circuit.Sim.ExportSimulationData += (sender, args) =>

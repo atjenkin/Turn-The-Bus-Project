@@ -9,6 +9,8 @@ public class VoltageSource : CircuitComponent
         this.Name = name;
         this.Interfaces = interfaces;
         this.Parameters = parameters;
-        spiceEntity = new SpiceSharp.Components.VoltageSource(name, interfaces[0], interfaces[1], parameters[0]);
+
+        spiceEntitys = new List<SpiceSharp.Entities.IEntity>();
+        spiceEntitys.Add(new SpiceSharp.Components.VoltageSource(name, interfaces[0], interfaces[1], parameters[0]));
     }
 }
