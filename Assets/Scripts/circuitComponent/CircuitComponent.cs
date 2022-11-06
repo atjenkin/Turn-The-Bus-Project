@@ -10,6 +10,7 @@ public abstract class CircuitComponent : MonoBehaviour
     public float[] Parameters;
 
     protected Rigidbody rigidbodyComponent;
+    protected Collider colliderComponent;
     public List<SpiceSharp.Entities.IEntity> spiceEntitys;
     public List<WireConnector> connectors;
 
@@ -17,6 +18,7 @@ public abstract class CircuitComponent : MonoBehaviour
     protected virtual void Start()
     {
         rigidbodyComponent = GetComponent<Rigidbody>(); // shorthand for rigidbody component
+        colliderComponent = GetComponent<Collider>();
     }
 
     public abstract void InitSpiceEntity(string name, string[] interfaces, float[] parameters);

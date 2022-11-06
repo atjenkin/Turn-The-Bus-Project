@@ -71,7 +71,7 @@
         {
             "Name": "RS",
             "Type": "Rheostat",
-            "Position": [1.5, 3, -3],
+            "Position": [1.5, 2.45, -3],
             "Interfaces": ["am_out", "am_out", "0"],
             "Parameters": [4.0e4] 
         }

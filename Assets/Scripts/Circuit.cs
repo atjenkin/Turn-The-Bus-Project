@@ -96,7 +96,6 @@ public class Circuit : MonoBehaviour
             instance.transform.position = new Vector3(meta.Position[0], meta.Position[1], meta.Position[2]);
 
             CircuitComponent thisComponent = instance.GetComponent<CircuitComponent>();
-            Debug.Log(thisComponent);
             thisComponent.InitSpiceEntity(meta.Name, meta.Interfaces, meta.Parameters);
 
             circuitComponents.Add(thisComponent);

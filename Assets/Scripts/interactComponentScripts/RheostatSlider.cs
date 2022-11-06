@@ -8,12 +8,19 @@ public class RheostatSlider : MonoBehaviour
     private Camera mainCamera;
     public const float SLIDINGRANGE = 0.18f;
     private Vector3 originPostion;
-    public float Ratio = 0.5f;
+
+    public double Ratio = 0.5f;
+    public double PathLength;
+    public Collider rodCollider;
+    public GameObject EndPointLeft;
+    public GameObject EndPointRight;
+
     // Start is called before the first frame update
     void Start()
     {
         mainCamera = Camera.main;
         originPostion = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        PathLength = Vector3.Distance(EndPointLeft.transform.position, EndPointRight.transform.position);
     }
 
     // Update is called once per frame
@@ -22,15 +29,12 @@ public class RheostatSlider : MonoBehaviour
         float cameraZDistance = mainCamera.WorldToScreenPoint(transform.position).z;
         Vector3 screenPostion = new Vector3(Input.mousePosition.x, Input.mousePosition.y, cameraZDistance);
         Vector3 newWorldPostion = mainCamera.ScreenToWorldPoint(screenPostion);
-
-        newWorldPostion.x = originPostion.x;
-        newWorldPostion.y = originPostion.y;
-        newWorldPostion.z = Math.Max(originPostion.z-SLIDINGRANGE, newWorldPostion.z);
-        newWorldPostion.z = Math.Min(originPostion.z+SLIDINGRANGE, newWorldPostion.z);
-
-        transform.position = newWorldPostion;
         
-        float newRatio = 1 - (newWorldPostion.z-originPostion.z+SLIDINGRANGE) / (2*SLIDINGRANGE);
+        Vector3 closestPoint = rodCollider.ClosestPoint(newWorldPostion);
+        transform.position = closestPoint;
+
+        double slideLength = Vector3.Distance(closestPoint, EndPointLeft.transform.position);
+        double newRatio = slideLength / PathLength;
         newRatio = Math.Max(newRatio, 0);
         newRatio = Math.Min(newRatio, 1);
         Ratio = newRatio;
