@@ -6,10 +6,8 @@ using System;
 public class RheostatSlider : MonoBehaviour
 {
     private Camera mainCamera;
-    public const float SLIDINGRANGE = 0.18f;
-    private Vector3 originPostion;
 
-    public double Ratio = 0.5f;
+    public double Ratio = 0.5;
     public double PathLength;
     public Collider rodCollider;
     public GameObject EndPointLeft;
@@ -19,7 +17,6 @@ public class RheostatSlider : MonoBehaviour
     void Start()
     {
         mainCamera = Camera.main;
-        originPostion = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         PathLength = Vector3.Distance(EndPointLeft.transform.position, EndPointRight.transform.position);
     }
 

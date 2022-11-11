@@ -52,7 +52,7 @@
             "Type": "Resistor",
             "Position": [1.5, 2.3, -0.2],
             "Interfaces": ["key_out", "am_in"],
-            "Parameters": [1.0e4]
+            "Parameters": [1, 0, 3, 0.1]
         },
         {
             "Name": "Vm",
