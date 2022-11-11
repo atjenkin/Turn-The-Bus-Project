@@ -24,8 +24,8 @@ public class Rheostat : CircuitComponent
         this.Parameters = parameters;
         spiceEntitys = new List<SpiceSharp.Entities.IEntity>();
 
-        spiceEntitys.Add(new SpiceSharp.Components.Resistor(name+"_RLeft", interfaces[0], interfaces[1], parameters[0]/2));
-        spiceEntitys.Add(new SpiceSharp.Components.Resistor(name+"_RRight", interfaces[1], interfaces[2], parameters[0]/2));
+        spiceEntitys.Add(new SpiceSharp.Components.Resistor(name+"_RLeft", interfaces[0], interfaces[1], parameters[0]*Ratio));
+        spiceEntitys.Add(new SpiceSharp.Components.Resistor(name+"_RRight", interfaces[1], interfaces[2], parameters[0]*(1-Ratio)));
         MaxResistance = (double)parameters[0];
     }
 
