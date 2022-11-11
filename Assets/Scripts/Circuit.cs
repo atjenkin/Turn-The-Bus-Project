@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using System.Linq;
 using WireBuilder;
+using TMPro;
 
 public class Circuit : MonoBehaviour
 {
@@ -54,7 +55,8 @@ public class Circuit : MonoBehaviour
 
     /**************** Members ****************/
     public static string labJSON;
-
+    
+    public TextMeshPro labTitleField;
     public List<CircuitComponent> circuitComponents;
 
     public SpiceSharp.Circuit Ckt;
@@ -70,7 +72,8 @@ public class Circuit : MonoBehaviour
         TextAsset textJSON = Resources.Load<TextAsset>(labJSON);
         circuitComponents = new List<CircuitComponent>();
         componentMetaList = JsonUtility.FromJson<ComponentMetaList>(textJSON.text);
-
+        
+        InitUIWidgets(textJSON);
         InitCircuit();
         GenerateWires();
         RunCircuit();
@@ -80,6 +83,12 @@ public class Circuit : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void InitUIWidgets(TextAsset textJSON)
+    {
+        LabInfo labInfoJSON = JsonUtility.FromJson<LabInfo>(textJSON.text);
+        labTitleField.SetText(labInfoJSON.LabTitle);
     }
 
     public void InitCircuit() 
