@@ -5,6 +5,7 @@ using UnityEditor;
 using System.Linq;
 using WireBuilder;
 using TMPro;
+using System.IO;
 
 public class Circuit : MonoBehaviour
 {
@@ -97,9 +98,11 @@ public class Circuit : MonoBehaviour
         Sim = new SpiceSharp.Simulations.OP("Sim");
         foreach(ComponentMeta meta in componentMetaList.Components) 
         {
-            string guid = AssetDatabase.FindAssets(meta.Type, new string[] {"Assets/Prefabs"})[0];
-            string prefabPath = AssetDatabase.GUIDToAssetPath(guid);
-            GameObject prefabObject = AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
+            string prefabPath = Application.streamingAssetsPath + "/" + meta.Type;
+            Debug.Log(prefabPath);
+            var loadedAssetBundle = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, meta.Type));
+            Debug.Log(loadedAssetBundle);
+            GameObject prefabObject = loadedAssetBundle.LoadAsset<GameObject>(meta.Type);
             var instance = Instantiate(prefabObject, this.transform, true);
             instance.name = meta.Name;
             instance.transform.position = new Vector3(meta.Position[0], meta.Position[1], meta.Position[2]);
