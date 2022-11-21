@@ -8,6 +8,9 @@ public class Voltmeter : CircuitComponent
     public double Indicator = 0;
     public float Scale = 1;
 
+    private bool isLabelDisplayed = false;
+
+    
     public override void InitSpiceEntity(string name, string[] interfaces, float[] parameters)
     {
         this.Name = name;
@@ -34,7 +37,12 @@ public class Voltmeter : CircuitComponent
         };
     }
 
+    void OnMouseDown(){
+        Debug.Log("onMouseClicked");
+    }
+
     void Update() 
     {
+        
     }
 }
