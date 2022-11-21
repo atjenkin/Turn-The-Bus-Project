@@ -1,8 +1,8 @@
 {
-    "labTitle": "To determine resistivity of two / three wires by plotting a graph between potential difference versus current.",
-    "aim": "To determine the resistance per cm of a given wire by plotting a graph for potential difference versus current.",
-    "background": "We know that resistance is a measure of the opposition to the flow of electricity in a circuit. The potential difference helps to understand the amount of energy transferred between two points in a circuit. In this session, let us learn to determine the resistance per cm of a given wire by plotting a graph for potential difference versus current.",
-    "Materials Required": [
+    "LabTitle": "To determine resistivity of two / three wires by plotting a graph between potential difference versus current.",
+    "Aim": "To determine the resistance per cm of a given wire by plotting a graph for potential difference versus current.",
+    "Background": "We know that resistance is a measure of the opposition to the flow of electricity in a circuit. The potential difference helps to understand the amount of energy transferred between two points in a circuit. In this session, let us learn to determine the resistance per cm of a given wire by plotting a graph for potential difference versus current.",
+    "MaterialsRequired": [
         "A wire of unknown resistance",
         "Battery",
         "Voltmeter",
@@ -52,7 +52,7 @@
             "Type": "Resistor",
             "Position": [1.5, 2.3, -0.2],
             "Interfaces": ["key_out", "am_in"],
-            "Parameters": [1.0e4]
+            "Parameters": [1, 0, 3, 0.1]
         },
         {
             "Name": "Vm",
@@ -69,11 +69,11 @@
             "Parameters": [1.0e3, 1.0e-6]
         },
         {
-            "Name": "R2",
-            "Type": "Resistor",
-            "Position": [1.5, 2.3, -3],
-            "Interfaces": ["am_out", "0"],
-            "Parameters": [2.0e4] 
+            "Name": "RS",
+            "Type": "Rheostat",
+            "Position": [1.5, 2.45, -3],
+            "Interfaces": ["am_out", "am_out", "0"],
+            "Parameters": [4.0e4] 
         }
     ]
 }

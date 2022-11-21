@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEditor;
 using System.Linq;
 using WireBuilder;
+using TMPro;
+using System.IO;
 
 public class Circuit : MonoBehaviour
 {
@@ -23,10 +25,39 @@ public class Circuit : MonoBehaviour
     {
         public ComponentMeta[] Components;
     }
-    
+
+    [System.Serializable]
+    public class LabInfo
+    {
+        public string LabTitle;
+        public string Aim;
+        public string Background;
+        public string Theory;
+        public string Diagram;
+    }
+
+    [System.Serializable]
+    public class LabMaterials
+    {
+        public string[] MaterialsRequired;
+    }
+
+    [System.Serializable]
+    public class LabProcedure
+    {
+        public string[] Procedure;
+    }
+
+    [System.Serializable]
+    public class LabObservations
+    {
+        public string[] Observations;
+    }
+
     /**************** Members ****************/
     public static string labJSON;
-
+    
+    public TextMeshPro labTitleField;
     public List<CircuitComponent> circuitComponents;
 
     public SpiceSharp.Circuit Ckt;
@@ -42,7 +73,8 @@ public class Circuit : MonoBehaviour
         TextAsset textJSON = Resources.Load<TextAsset>(labJSON);
         circuitComponents = new List<CircuitComponent>();
         componentMetaList = JsonUtility.FromJson<ComponentMetaList>(textJSON.text);
-
+        
+        InitUIWidgets(textJSON);
         InitCircuit();
         GenerateWires();
         RunCircuit();
@@ -54,15 +86,23 @@ public class Circuit : MonoBehaviour
 
     }
 
+    public void InitUIWidgets(TextAsset textJSON)
+    {
+        LabInfo labInfoJSON = JsonUtility.FromJson<LabInfo>(textJSON.text);
+        labTitleField.SetText(labInfoJSON.LabTitle);
+    }
+
     public void InitCircuit() 
     {
         Ckt = new SpiceSharp.Circuit();
         Sim = new SpiceSharp.Simulations.OP("Sim");
         foreach(ComponentMeta meta in componentMetaList.Components) 
         {
-            string guid = AssetDatabase.FindAssets(meta.Type, new string[] {"Assets/Prefabs"})[0];
-            string prefabPath = AssetDatabase.GUIDToAssetPath(guid);
-            GameObject prefabObject = AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
+            string prefabPath = Application.streamingAssetsPath + "/" + meta.Type;
+            Debug.Log(prefabPath);
+            var loadedAssetBundle = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, meta.Type));
+            Debug.Log(loadedAssetBundle);
+            GameObject prefabObject = loadedAssetBundle.LoadAsset<GameObject>(meta.Type);
             var instance = Instantiate(prefabObject, this.transform, true);
             instance.name = meta.Name;
             instance.transform.position = new Vector3(meta.Position[0], meta.Position[1], meta.Position[2]);
@@ -71,7 +111,6 @@ public class Circuit : MonoBehaviour
             thisComponent.InitSpiceEntity(meta.Name, meta.Interfaces, meta.Parameters);
 
             circuitComponents.Add(thisComponent);
-            Ckt.Add(thisComponent.spiceEntity);
             thisComponent.RegisterComponent(this);
 
             thisComponent.InitInterfaces(meta.Interfaces);
@@ -83,10 +122,12 @@ public class Circuit : MonoBehaviour
         Dictionary<string, List<WireConnector>> interfaces = new Dictionary<string, List<WireConnector>>();
         foreach(CircuitComponent thisComponent in circuitComponents) 
         {
-            foreach(var item in thisComponent.connectors)
+            for(int i=0; i<thisComponent.connectors.Count; i++)
             {
-                if(!interfaces.ContainsKey(item.Key)) interfaces.Add(item.Key, new List<WireConnector>());
-                interfaces[item.Key].Add(item.Value);
+                string interfaceName = thisComponent.Interfaces[i];
+                WireConnector connector = thisComponent.connectors[i];
+                if(!interfaces.ContainsKey(interfaceName)) interfaces.Add(interfaceName, new List<WireConnector>());
+                interfaces[interfaceName].Add(connector);
             }
         }
         foreach(var item in interfaces)
