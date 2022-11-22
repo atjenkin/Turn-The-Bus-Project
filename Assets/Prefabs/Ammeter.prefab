@@ -463,8 +463,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8237562787553036884}
   - component: {fileID: 5953239389681958385}
-  - component: {fileID: 1398640109750078999}
   - component: {fileID: -2178402722737303807}
+  - component: {fileID: 4846372209714756408}
   m_Layer: 0
   m_Name: Ammeter
   m_TagString: Untagged
@@ -516,20 +516,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!136 &1398640109750078999
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1420537975713874807}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0
-  m_Height: 0
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.002, z: 0}
 --- !u!114 &-2178402722737303807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -545,8 +531,22 @@ MonoBehaviour:
   Name: 
   Interfaces: []
   Parameters: []
+  connectors: []
   Indicator: 0
   Scale: 1000
+--- !u!65 &4846372209714756408
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1420537975713874807}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.15494007, y: 0.14550745, z: 0.1893654}
+  m_Center: {x: 0.001567468, y: 0.070978224, z: 0.00517489}
 --- !u!1 &3140249185841185014
 GameObject:
   m_ObjectHideFlags: 0

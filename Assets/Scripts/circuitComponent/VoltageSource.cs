@@ -13,4 +13,9 @@ public class VoltageSource : CircuitComponent
         spiceEntitys = new List<SpiceSharp.Entities.IEntity>();
         spiceEntitys.Add(new SpiceSharp.Components.VoltageSource(name, interfaces[0], interfaces[1], parameters[0]));
     }
+
+    void OnMouseDown(){
+        Circuit.isLabelWindowOpen = true;
+        Debug.Log("onMouseClicked: Voltage Source");
+    }
 }

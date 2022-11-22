@@ -64,6 +64,8 @@ public class Circuit : MonoBehaviour
     public SpiceSharp.Simulations.BiasingSimulation Sim;
 
     public ComponentMetaList componentMetaList = new ComponentMetaList();
+
+    public static bool isLabelWindowOpen = false;
     
 
     /**************** Methods ****************/
@@ -73,7 +75,6 @@ public class Circuit : MonoBehaviour
         TextAsset textJSON = Resources.Load<TextAsset>(labJSON);
         circuitComponents = new List<CircuitComponent>();
         componentMetaList = JsonUtility.FromJson<ComponentMetaList>(textJSON.text);
-        
         InitUIWidgets(textJSON);
         InitCircuit();
         GenerateWires();
@@ -83,7 +84,7 @@ public class Circuit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+    
     }
 
     public void InitUIWidgets(TextAsset textJSON)
@@ -144,4 +145,7 @@ public class Circuit : MonoBehaviour
     {
         Sim.Run(Ckt);
     }
+
+    
+
 }
