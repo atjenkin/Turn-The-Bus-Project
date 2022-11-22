@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEditor;
 using System.Linq;
 using WireBuilder;
+using TMPro;
+using System.IO;
 
 public class Circuit : MonoBehaviour
 {
@@ -54,7 +56,8 @@ public class Circuit : MonoBehaviour
 
     /**************** Members ****************/
     public static string labJSON;
-
+    
+    public TextMeshPro labTitleField;
     public List<CircuitComponent> circuitComponents;
 
     public SpiceSharp.Circuit Ckt;
@@ -72,7 +75,8 @@ public class Circuit : MonoBehaviour
         TextAsset textJSON = Resources.Load<TextAsset>(labJSON);
         circuitComponents = new List<CircuitComponent>();
         componentMetaList = JsonUtility.FromJson<ComponentMetaList>(textJSON.text);
-
+        
+        InitUIWidgets(textJSON);
         InitCircuit();
         GenerateWires();
         RunCircuit();
@@ -84,15 +88,23 @@ public class Circuit : MonoBehaviour
 
     }
 
+    public void InitUIWidgets(TextAsset textJSON)
+    {
+        LabInfo labInfoJSON = JsonUtility.FromJson<LabInfo>(textJSON.text);
+        labTitleField.SetText(labInfoJSON.LabTitle);
+    }
+
     public void InitCircuit() 
     {
         Ckt = new SpiceSharp.Circuit();
         Sim = new SpiceSharp.Simulations.OP("Sim");
         foreach(ComponentMeta meta in componentMetaList.Components) 
         {
-            string guid = AssetDatabase.FindAssets(meta.Type, new string[] {PREFAB_PATH})[0];
-            string prefabPath = AssetDatabase.GUIDToAssetPath(guid);
-            GameObject prefabObject = AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
+            string prefabPath = Application.streamingAssetsPath + "/" + meta.Type;
+            Debug.Log(prefabPath);
+            var loadedAssetBundle = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, meta.Type));
+            Debug.Log(loadedAssetBundle);
+            GameObject prefabObject = loadedAssetBundle.LoadAsset<GameObject>(meta.Type);
             var instance = Instantiate(prefabObject, this.transform, true);
             instance.name = meta.Name;
             instance.transform.position = new Vector3(meta.Position[0], meta.Position[1], meta.Position[2]);
