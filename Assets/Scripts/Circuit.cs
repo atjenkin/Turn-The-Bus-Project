@@ -61,6 +61,8 @@ public class Circuit : MonoBehaviour
     public SpiceSharp.Simulations.BiasingSimulation Sim;
 
     public ComponentMetaList componentMetaList = new ComponentMetaList();
+
+    public const string PREFAB_PATH = "Assets/Prefabs";
     
 
     /**************** Methods ****************/
@@ -88,7 +90,7 @@ public class Circuit : MonoBehaviour
         Sim = new SpiceSharp.Simulations.OP("Sim");
         foreach(ComponentMeta meta in componentMetaList.Components) 
         {
-            string guid = AssetDatabase.FindAssets(meta.Type, new string[] {"Assets/Prefabs"})[0];
+            string guid = AssetDatabase.FindAssets(meta.Type, new string[] {PREFAB_PATH})[0];
             string prefabPath = AssetDatabase.GUIDToAssetPath(guid);
             GameObject prefabObject = AssetDatabase.LoadAssetAtPath<GameObject>(prefabPath);
             var instance = Instantiate(prefabObject, this.transform, true);
