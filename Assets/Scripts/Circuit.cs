@@ -58,6 +58,8 @@ public class Circuit : MonoBehaviour
     public static string labJSON;
     
     public TextMeshPro labTitleField;
+    public TextMeshPro componentTitleField;
+    public TextMeshPro componentDescriptionField;
     public List<CircuitComponent> circuitComponents;
 
     public SpiceSharp.Circuit Ckt;
@@ -106,6 +108,12 @@ public class Circuit : MonoBehaviour
             GameObject prefabObject = loadedAssetBundle.LoadAsset<GameObject>(meta.Type);
             var instance = Instantiate(prefabObject, this.transform, true);
             instance.name = meta.Name;
+
+            // you will probably need to move this to whatever function you use for on click, but these are the field names to have SetText called
+            componentTitleField.SetText(meta.Name);
+            // componentDescriptionField.SetText(meta.Description); (this is for the Description field you're going to add)
+
+
             instance.transform.position = new Vector3(meta.Position[0], meta.Position[1], meta.Position[2]);
 
             CircuitComponent thisComponent = instance.GetComponent<CircuitComponent>();
