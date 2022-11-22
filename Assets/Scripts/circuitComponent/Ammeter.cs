@@ -34,4 +34,10 @@ public class Ammeter : CircuitComponent
             gameObject.GetComponentInChildren<AmmeterText>().UpdateAmmeterValue(this.Indicator * this.Scale);
         };
     }
+
+    void OnMouseDown(){
+        Circuit.isLabelWindowOpen = true;
+        Debug.Log("onMouseClicked: Ammeter");
+    }
+
 }

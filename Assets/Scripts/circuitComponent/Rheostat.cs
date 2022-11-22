@@ -52,4 +52,9 @@ public class Rheostat : CircuitComponent
         }
         Ratio = sliderRatio;
     }
+
+    void OnMouseDown(){
+        Circuit.isLabelWindowOpen = true;
+        Debug.Log("onMouseClicked: Rheostat");
+    }
 }

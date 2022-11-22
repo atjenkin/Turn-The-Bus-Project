@@ -81,4 +81,10 @@ public class Resistor : CircuitComponent
         Material material = AssetDatabase.LoadAssetAtPath<Material>(materialPath);
         return material;
     }
+
+    void OnMouseDown(){
+        Circuit.isLabelWindowOpen = true;
+        Debug.Log("onMouseClicked: Resistor");
+    }
+
 }
