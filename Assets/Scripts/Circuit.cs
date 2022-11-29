@@ -60,6 +60,9 @@ public class Circuit : MonoBehaviour
     public TextMeshPro labTitleField;
     public TextMeshPro componentTitleField;
     public TextMeshPro componentDescriptionField;
+
+    public static string componentTitle = "";
+    public static string componentDescription = "";
     public List<CircuitComponent> circuitComponents;
 
     public SpiceSharp.Circuit Ckt;
@@ -86,13 +89,27 @@ public class Circuit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    
+        updateLabelInfo();
     }
 
     public void InitUIWidgets(TextAsset textJSON)
     {
         LabInfo labInfoJSON = JsonUtility.FromJson<LabInfo>(textJSON.text);
         labTitleField.SetText(labInfoJSON.LabTitle);
+    }
+
+    private void updateLabelInfo(){
+        if (isLabelWindowOpen){
+            componentTitleField.SetText(componentTitle);
+            componentDescriptionField.SetText(componentDescription);
+            componentTitleField.gameObject.SetActive(true);
+            componentDescriptionField.gameObject.SetActive(true);
+
+        }
+        else{
+            componentTitleField.gameObject.SetActive(false);
+            componentDescriptionField.gameObject.SetActive(false);
+        }
     }
 
     public void InitCircuit() 
@@ -110,7 +127,7 @@ public class Circuit : MonoBehaviour
             instance.name = meta.Name;
 
             // you will probably need to move this to whatever function you use for on click, but these are the field names to have SetText called
-            componentTitleField.SetText(meta.Name);
+            // componentTitleField.SetText(meta.Name);
             // componentDescriptionField.SetText(meta.Description); (this is for the Description field you're going to add)
 
 

@@ -37,7 +37,9 @@ public class Ammeter : CircuitComponent
 
     void OnMouseDown(){
         Circuit.isLabelWindowOpen = true;
-        Debug.Log("onMouseClicked: Ammeter");
+        Circuit.componentTitle = "Ammeter";
+        Circuit.componentDescription = "Ammeter description";
+
     }
 
 }
