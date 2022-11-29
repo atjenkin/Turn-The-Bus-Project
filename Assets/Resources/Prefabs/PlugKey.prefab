@@ -323,7 +323,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.0011339122, y: 0.0005133098, z: 0.0011311199}
+  m_Size: {x: 0.002, y: 0.0006, z: 0.002}
   m_Center: {x: -0.0000025630004, y: 0.0025019248, z: -0.005225941}
 --- !u!54 &4180366140603171863
 Rigidbody:
@@ -645,7 +645,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.6, z: 1.9027823}
+  m_Size: {x: 1, y: 0.35, z: 1.9027823}
   m_Center: {x: -1.4111744e-16, y: 0, z: -0.012309923}
 --- !u!114 &3677031529448410593
 MonoBehaviour:
@@ -664,6 +664,7 @@ MonoBehaviour:
   Parameters: []
   connectors: []
   PlugState: 0
+  button: {fileID: 1625301682939724783}
 --- !u!54 &410130080867993512
 Rigidbody:
   m_ObjectHideFlags: 0

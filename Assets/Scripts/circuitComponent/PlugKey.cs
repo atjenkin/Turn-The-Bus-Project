@@ -11,7 +11,7 @@ public class PlugKey : CircuitComponent
     public bool PlugState = false;
 
     private event EventHandler OnComponentChanged;
-    private SwitchButton button;
+    public GameObject button;
 
     public override void InitSpiceEntity(string name, string[] interfaces, float[] parameters)
     {
@@ -33,16 +33,10 @@ public class PlugKey : CircuitComponent
             circuit.RunCircuit();
         };
     }
-    
-    protected override void Start() 
-    {
-        base.Start();
-        button = gameObject.GetComponentInChildren<SwitchButton>();
-    }
 
     void Update() 
     {
-        bool plugIn = button.PlugIn;
+        bool plugIn = button.GetComponent<SwitchButton>().PlugIn;
         if(!plugIn && PlugState)
         {
             spiceEntitys[0].SetParameter<double>("resistance", MaxResistance);

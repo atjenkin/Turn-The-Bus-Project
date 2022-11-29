@@ -674,6 +674,7 @@ MonoBehaviour:
   Interfaces: []
   Parameters: []
   connectors: []
+  slider: {fileID: 8472781057533496212}
   Ratio: 0.5
   MaxResistance: 0
 --- !u!1 &6055586593976147388
