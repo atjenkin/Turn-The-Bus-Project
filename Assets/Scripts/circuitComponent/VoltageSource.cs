@@ -16,6 +16,7 @@ public class VoltageSource : CircuitComponent
 
     void OnMouseDown(){
         Circuit.isLabelWindowOpen = true;
-        Debug.Log("onMouseClicked: Voltage Source");
+        Circuit.componentTitle = "Voltage Source";
+        Circuit.componentDescription = "Voltage Source description";
     }
 }

@@ -55,6 +55,8 @@ public class Rheostat : CircuitComponent
 
     void OnMouseDown(){
         Circuit.isLabelWindowOpen = true;
-        Debug.Log("onMouseClicked: Rheostat");
+        Circuit.componentTitle = "Rheostat";
+        Circuit.componentDescription = "Rheostat description";
+        
     }
 }

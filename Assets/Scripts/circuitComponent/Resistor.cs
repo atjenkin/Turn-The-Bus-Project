@@ -82,7 +82,9 @@ public class Resistor : CircuitComponent
 
     void OnMouseDown(){
         Circuit.isLabelWindowOpen = true;
-        Debug.Log("onMouseClicked: Resistor");
+        Circuit.componentTitle = "Resistor";
+        Circuit.componentDescription = "Resistor description";
+
     }
 
 }
