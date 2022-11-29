@@ -3,7 +3,10 @@ guid: e8b2f9c15bd4778499942db17271b970
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - textJSON: {instanceID: 0}
+  - labButton: {fileID: 6947061338129257230, guid: c59310f239c6294438daada8b97f81e8, type: 3}
+  - parent: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
