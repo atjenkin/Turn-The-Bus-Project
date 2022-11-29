@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
+//using UnityEditor;
 using System.Linq;
 using WireBuilder;
 using TMPro;
@@ -70,6 +70,7 @@ public class Circuit : MonoBehaviour
 
     public ComponentMetaList componentMetaList = new ComponentMetaList();
 
+    public const string PREFAB_PATH = "Prefabs";
     public static bool isLabelWindowOpen = false;
     
 
@@ -118,11 +119,9 @@ public class Circuit : MonoBehaviour
         Sim = new SpiceSharp.Simulations.OP("Sim");
         foreach(ComponentMeta meta in componentMetaList.Components) 
         {
-            string prefabPath = Application.streamingAssetsPath + "/" + meta.Type;
-            Debug.Log(prefabPath);
-            var loadedAssetBundle = AssetBundle.LoadFromFile(Path.Combine(Application.streamingAssetsPath, meta.Type));
-            Debug.Log(loadedAssetBundle);
-            GameObject prefabObject = loadedAssetBundle.LoadAsset<GameObject>(meta.Type);
+
+            string prefabPath = PREFAB_PATH + meta.Type;
+            GameObject prefabObject = Resources.Load<GameObject>(prefabPath);
             var instance = Instantiate(prefabObject, this.transform, true);
             instance.name = meta.Name;
 
