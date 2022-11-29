@@ -70,7 +70,7 @@ public class Circuit : MonoBehaviour
 
     public ComponentMetaList componentMetaList = new ComponentMetaList();
 
-    public const string PREFAB_PATH = "Prefabs";
+    public const string PREFAB_PATH = "Prefabs/";
     public static bool isLabelWindowOpen = false;
     
 
@@ -121,7 +121,9 @@ public class Circuit : MonoBehaviour
         {
 
             string prefabPath = PREFAB_PATH + meta.Type;
+            Debug.Log(prefabPath);
             GameObject prefabObject = Resources.Load<GameObject>(prefabPath);
+            Debug.Log(prefabObject);
             var instance = Instantiate(prefabObject, this.transform, true);
             instance.name = meta.Name;
 

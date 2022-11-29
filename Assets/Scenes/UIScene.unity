@@ -327,7 +327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textJSON: {fileID: 4900000, guid: f1f0b34c0cfa66f4891c17a13169b278, type: 3}
-  labButton: {fileID: 6947061338129257230, guid: 89f79d83bfcc3c7459bcbbebc12a17ed, type: 3}
+  labButton: {fileID: 6947061338129257230, guid: c59310f239c6294438daada8b97f81e8, type: 3}
   parent: {fileID: 649421442}
   labs:
     Labs: []
