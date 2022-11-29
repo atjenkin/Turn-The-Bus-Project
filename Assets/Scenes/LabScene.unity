@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -259,7 +259,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1593626894294431491, guid: 23415955da99571458d5d1587a0cb9c7, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1593626894294431491, guid: 23415955da99571458d5d1587a0cb9c7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -483,7 +483,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &714243544
 PrefabInstance:
@@ -494,7 +494,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6445939931390287878, guid: 16315d7272e311c40811da35edae226b, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6445939931390287878, guid: 16315d7272e311c40811da35edae226b, type: 3}
       propertyPath: m_LocalScale.x
@@ -1063,7 +1063,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 45.53, y: -90.7, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -1120,7 +1120,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1593626894294431491, guid: 23415955da99571458d5d1587a0cb9c7, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1593626894294431491, guid: 23415955da99571458d5d1587a0cb9c7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1251,7 +1251,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!65 &1110924372
 BoxCollider:
@@ -1375,7 +1375,7 @@ RectTransform:
   - {fileID: 882495820}
   - {fileID: 731864690}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 130.327, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1469,7 +1469,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1593626894294431491, guid: 23415955da99571458d5d1587a0cb9c7, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1593626894294431491, guid: 23415955da99571458d5d1587a0cb9c7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1826,7 +1826,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1593626894294431491, guid: 23415955da99571458d5d1587a0cb9c7, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1593626894294431491, guid: 23415955da99571458d5d1587a0cb9c7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2031,7 +2031,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2103185096
 MonoBehaviour:
@@ -2046,8 +2046,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   labTitleField: {fileID: 2142135685}
-  componentTitleField: {fileID: 0}
-  componentDescriptionField: {fileID: 0}
+  componentTitleField: {fileID: 882495821}
+  componentDescriptionField: {fileID: 731864691}
   circuitComponents: []
   componentMetaList:
     Components: []
@@ -2244,7 +2244,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2142135683
 GameObject:
