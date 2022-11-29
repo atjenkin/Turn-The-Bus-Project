@@ -45,7 +45,7 @@ public class Resistor : CircuitComponent
     public const int MIN_MULTIPLIER = -2;
     public const int MAX_RESISTANCE_PARAM = 9;
     public const int MIN_RESISTANCE_PARAM = 0;
-    public const string MATERIAL_PATH = "Assets/Materials/Resistor Materials";
+    public const string MATERIAL_PATH = "Materials/Resistor Materials/";
 
     public GameObject Band1;
     public GameObject Band2;
@@ -77,9 +77,7 @@ public class Resistor : CircuitComponent
     private Material loadBandColor(int param, Dictionary<int, string> colorDict) 
     {
         string colorName = colorDict[param];
-        string guid = AssetDatabase.FindAssets(colorName, new string[] {MATERIAL_PATH})[0];
-        string materialPath = AssetDatabase.GUIDToAssetPath(guid);
-        return AssetDatabase.LoadAssetAtPath<Material>(materialPath);
+        return Resources.Load<Material>(MATERIAL_PATH+colorName);
     }
 
     void OnMouseDown(){
