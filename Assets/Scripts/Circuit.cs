@@ -58,6 +58,8 @@ public class Circuit : MonoBehaviour
     public static string labJSON;
     
     public TextMeshPro labTitleField;
+    public TextMeshPro componentTitleField;
+    public TextMeshPro componentDescriptionField;
     public List<CircuitComponent> circuitComponents;
 
     public SpiceSharp.Circuit Ckt;
@@ -66,6 +68,7 @@ public class Circuit : MonoBehaviour
     public ComponentMetaList componentMetaList = new ComponentMetaList();
 
     public const string PREFAB_PATH = "Prefabs";
+    public static bool isLabelWindowOpen = false;
     
 
     /**************** Methods ****************/
@@ -75,7 +78,6 @@ public class Circuit : MonoBehaviour
         TextAsset textJSON = Resources.Load<TextAsset>(labJSON);
         circuitComponents = new List<CircuitComponent>();
         componentMetaList = JsonUtility.FromJson<ComponentMetaList>(textJSON.text);
-        
         InitUIWidgets(textJSON);
         InitCircuit();
         GenerateWires();
@@ -85,7 +87,7 @@ public class Circuit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+    
     }
 
     public void InitUIWidgets(TextAsset textJSON)
@@ -105,6 +107,12 @@ public class Circuit : MonoBehaviour
             GameObject prefabObject = Resources.Load<GameObject>(prefabPath);
             var instance = Instantiate(prefabObject, this.transform, true);
             instance.name = meta.Name;
+
+            // you will probably need to move this to whatever function you use for on click, but these are the field names to have SetText called
+            componentTitleField.SetText(meta.Name);
+            // componentDescriptionField.SetText(meta.Description); (this is for the Description field you're going to add)
+
+
             instance.transform.position = new Vector3(meta.Position[0], meta.Position[1], meta.Position[2]);
 
             CircuitComponent thisComponent = instance.GetComponent<CircuitComponent>();
@@ -144,4 +152,7 @@ public class Circuit : MonoBehaviour
     {
         Sim.Run(Ckt);
     }
+
+    
+
 }
