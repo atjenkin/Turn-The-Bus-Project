@@ -69,11 +69,11 @@ public class Resistor : CircuitComponent
 
     protected override void Start()
     {
-        Band1.GetComponent<Renderer>().material = loadBandColor(ResistorParam1, RESISTANCE_BAND_COLORS);
-        Band2.GetComponent<Renderer>().material = loadBandColor(ResistorParam2, RESISTANCE_BAND_COLORS);
-        BandMultiplier.GetComponent<Renderer>().material = loadBandColor(Multiplier, MULTIPLIER_BAND_COLORS);
+        // Band1.GetComponent<Renderer>().material = loadBandColor(ResistorParam1, RESISTANCE_BAND_COLORS);
+        // Band2.GetComponent<Renderer>().material = loadBandColor(ResistorParam2, RESISTANCE_BAND_COLORS);
+        // BandMultiplier.GetComponent<Renderer>().material = loadBandColor(Multiplier, MULTIPLIER_BAND_COLORS);
     }
-
+/*
     private Material loadBandColor(int param, Dictionary<int, string> colorDict) 
     {
         string colorName = colorDict[param];
@@ -81,7 +81,7 @@ public class Resistor : CircuitComponent
         string materialPath = AssetDatabase.GUIDToAssetPath(guid);
         return AssetDatabase.LoadAssetAtPath<Material>(materialPath);
     }
-
+*/
     void OnMouseDown(){
         Circuit.isLabelWindowOpen = true;
         Debug.Log("onMouseClicked: Resistor");

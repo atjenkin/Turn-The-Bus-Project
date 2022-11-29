@@ -67,7 +67,7 @@ public class Circuit : MonoBehaviour
 
     public ComponentMetaList componentMetaList = new ComponentMetaList();
 
-    public const string PREFAB_PATH = "Prefabs";
+    public const string PREFAB_PATH = "Prefabs/";
     public static bool isLabelWindowOpen = false;
     
 
@@ -104,12 +104,14 @@ public class Circuit : MonoBehaviour
         {
 
             string prefabPath = PREFAB_PATH + meta.Type;
+            Debug.Log(prefabPath);
             GameObject prefabObject = Resources.Load<GameObject>(prefabPath);
+            Debug.Log(prefabObject);
             var instance = Instantiate(prefabObject, this.transform, true);
             instance.name = meta.Name;
 
             // you will probably need to move this to whatever function you use for on click, but these are the field names to have SetText called
-            componentTitleField.SetText(meta.Name);
+            // componentTitleField.SetText(meta.Name);
             // componentDescriptionField.SetText(meta.Description); (this is for the Description field you're going to add)
 
 
