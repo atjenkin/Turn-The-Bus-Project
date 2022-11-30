@@ -6,7 +6,7 @@ using System;
 public class Rheostat : CircuitComponent
 {
     private event EventHandler OnComponentChanged;
-    private RheostatSlider slider;
+    public GameObject slider;
     public double Ratio = 0.5f;
     public double MaxResistance;
     public const double MinResistance = 1.0e-6;
@@ -39,7 +39,7 @@ public class Rheostat : CircuitComponent
 
     void Update() 
     {
-        double sliderRatio = slider.Ratio;
+        double sliderRatio = slider.GetComponent<RheostatSlider>().Ratio;
         if(Ratio != sliderRatio && spiceEntitys!=null)
         {
             spiceEntitys[0].SetParameter<double>("resistance", Math.Max(sliderRatio * MaxResistance, MinResistance));
