@@ -13,11 +13,13 @@ public class PlugKey : CircuitComponent
     private event EventHandler OnComponentChanged;
     private SwitchButton button;
 
-    public override void InitSpiceEntity(string name, string[] interfaces, float[] parameters)
+    public override void InitSpiceEntity(string name, string[] interfaces, float[] parameters, string title, string description)
     {
         this.Name = name;
         this.Interfaces = interfaces;
         this.Parameters = parameters;
+        this.Title = title;
+        this.Description = description;
 
         // A Plug key can be treated as a resistor with infinite resistance
         spiceEntitys = new List<SpiceSharp.Entities.IEntity>();

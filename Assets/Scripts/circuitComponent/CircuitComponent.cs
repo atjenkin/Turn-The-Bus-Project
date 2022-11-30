@@ -9,6 +9,10 @@ public abstract class CircuitComponent : MonoBehaviour
     public string[] Interfaces;
     public float[] Parameters;
 
+    public string Title;
+
+    public string Description;
+
     protected Rigidbody rigidbodyComponent;
     protected Collider colliderComponent;
     public List<SpiceSharp.Entities.IEntity> spiceEntitys;
@@ -21,7 +25,7 @@ public abstract class CircuitComponent : MonoBehaviour
         colliderComponent = GetComponent<Collider>();
     }
 
-    public abstract void InitSpiceEntity(string name, string[] interfaces, float[] parameters);
+    public abstract void InitSpiceEntity(string name, string[] interfaces, float[] parameters, string title, string description);
 
     public virtual void RegisterComponent(Circuit circuit) 
     {

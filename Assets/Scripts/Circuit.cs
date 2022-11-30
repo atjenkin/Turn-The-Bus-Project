@@ -15,6 +15,8 @@ public class Circuit : MonoBehaviour
     {
         public string Name;
         public string Type;
+        public string Title;
+        public string Description;
         public float[] Position;
         public string[] Interfaces;
         public float[] Parameters;
@@ -135,7 +137,7 @@ public class Circuit : MonoBehaviour
             instance.transform.position = new Vector3(meta.Position[0], meta.Position[1], meta.Position[2]);
 
             CircuitComponent thisComponent = instance.GetComponent<CircuitComponent>();
-            thisComponent.InitSpiceEntity(meta.Name, meta.Interfaces, meta.Parameters);
+            thisComponent.InitSpiceEntity(meta.Name, meta.Interfaces, meta.Parameters, meta.Title, meta.Description);
 
             circuitComponents.Add(thisComponent);
             thisComponent.RegisterComponent(this);

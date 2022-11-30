@@ -9,13 +9,19 @@ public class Ammeter : CircuitComponent
     public double Indicator = 0;
     public float Scale = 1.0e3f;
 
-    public override void InitSpiceEntity(string name, string[] interfaces, float[] parameters)
+    public string componentTitleString = "";
+    public string componentDescriptionString = "";
+
+
+    public override void InitSpiceEntity(string name, string[] interfaces, float[] parameters, string title, string description)
     {
         this.Name = name;
         this.Interfaces = interfaces;
         this.Parameters = parameters;
-
         this.Scale = parameters[0];
+        this.Title = title;
+        this.Description = description;
+
         // An ammeter can be treated as a resistor with extremely low resistance
         spiceEntitys = new List<SpiceSharp.Entities.IEntity>();
         spiceEntitys.Add(new SpiceSharp.Components.Resistor(name, interfaces[0], interfaces[1], parameters[1]));
@@ -37,9 +43,9 @@ public class Ammeter : CircuitComponent
 
     void OnMouseDown(){
         Circuit.isLabelWindowOpen = true;
-        Circuit.componentTitle = "Ammeter";
-        Circuit.componentDescription = "Ammeter description";
-
+        Circuit.componentTitle = Title;
+        Circuit.componentDescription = Description;
+        
     }
 
 }

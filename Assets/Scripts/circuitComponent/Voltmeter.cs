@@ -10,14 +10,15 @@ public class Voltmeter : CircuitComponent
 
     private bool isLabelDisplayed;
     
-    public override void InitSpiceEntity(string name, string[] interfaces, float[] parameters)
+    public override void InitSpiceEntity(string name, string[] interfaces, float[] parameters, string title, string description)
     {
         this.Name = name;
         this.Interfaces = interfaces;
         this.Parameters = parameters;
+        this.Title = title;
+        this.Description = description;
 
         this.Scale = parameters[0];
-        Debug.Log(name);
         spiceEntitys = new List<SpiceSharp.Entities.IEntity>();
         // A voltmeter can be treated as a resistor with extremely high resistance
         spiceEntitys.Add(new SpiceSharp.Components.Resistor(name, interfaces[0], interfaces[1], parameters[1]));
@@ -39,12 +40,9 @@ public class Voltmeter : CircuitComponent
 
     void OnMouseDown(){
         Circuit.isLabelWindowOpen = true;
-        Circuit.componentTitle = "Voltmeter";
-        Circuit.componentDescription = "Voltmeter description";
+        Circuit.componentTitle = Title;
+        Circuit.componentDescription = Description;
     }
 
-    void Update() 
-    {
-        
-    }
+    
 }
