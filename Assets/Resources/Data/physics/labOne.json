@@ -37,7 +37,7 @@
             "Name": "V1",
             "Type": "VoltageSource",
             "Title": "Voltage Source",
-            "Description": "This is a voltage source",
+            "Description": "A voltage source is a two-terminal device which can maintain a fixed voltage.",
             "Position": [0.5, 2.3, -1.5],
             "Interfaces": ["pos", "0"],
             "Parameters": [3.0]
@@ -55,7 +55,7 @@
             "Name": "R1",
             "Type": "Resistor",
             "Title": "Resistor",
-            "Description": "This is a resistor",
+            "Description": "A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. In electronic circuits, resistors are used to reduce current flow, adjust signal levels, to divide voltages, bias active elements, and terminate transmission lines, among other uses.",
             "Position": [1.5, 2.3, -0.2],
             "Interfaces": ["key_out", "am_in"],
             "Parameters": [1, 0, 3, 0.1]
@@ -64,7 +64,7 @@
             "Name": "Vm",
             "Type": "Voltmeter",
             "Title": "Voltmeter",
-            "Description": "This is a voltmeter",
+            "Description": "A voltmeter is an instrument used for measuring electric potential difference between two points in an electric circuit. It is connected in parallel. It usually has a high resistance so that it takes negligible current from the circuit.",
             "Position": [2.18, 2.3, -0.2],
             "Interfaces": ["key_out", "am_in"],
             "Parameters": [1, 1.0e8]
@@ -73,7 +73,7 @@
             "Name": "Am",
             "Type": "Ammeter",
             "Title": "Ammeter",
-            "Description": "This is an ammeter",
+            "Description": "An ammeter is an instrument used to measure the current in a circuit. Electric currents are measured in amperes (A). For direct measurement, the ammeter is connected in series with the circuit in which the current is to be measured.",
             "Position": [1.5, 2.3, -1.5],
             "Interfaces": ["am_in", "am_out"],
             "Parameters": [1.0e3, 1.0e1]
@@ -82,7 +82,7 @@
             "Name": "RS",
             "Type": "Rheostat",
             "Title": "Rheostat",
-            "Description": "This is a rheostat",
+            "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
             "Position": [1.5, 2.45, -3],
             "Interfaces": ["am_out", "am_out", "0"],
             "Parameters": [4.0e4] 
