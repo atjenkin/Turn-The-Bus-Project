@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class VoltageSource : CircuitComponent
 {
-    public override void InitSpiceEntity(string name, string[] interfaces, float[] parameters)
+    public override void InitSpiceEntity(string name, string[] interfaces, float[] parameters, string title, string description)
     {
         this.Name = name;
         this.Interfaces = interfaces;
         this.Parameters = parameters;
+        this.Title = title;
+        this.Description = description;
 
         spiceEntitys = new List<SpiceSharp.Entities.IEntity>();
         spiceEntitys.Add(new SpiceSharp.Components.VoltageSource(name, interfaces[0], interfaces[1], parameters[0]));
@@ -16,7 +18,7 @@ public class VoltageSource : CircuitComponent
 
     void OnMouseDown(){
         Circuit.isLabelWindowOpen = true;
-        Circuit.componentTitle = "Voltage Source";
-        Circuit.componentDescription = "Voltage Source description";
+        Circuit.componentTitle = Title;
+        Circuit.componentDescription = Description;
     }
 }

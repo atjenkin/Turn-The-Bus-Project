@@ -36,6 +36,8 @@
         {
             "Name": "V1",
             "Type": "VoltageSource",
+            "Title": "Voltage Source",
+            "Description": "This is a voltage source",
             "Position": [0.5, 2.3, -1.5],
             "Interfaces": ["pos", "0"],
             "Parameters": [3.0]
@@ -43,6 +45,8 @@
         {
             "Name": "K1",
             "Type": "PlugKey",
+            "Title": "Plug Key",
+            "Description": "This is a plug key",
             "Position": [0.5, 2.3, -0.2],
             "Interfaces": ["pos", "key_out"],
             "Parameters": [3.0]
@@ -50,6 +54,8 @@
         {
             "Name": "R1",
             "Type": "Resistor",
+            "Title": "Resistor",
+            "Description": "This is a resistor",
             "Position": [1.5, 2.3, -0.2],
             "Interfaces": ["key_out", "am_in"],
             "Parameters": [1, 0, 3, 0.1]
@@ -57,6 +63,8 @@
         {
             "Name": "Vm",
             "Type": "Voltmeter",
+            "Title": "Voltmeter",
+            "Description": "This is a voltmeter",
             "Position": [2.18, 2.3, -0.2],
             "Interfaces": ["key_out", "am_in"],
             "Parameters": [1, 1.0e8]
@@ -64,6 +72,8 @@
         {
             "Name": "Am",
             "Type": "Ammeter",
+            "Title": "Ammeter",
+            "Description": "This is an ammeter",
             "Position": [1.5, 2.3, -1.5],
             "Interfaces": ["am_in", "am_out"],
             "Parameters": [1.0e3, 1.0e1]
@@ -71,6 +81,8 @@
         {
             "Name": "RS",
             "Type": "Rheostat",
+            "Title": "Rheostat",
+            "Description": "This is a rheostat",
             "Position": [1.5, 2.45, -3],
             "Interfaces": ["am_out", "am_out", "0"],
             "Parameters": [4.0e4] 

@@ -52,11 +52,13 @@ public class Resistor : CircuitComponent
     public GameObject BandMultiplier;
     public GameObject BandTolerance;
 
-    public override void InitSpiceEntity(string name, string[] interfaces, float[] parameters)
+    public override void InitSpiceEntity(string name, string[] interfaces, float[] parameters, string title, string description)
     {
         this.Name = name;
         this.Interfaces = interfaces;
         this.Parameters = parameters;
+        this.Title = title;
+        this.Description = description;
         
         ResistorParam1 = Math.Max(Math.Min((int)parameters[0], MAX_RESISTANCE_PARAM), MIN_RESISTANCE_PARAM);
         ResistorParam2 = Math.Min(Math.Min((int)parameters[1], MAX_RESISTANCE_PARAM), MIN_RESISTANCE_PARAM);
@@ -82,9 +84,8 @@ public class Resistor : CircuitComponent
 
     void OnMouseDown(){
         Circuit.isLabelWindowOpen = true;
-        Circuit.componentTitle = "Resistor";
-        Circuit.componentDescription = "Resistor description";
-
+        Circuit.componentTitle = Title;
+        Circuit.componentDescription = Description;
     }
 
 }

@@ -24,6 +24,8 @@
         {
             "Name": "V1",
             "Type": "VoltageSource",
+            "Title": "Voltage Source",
+            "Description": "This is a voltage source",
             "Position": [0.5, 2.3, -1.5],
             "Interfaces": ["pos", "0"],
             "Parameters": [3.0]
