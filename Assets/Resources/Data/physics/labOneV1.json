@@ -35,13 +35,13 @@
     "Components": [
         
         {
-            "Name": "Vm",
-            "Type": "Voltmeter",
-            "Title": "Voltmeter",
-            "Description": "A voltmeter is an instrument used for measuring electric potential difference between two points in an electric circuit. It is connected in parallel. It usually has a high resistance so that it takes negligible current from the circuit.",
-            "Position": [2.18, 2.3, -0.2],
+            "Name": "R1",
+            "Type": "Resistor",
+            "Title": "Resistor",
+            "Description": "A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. In electronic circuits, resistors are used to reduce current flow, adjust signal levels, to divide voltages, bias active elements, and terminate transmission lines, among other uses.",
+            "Position": [1.5, 2.3, -0.2],
             "Interfaces": ["key_out", "am_in"],
-            "Parameters": [1, 1.0e8]
+            "Parameters": [1, 0, 3, 0.1]
         }
     ]
 }

@@ -37,8 +37,10 @@ public class Rheostat : CircuitComponent
         };
     }
 
-    void Update() 
+    protected override void Update() 
     {
+        base.Update();
+        
         double sliderRatio = slider.GetComponent<RheostatSlider>().Ratio;
         if(Ratio != sliderRatio && spiceEntitys!=null)
         {
