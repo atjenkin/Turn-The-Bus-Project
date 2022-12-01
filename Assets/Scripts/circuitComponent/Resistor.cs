@@ -71,6 +71,7 @@ public class Resistor : CircuitComponent
 
     protected override void Start()
     {
+        base.Start();
         Band1.GetComponent<Renderer>().material = loadBandColor(ResistorParam1, RESISTANCE_BAND_COLORS);
         Band2.GetComponent<Renderer>().material = loadBandColor(ResistorParam2, RESISTANCE_BAND_COLORS);
         BandMultiplier.GetComponent<Renderer>().material = loadBandColor(Multiplier, MULTIPLIER_BAND_COLORS);

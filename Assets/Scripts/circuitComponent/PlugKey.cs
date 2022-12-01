@@ -36,8 +36,10 @@ public class PlugKey : CircuitComponent
         };
     }
 
-    void Update() 
+    protected override void Update() 
     {
+        base.Update();
+
         bool plugIn = button.GetComponent<SwitchButton>().PlugIn;
         if(!plugIn && PlugState)
         {
