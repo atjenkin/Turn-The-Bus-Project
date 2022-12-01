@@ -11,11 +11,15 @@ public class Rheostat : CircuitComponent
     public double MaxResistance;
     public const double MinResistance = 1.0e-6;
 
-    public override void InitSpiceEntity(string name, string[] interfaces, float[] parameters)
+
+    public override void InitSpiceEntity(string name, string[] interfaces, float[] parameters, string title, string description)
     {
         this.Name = name;
         this.Interfaces = interfaces;
         this.Parameters = parameters;
+        this.Title = title;
+        this.Description = description;
+        
         spiceEntitys = new List<SpiceSharp.Entities.IEntity>();
 
         spiceEntitys.Add(new SpiceSharp.Components.Resistor(name+"_RLeft", interfaces[0], interfaces[1], parameters[0]*Ratio));
@@ -49,8 +53,7 @@ public class Rheostat : CircuitComponent
 
     void OnMouseDown(){
         Circuit.isLabelWindowOpen = true;
-        Circuit.componentTitle = "Rheostat";
-        Circuit.componentDescription = "Rheostat description";
-        
+        Circuit.componentTitle = Title;
+        Circuit.componentDescription = Description;
     }
 }

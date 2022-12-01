@@ -33,47 +33,15 @@
         "Length of the given wire, l = _ m"
     ],
     "Components": [
-        {
-            "Name": "V1",
-            "Type": "VoltageSource",
-            "Position": [0.5, 2.3, -1.5],
-            "Interfaces": ["pos", "0"],
-            "Parameters": [3.0]
-        },
-        {
-            "Name": "K1",
-            "Type": "PlugKey",
-            "Position": [0.5, 3, -0.2],
-            "Interfaces": ["pos", "key_out"],
-            "Parameters": [3.0]
-        },
-        {
-            "Name": "R1",
-            "Type": "Resistor",
-            "Position": [1.5, 2.3, -0.2],
-            "Interfaces": ["key_out", "am_in"],
-            "Parameters": [1, 0, 3, 0.1]
-        },
+        
         {
             "Name": "Vm",
             "Type": "Voltmeter",
+            "Title": "Voltmeter",
+            "Description": "A voltmeter is an instrument used for measuring electric potential difference between two points in an electric circuit. It is connected in parallel. It usually has a high resistance so that it takes negligible current from the circuit.",
             "Position": [2.18, 2.3, -0.2],
             "Interfaces": ["key_out", "am_in"],
             "Parameters": [1, 1.0e8]
-        },
-        {
-            "Name": "Am",
-            "Type": "Ammeter",
-            "Position": [1.5, 2.3, -1.5],
-            "Interfaces": ["am_in", "am_out"],
-            "Parameters": [1.0e3, 1.0e1]
-        },
-        {
-            "Name": "RS",
-            "Type": "Rheostat",
-            "Position": [1.5, 2.45, -3],
-            "Interfaces": ["am_out", "am_out", "0"],
-            "Parameters": [4.0e4] 
         }
     ]
 }
