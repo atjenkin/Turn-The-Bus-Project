@@ -72,6 +72,7 @@ public class Circuit : MonoBehaviour
 
     public const string PREFAB_PATH = "Prefabs/";
     public static bool isLabelWindowOpen = false;
+    private int updateCnt = 0;
     
 
     /**************** Methods ****************/
@@ -83,13 +84,17 @@ public class Circuit : MonoBehaviour
         componentMetaList = JsonUtility.FromJson<ComponentMetaList>(textJSON.text);
         InitUIWidgets(textJSON);
         InitCircuit();
-        GenerateWires();
+        //GenerateWires();
         RunCircuit();
     }
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+        // FIXME: the wires generation are manually delayed.
+        updateCnt++;
+        if(updateCnt==300) 
+            GenerateWires();
         updateLabelInfo();
     }
 

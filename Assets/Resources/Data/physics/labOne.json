@@ -43,7 +43,7 @@
         {
             "Name": "K1",
             "Type": "PlugKey",
-            "Position": [0.5, 2.3, -0.2],
+            "Position": [0.5, 3, -0.2],
             "Interfaces": ["pos", "key_out"],
             "Parameters": [3.0]
         },
