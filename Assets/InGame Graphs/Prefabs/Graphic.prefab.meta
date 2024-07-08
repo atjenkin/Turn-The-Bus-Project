@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 616dca15c7978b0439f96de78e0ff213
+timeCreated: 1498250544
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 93852
+  packageName: InGame Graphs
+  packageVersion: 2.5
+  assetPath: Assets/InGame Graphs/Prefabs/Graphic.prefab
+  uploadId: 369826

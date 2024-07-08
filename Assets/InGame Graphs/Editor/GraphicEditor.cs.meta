@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 6e51b7ec4bd78134cbe3c5e9ed2d0320
+timeCreated: 1502580089
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 93852
+  packageName: InGame Graphs
+  packageVersion: 2.5
+  assetPath: Assets/InGame Graphs/Editor/GraphicEditor.cs
+  uploadId: 369826

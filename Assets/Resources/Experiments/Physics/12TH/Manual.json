@@ -1,0 +1,53 @@
+{
+    "Experiments": [
+      {
+          "ExperimentNumber": 1,
+          "ExperimentType": "ElectricalLab",
+          "ExperimentTitle": "Learn About Resistance",
+          "ExperimentPic": "Assets/Resources/Pictures/ExperimentPics/experiment1.png",
+          "ExperimentJSON": "Experiments/Physics/12TH/experiment1"
+      },
+      {
+        "ExperimentNumber": 2,
+        "ExperimentType": "ElectricalLab",
+        "ExperimentTitle": "Connect Resistance to a Battery",
+        "ExperimentPic": "Assets/Resources/Pictures/ExperimentPics/experiment2.png",
+        "ExperimentJSON": "Experiments/Physics/12TH/experiment2"
+      },
+      {
+        "ExperimentNumber": 3,
+        "ExperimentType": "ElectricalLab",
+        "ExperimentTitle": "Ohm's Law With Standard Resistance",
+        "ExperimentPic": "Assets/Resources/Pictures/ExperimentPics/experiment3.png",
+        "ExperimentJSON": "Experiments/Physics/12TH/experiment3"
+      },
+      {
+        "ExperimentNumber": 4,
+        "ExperimentType": "ElectricalLab",
+        "ExperimentTitle": "Experiment 1 : Ohm's Law with Wire of Unknown Resistance",
+        "ExperimentPic": "Assets/Resources/Pictures/ExperimentPics/experiment4.png",
+        "ExperimentJSON": "Experiments/Physics/12TH/experiment4"
+      },
+      {
+        "ExperimentNumber": 5,
+        "ExperimentType": "ElectricalLab",
+        "ExperimentTitle": "To Determine the Internal Resistance of a given primary cell using a potentiometer",
+        "ExperimentPic":"Assets/Resources/Pictures/ExperimentPics/experiment5.png",
+        "ExperimentJSON": "Experiments/Physics/12TH/experiment5"
+      },
+      {
+        "ExperimentNumber": 14,
+        "ExperimentType": "OpticalLab14",
+        "ExperimentTitle": "To determine refractive index of a glass slab using a travelling microscope.",
+        "ExperimentPic":"Assets/Resources/Pictures/ExperimentPics/experiment14.png",
+        "ExperimentJSON": "-"
+      },
+      {
+        "ExperimentNumber": 15,
+        "ExperimentType": "OpticalLab15",
+        "ExperimentTitle": "To determine the refractive index of a liquid (water) using (i) concave mirror, (ii) convex lens and a plane mirror.",
+        "ExperimentPic":"Assets/Resources/Pictures/ExperimentPics/experiment15.png",
+        "ExperimentJSON": "-"
+      }
+    ]
+  }
