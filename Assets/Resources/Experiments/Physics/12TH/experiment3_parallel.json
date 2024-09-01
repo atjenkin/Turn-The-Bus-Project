@@ -1,0 +1,113 @@
+{
+    "ExperimentTitle": "Class 12 Experiment 3, part 2",
+    "Aim": "To verify the laws of combination of resistances (parallel) using a metre bridge",
+    "Background": "",
+    "MaterialsRequired": [
+        "A metre bridge (rheostat in this experiment)",
+        "a sensitive galvanometer (ammeter in this experiment)",
+        "two different resistances ( 2 resistance of 25 ohm in this experiment)",
+        "Resistance box (rheostat in this experiment)",
+        "A cell"
+    ],
+    "Theory": "",
+    "Diagram": "Assets/Resources/Pictures/ExperimentPics/experiment3.png",
+    "Procedure": [
+    "Set up the circuit as shown in Fig. E 3.1.",
+    "Tighten all plugs in the resistance box by rotating and pressing each plug to ensure that all plugs make good electrical contacts. Clean the ends of connecting wires using sandpaper before making the connections.",
+    "Remove some plug(s) from the resistance box to get a suitable value of resistance R. Obtain the null point D on the metre bridge wire by sliding the jockey between ends A and C as was done in Experiment 2.",
+    "Note resistance R and lengths AD and DC in the observation table.",
+    "Calculate the experimental value of the equivalent series resistance (X) of the combination of resistances as shown in Table E 3.1.",
+    "Repeat the experiment for four more values of resistances R. Obtain the mean value of unknown resistance.",
+    "Repeat steps 2 - 6 by connecting resistances R1 and R2 in parallel as shown in Fig. E 3.2 and calculate the experimental value of the equivalent parallel resistance (X) of the combination of resistance."
+],
+   "Observations": [
+    "l0 = ... cm (in the beginning of the experiment)",
+    "l = ... cm (after changing the resistance R and obtaining new balance points)",
+    "l0 = ... cm (at the end of the experiment)",
+    "Record the resistance R and lengths AD and DC for each set of measurements.",
+    "Calculate the experimental values of series and parallel resistance combinations as shown in Table E 3.1.",
+    "Record the mean values of the unknown resistance after repeating the measurements with different resistance values."
+],
+"Components": [
+    {
+        "Name": "V1",
+        "Type": "VoltageSource",
+        "Title": "Voltage Source",
+        "Description": "A voltage source is a two-terminal device which can maintain a fixed voltage.",
+        "Position": [-3.94, 0, -1.31],
+        "Rotation": [0,0,0],
+        "Scale": [3,3,3],
+        "Interfaces": ["pos", "0"],
+        "Parameters": [10.0]
+    },
+    {
+        "Name": "RS1",
+        "Type": "Rheostat",
+        "Title": "Rheostat (meter bridge)",
+        "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat.",
+        "Position": [-5.31, 1.07, 7.69],
+        "Rotation": [0,-90,0],
+        "Scale": [2,2,2],
+        "Interfaces": ["pos", "Amm", "0"],
+        "Parameters": [4.0e4]
+    },
+    {
+        "Name": "Am1",
+        "Type": "Ammeter",
+        "Title": "Ammeter (galvanometer)",
+        "Description": "An ammeter is an instrument used to measure the current in a circuit. Electric currents are measured in amperes (A). For direct measurement, the ammeter is connected in series with the circuit in which the current is to be measured.",
+        "Position": [-0.94, 0, -2.08],
+        "Rotation": [0,-90,0],
+        "Scale": [10,10,10],
+        "Interfaces": ["Amm", "Amm_Out"],
+        "Parameters": [1.0e3, 1]
+    },
+
+    {
+        "Name": "K1",
+        "Type": "PlugKey",
+        "Title": "Plug Key",
+        "Description": "This is a plug key",
+        "Position": [4.46, 0, 1.76],
+        "Rotation": [0,-90,0],
+        "Scale": [1.5,1.5,1.5],
+        "Interfaces": ["Key2_out", "Amm_Out"],
+        "Parameters": [3.0]
+    },
+
+    {
+        "Name": "RS2",
+        "Type": "Rheostat",
+        "Title": "Rheostat -Resistancebox",
+        "Description": "The most common way to vary the resistance in a circuit continuously is to use a Resistance box.",
+        "Position": [1.47, 3, 5.41],
+        "Rotation": [0,-90,0],
+        "Scale": [2,2,2],
+        "Interfaces": ["0","Amm_Out","null"],
+        "Parameters": [100]
+    },
+
+    {
+        "Name": "W1",
+       "Type": "WireResistance",
+        "Title": "Resistor",
+        "Description": "A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. In electronic circuits, resistors are used to reduce current flow, adjust signal levels, to divide voltages, bias active elements, and terminate transmission lines, among other uses.",
+        "Position": [0.47, 0, 3.41],
+        "Rotation": [0,-90,0],
+        "Scale": [1,1,1],
+        "Interfaces": ["pos", "Key2_out"],
+        "Parameters": [5e-6, 1.7e-4, 2.941176]
+    },
+    {
+        "Name": "W2",
+       "Type": "WireResistance",
+        "Title": "Resistor",
+        "Description": "A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. In electronic circuits, resistors are used to reduce current flow, adjust signal levels, to divide voltages, bias active elements, and terminate transmission lines, among other uses.",
+        "Position": [0.47, 1, 4.41],
+        "Rotation": [0,-90,0],
+        "Scale": [1,1,1],
+        "Interfaces": ["pos", "Key2_out"],
+        "Parameters": [5e-6, 1.7e-4, 2.941176]
+    }
+]
+}

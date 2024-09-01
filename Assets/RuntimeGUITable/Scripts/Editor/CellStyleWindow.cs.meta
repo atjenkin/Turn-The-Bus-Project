@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 6ab2653fadd3c425aa17fc9d7e898b2d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 137867
+  packageName: UI Table
+  packageVersion: 1.19
+  assetPath: Assets/RuntimeGUITable/Scripts/Editor/CellStyleWindow.cs
+  uploadId: 449470

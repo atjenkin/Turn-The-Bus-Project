@@ -1,0 +1,108 @@
+{
+    "ExperimentTitle": "Class 12 Experiment 5",
+    "Aim": "To determine the internal resistance of a given primary cell using a potentiometer.",
+    "Background": "",
+    "MaterialsRequired": [
+        "Potentiometer",
+        "Leclanche Cell",
+        "Ammeter",
+        "Resistance box",
+        "Plug Key",
+        "Galvanometer",
+        "Rheostat",
+        "Connecting Wire"
+    ],
+    "Theory": "",
+    "Diagram": "Assets/Resources/Pictures/ExperimentPics/experiment5.png",
+    "Procedure": [
+        "Connect different electrical components as shown in the circuit (Fig. E 5.1). After checking the circuit connections, close key K1.",
+        "With keys K2 and K3 open and a protective high resistance P from the RBOX 2, find the position of the balance point. For final reading, short circuit the resistance P by closing the key K3 and find the balance length l0.",
+        "Take R = 10 Ω (from RBOX 1), close the key K2 and quickly measure the new balance length l. Open K2 as soon as this has been done.",
+        "Keep the readings in the ammeter constant throughout the above observation.",
+        "Reduce the value of R in equal steps of 1 Ω and for each value of R obtain the balance length l.",
+        "At the end of the experiment, open key K2 and repeat step 2 to find l0 again."
+    ],
+    "Observations": [
+        "l0 = ... cm (in the beginning of the experiment)",
+        "l0 = ... cm (at the end of the experiment)"
+    ],
+    "Components": [
+        {
+            "Name": "V1",
+            "Type": "VoltageSource",
+            "Title": "Voltage Source",
+            "Description": "A voltage source is a two-terminal device which can maintain a fixed voltage.",
+            "Position": [-7.5, 0, 6.64],
+            "Rotation": [0,0,0],
+            "Scale": [3,3,3],
+            "Interfaces": ["pos", "0"],
+            "Parameters": [10.0]
+        },
+        {
+            "Name": "RS1",
+            "Type": "Rheostat",
+            "Title": "Rheostat",
+            "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
+            "Position": [-4.93, 1, 0.78],
+            "Rotation": [0,-90,0],
+            "Scale": [2,2,2],
+            "Interfaces": ["pos", "Amm", "0"],
+            "Parameters": [10] 
+        },
+        {
+            "Name": "Am1",
+            "Type": "Ammeter",
+            "Title": "Ammeter",
+            "Description": "An ammeter is an instrument used to measure the current in a circuit. Electric currents are measured in amperes (A). For direct measurement, the ammeter is connected in series with the circuit in which the current is to be measured.",
+            "Position": [-0.94, 0, 1.08],
+            "Rotation": [0,-90,0],
+            "Scale": [10,10,10],
+            "Interfaces": ["Amm", "Amm_Out"],
+            "Parameters": [1.0e3, 1]
+        },
+        {
+            "Name": "K1",
+            "Type": "PlugKey",
+            "Title": "Plug Key",
+            "Description": "This is a plug key",
+            "Position": [4.46, 0, 1.76],
+            "Rotation": [0,-90,0],
+            "Scale": [1.5,1.5,1.5],
+            "Interfaces": ["Key2_out", "Amm_Out"],
+            "Parameters": [3.0]
+        },
+        {
+            "Name": "V2",
+            "Type": "VoltageSource",
+            "Title": "Voltage Source",
+            "Description": "A voltage source is a two-terminal device which can maintain a fixed voltage.",
+            "Position": [-3.61, 0, 5.27],
+            "Rotation": [0,0,0],
+            "Scale": [2,2,2],
+            "Interfaces": ["pos", "asd"],
+            "Parameters": [5.0]
+        },
+        {
+            "Name": "R1",
+            "Type": "Resistor",
+            "Title": "Resistor",
+            "Description": "A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. In electronic circuits, resistors are used to reduce current flow, adjust signal levels, to divide voltages, bias active elements, and terminate transmission lines, among other uses.",
+            "Position": [0.47, 0, 8.91],
+            "Rotation": [0,-90,0],
+            "Scale": [1,1,1],
+            "Interfaces": ["asd", "Amm_Out"],
+            "Parameters": [1, 0, 0, 0]
+        },
+        {
+            "Name": "R2",
+            "Type": "Resistor",
+            "Title": "Resistor",
+            "Description": "A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. In electronic circuits, resistors are used to reduce current flow, adjust signal levels, to divide voltages, bias active elements, and terminate transmission lines, among other uses.",
+            "Position": [0.09, 0, 5.92],
+            "Rotation": [0,-90,0],
+            "Scale": [1,1,1],
+            "Interfaces": ["pos", "Key2_out"],
+            "Parameters": [1, 0, -1, 0]
+        }
+    ]
+}

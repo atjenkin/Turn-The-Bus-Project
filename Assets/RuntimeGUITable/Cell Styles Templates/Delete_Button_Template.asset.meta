@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1b2404ee1d95b4ae9b7048b851dd5a79
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 137867
+  packageName: UI Table
+  packageVersion: 1.19
+  assetPath: Assets/RuntimeGUITable/Cell Styles Templates/Delete_Button_Template.asset
+  uploadId: 449470

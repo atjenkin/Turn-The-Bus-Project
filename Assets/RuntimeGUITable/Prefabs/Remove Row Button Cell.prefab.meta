@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b1459205566a446a9beef59cfd676360
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 137867
+  packageName: UI Table
+  packageVersion: 1.19
+  assetPath: Assets/RuntimeGUITable/Prefabs/Remove Row Button Cell.prefab
+  uploadId: 449470

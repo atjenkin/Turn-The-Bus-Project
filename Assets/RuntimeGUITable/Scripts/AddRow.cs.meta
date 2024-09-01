@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 46333fe1f2eb542dcb9f3457968f9126
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 137867
+  packageName: UI Table
+  packageVersion: 1.19
+  assetPath: Assets/RuntimeGUITable/Scripts/AddRow.cs
+  uploadId: 449470

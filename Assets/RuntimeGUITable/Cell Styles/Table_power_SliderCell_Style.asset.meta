@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: d94080d5e77054dc3b02d8d4bef7ac5b
+timeCreated: 1551908421
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 137867
+  packageName: UI Table
+  packageVersion: 1.19
+  assetPath: Assets/RuntimeGUITable/Cell Styles/Table_power_SliderCell_Style.asset
+  uploadId: 449470
