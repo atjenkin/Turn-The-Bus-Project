@@ -1,0 +1,130 @@
+{
+    "ExperimentTitle": "Class 12 Experiment 4",
+    "Aim": "To compare the emf of two given primary cells (Daniel and Leclanche cells) using a potentiometer.",
+    "Background": "",
+    "MaterialsRequired": [
+        "Potentiometer (Rheostat in our case)",
+        "Leclanche Cell",
+        "Ammeter",
+        "Resistance box",
+        "Plug Key",
+        "Two way key",
+        "Rheostat",
+        "Connecting Wire"
+    ],
+    "Theory": "",
+    "Diagram": "Assets/Resources/Pictures/ExperimentPics/experiment4.png",
+    "Procedure": [
+    "1. Make the circuit connections according to Fig. E 4.2. Connect positive terminals of the battery E and the two cells E1 and E2 to zero at end A of the potentiometer wire.",
+    "2. Connect negative terminal of E to the end B of the potentiometer wire through a one way key K1 and a rheostat.",
+    "3. Connect negative terminals of the cell E1 and E2 to the terminals ‘a’ and ‘b’ of the two way key.",
+    "4. Shunt a resistance box RBOX through a key K2. Connect common terminal of the two way key to one end of RBOX.",
+    "5. Connect other end of the resistance box to a ammeter whose other end is joined to a jockey. Jockey can be slided on the potentiometer wire to obtain null deflection in the ammeter.",
+    "6. Bring the cell E1 in the circuit by inserting the plug between the gaps ‘a’ and ‘c’ of the two way key.",
+    "7. Leave the key K2 open. Make rheostat resistance minimum. Take out high resistance (of the order of thousand ohm) from the resistance box. Make contact of the jockey at the zero end of the potentiometer wire. Note the direction of deflection in the ammeter.",
+    "8. Next, move the jockey to bring it in contact with the other end of the wire. Note whether the direction of deflection of the ammeter needle is opposite to that observed in step 7.",
+    "9. If the deflection of ammeter needle is in opposite direction in the above two situations, connections are correct. If not, look out for the reason. Connections might be loose or emf of the battery E might be less than that of the cells E1 and E2. Make necessary changes as required.",
+    "10. Slide the jockey gently over the potentiometer wire till you get null deflection in the ammeter. Plug in the key K2 to get the accurate position of the null (or balance) point. The resistance in the resistance box limits the current flowing through the ammeter. Near the balance point, the current flowing through the ammeter is small, insertion of the key K2 short circuits the resistances and hence increases the current. This improves the sensitivity of balance point detection.",
+    "11. Note the length of the wire AJ, and record it as l1. Repeat detection of balance point while moving the jockey in opposite direction and record the second value of l1.",
+    "12. Next bring E2 in the circuit by inserting plug between the gaps ‘b’ and ‘c’ of the two way key. Obtain the balance point J1 in the same way as you did in finding l1 and note the length AJ1 as l2.",
+    "13. Repeat steps 6 to 11 three times by shifting the contact point of the rheostat and calculate l1/l2 for each set of readings, for E1 and E2."
+],
+    "Observations": [
+        "1. No. of wires on the potentiometer board = ...",
+        "2. Range of the voltmeter = 0...V to ... V",
+        "3. Least count of the voltmeter = ...V",
+        "4. Potential drop across E = ...V",
+        "5. Potential drop across E1 = ...V",
+        "6. Potential drop across E2 = ...V"
+    ],
+    "Components": [
+        {
+            "Name": "Vaux",
+            "Type": "VoltageSource",
+            "Title": "Auxiliary Voltage Source",
+            "Description": "Provides a stable voltage to power the potentiometer wire, crucial for maintaining a constant potential gradient.",
+            "Position": [-7.5, 0, -1.41],
+            "Rotation": [0, 0, 0],
+            "Scale": [3, 3, 3],
+            "Interfaces": ["r2_pos", "r1_out"],
+            "Parameters": [3.0]
+        },
+        {
+            "Name": "V1",
+            "Type": "VoltageSource",
+            "Title": "Daniel Cell",
+            "Description": "Supplies voltage to the primary circuit for the internal resistance measurement using the potentiometer.",
+            "Position": [-7.5, 0.08, 0.98],
+            "Rotation": [0, 0, 0],
+            "Scale": [3, 3, 3],
+            "Interfaces": ["r2_pos", "k1_out"],
+            "Parameters": [1.1]
+        },
+        {
+            "Name": "V2",
+            "Type": "VoltageSource",
+            "Title": "Leclanche cell",
+            "Description": "Provides voltage to secondary parts of the circuit, assisting in controlling the overall experimental conditions.",
+            "Position": [-7.5, 0.19, 2.95],
+            "Rotation": [0, 0, 0],
+            "Scale": [3, 3, 3],
+            "Interfaces": ["r2_pos", "k2_out"],
+            "Parameters": [1.5]
+        },
+        {
+            "Name": "RS1",
+            "Type": "Rheostat",
+            "Title": "Main Circuit Rheostat",
+            "Description": "Used to adjust the main current flowing through the potentiometer, crucial for setting the initial conditions of the experiment.",
+            "Position": [-5.31, 1.07, 7.69],
+            "Rotation": [0, -90, 0],
+            "Scale": [2, 2, 2],
+            "Interfaces": ["0", "r1_out", "r1_in"],
+            "Parameters": [20]
+        },
+        {
+            "Name": "Am1",
+            "Type": "Ammeter",
+            "Title": "Circuit Ammeter",
+            "Description": "Measures the current in the circuit to ensure consistency during the experiment, vital for accurate internal resistance calculation.",
+            "Position": [-0.94, 0, -0.91],
+            "Rotation": [0, -90, 0],
+            "Scale": [10, 10, 10],
+            "Interfaces": ["Amm", "Amm_Out"],
+            "Parameters": [1.0e3, 1]
+        },
+        {
+            "Name": "K1",
+            "Type": "PlugKey",
+            "Title": "Daniel Cell Control Key",
+            "Description": "Allows for the circuit to be opened or closed, controlling the flow of electricity for the experiment.",
+            "Position": [8.23, 0.29, 1.76],
+            "Rotation": [0, -90, 0],
+            "Scale": [1.5, 1.5, 1.5],
+            "Interfaces": ["k1_out", "Amm"],
+            "Parameters": [3.0]
+        },
+        {
+            "Name": "K2",
+            "Type": "PlugKey",
+            "Title": "Leclanche cell Control Key",
+            "Description": "Used for additional control over secondary circuit elements, facilitating precise adjustments during measurements.",
+            "Position": [8.26, 0.28, 5.67],
+            "Rotation": [0, -90, 0],
+            "Scale": [1.5, 1.5, 1.5],
+            "Interfaces": ["k2_out", "Amm"],
+            "Parameters": [3.0]
+        },
+        {
+            "Name": "RS2",
+            "Type": "Rheostat",
+            "Title": "Rheostat (Meter Bridge Simulation)",
+            "Description": "Acts as a meter bridge by simulating resistance adjustments, specifically used for fine-tuning the measurements of the potentiometer setup.",
+            "Position": [6.16, 1.24, 7.55],
+            "Rotation": [0, -90, 0],
+            "Scale": [2, 2, 2],
+            "Interfaces": ["r1_in", "Amm_Out", "r2_pos"],
+            "Parameters": [100]
+        }
+    ]
+}

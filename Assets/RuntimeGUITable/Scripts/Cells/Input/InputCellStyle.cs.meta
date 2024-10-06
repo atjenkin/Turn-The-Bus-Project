@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: a76d5173e51fc431ab439dedaf6b9af9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 137867
+  packageName: UI Table
+  packageVersion: 1.19
+  assetPath: Assets/RuntimeGUITable/Scripts/Cells/Input/InputCellStyle.cs
+  uploadId: 449470

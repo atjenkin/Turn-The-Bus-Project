@@ -1,0 +1,148 @@
+{
+  "LabTitle": "To determine the resistance of a given wire using a metre bridge and hence determine the resistivity of the material of the wire.",
+  "Aim": "To determine the resistance of a given wire using a metre bridge and hence determine the resistivity of the material of the wire.",
+  "Background": "We know that resistance is a measure of the opposition to the flow of electricity in a circuit. The potential difference helps to understand the amount of energy transferred between two points in a circuit. In this session, let us learn to determine the resistance per cm of a given wire by plotting a graph for potential difference versus current.",
+  "MaterialsRequired": [
+    "Metre bridge",
+    "a wire about 1m long (of material whose specific resistance is to be determined)",
+    "a resistance box",
+    "a rheostat",
+    "galvanometer",
+    "a jockey",
+    "one-way key",
+    "a cell or battery eliminator",
+    "thick connecting wires",
+    "sand paper",
+    "screw gauge."
+  ],
+  "Theory": "",
+  "Diagram": "labDiagrams/labOne.png",
+  "Procedure": [
+    " Find the average diameter of the wire with a screw gauge. From this, obtain the value of its radius r.",
+    " Clean the insulation at the ends of connecting wires with a piece of sand paper. Tighten all plugs of the resistance box (RBOX) by pressing each plug.",
+    " Set up the circuit as shown in Fig. E 2.1 with unknown resistance wire of known length in gap E.",
+    " Next, introduce some resistance R in the circuit from the resistance box. Bring the jockey J in contact with terminal A first and then with terminal C. Note the direction in which pointer of the galvanometer gets deflected in each case. Make sure that jockey remains in contact with the wire for a fraction of a second. If the galvanometer shows deflection on both sides of its zero mark for these two points of contact of the jockey, null point will be somewhere on the wire AC. If it is not so, adjust resistance R so that the null point is somewhere in the middle of the wire AC, say, between 30 cm and 70 cm.",
+    " If there is one-sided deflection, check the circuit again, especially junctions, for their continuity.",
+    " Repeat step 4 for four different values of resistance R.",
+    " Interchange the position of the resistances S and R and repeat steps 4 to 6 for the same five values of R. While interchanging S and R, ensure that the same length of wire of resistance S is now in the gap F. The interchange takes care of unaccounted resistance offered by terminals."
+  ],
+  "Observations": [
+    "Length of the wire of unknown resistance, L = ...cm",
+    "Measurement of diameter of wire of unknown resistance",
+    "Least count of the screw gauge (L.C.) = ... mm",
+    "Zero error of the screw gauge = ...mm",
+    "Zero correction of the screw gauge = ...mm"
+  ],
+  "Components": [
+    {
+      "Name": "V1",
+      "Type": "VoltageSource",
+      "Title": "Voltage Source",
+      "Description": "A voltage source is a two-terminal device which can maintain a fixed voltage.",
+      "Position": [-7.24, 2.3, 6.19],
+      "Rotation": [0, 0, 0],
+      "Scale": [4, 4, 4],
+      "Interfaces": ["pos", "0"],
+      "Parameters": [10.0]
+    },
+    {
+      "Name": "K1",
+      "Type": "PlugKey",
+      "Title": "Plug Key",
+      "Description": "This is a plug key",
+      "Position": [-0.27, 2.3, 5.92],
+      "Rotation": [0, -90, 0],
+      "Scale": [2, 2, 2],
+      "Interfaces": ["C1", "0"],
+      "Parameters": [3.0]
+    },
+    {
+      "Name": "Connector1",
+      "Type": "Connector",
+      "Title": "Connector",
+      "Description": "Use to connect wire.",
+      "Position": [8.89, 0.99, 10.28],
+      "Rotation": [0, 0, 0],
+      "Scale": [0.2, 0.2, 0.2],
+      "Interfaces": ["C1", "C2", "N0", "N1"],
+      "Parameters": [0]
+    },
+    {
+      "Name": "Connector2",
+      "Type": "Connector",
+      "Title": "Connector",
+      "Description": "Use to connect wire.",
+      "Position": [8.43, 0.99, -1.95],
+      "Rotation": [0, 0, 0],
+      "Scale": [0.2, 0.2, 0.2],
+      "Interfaces": ["C2", "rs2_in", "N2", "N3"],
+      "Parameters": [0]
+    },
+    {
+      "Name": "RS2",
+      "Type": "Rheostat",
+      "Title": "Rheostat",
+      "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
+      "Position": [-0.25, 0.99, -1.95],
+      "Rotation": [0, -90, 0],
+      "Scale": [3, 3, 3],
+      "Interfaces": ["N6", "am_in", "rs2_in"],
+      "Parameters": [100]
+    },
+    {
+      "Name": "Am",
+      "Type": "Ammeter",
+      "Title": "Ammeter",
+      "Description": "An ammeter is an instrument used to measure the current in a circuit. Electric currents are measured in amperes (A). For direct measurement, the ammeter is connected in series with the circuit in which the current is to be measured.",
+      "Position": [-0.15, 2.3, -0.69],
+      "Rotation": [0, -90, 0],
+      "Scale": [10, 10, 10],
+      "Interfaces": ["am_in", "C3"],
+      "Parameters": [1.0e3, 1.0e1]
+    },
+    {
+      "Name": "Connector3",
+      "Type": "Connector",
+      "Title": "Connector",
+      "Description": "Use to connect wire.",
+      "Position": [-0.3, 0.99, 3.38],
+      "Rotation": [0, 0, 0],
+      "Scale": [0.2, 0.2, 0.2],
+      "Interfaces": ["C3", "am_out", "N4", "N5"],
+      "Parameters": [0]
+    },
+    {
+      "Name": "RS3",
+      "Type": "Rheostat",
+      "Title": "Rheostat",
+      "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
+      "Position": [4.24, 2.45, 2.2],
+      "Rotation": [0, -90, 0],
+      "Scale": [3, 3, 3],
+      "Interfaces": ["N8", "am_out", "C2"],
+      "Parameters": [10]
+    },
+    {
+      "Name": "W1",
+      "Type": "WireResistance",
+      "Title": "Resistor",
+      "Description": "A wire resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. In electronic circuits, resistors are used to reduce current flow, adjust signal levels, to divide voltages, bias active elements, and terminate transmission lines, among other uses.",
+      "Position": [-4.71, 2.35, 1.3],
+      "Rotation": [0, -90, 0],
+      "Scale": [0.53, 1.47, 0.56],
+      "Interfaces": ["C4", "N4"],
+      "Parameters": [9.6e-8, 1.3e-6, 0.25]
+    },
+    {
+      "Name": "Connector4",
+      "Type": "Connector",
+      "Title": "Connector",
+      "Description": "Use to connect wire.",
+      "Position": [-7.11, 0.99, -1.95],
+      "Rotation": [0, 0, 0],
+      "Scale": [0.2, 0.2, 0.2],
+      "Interfaces": ["C4", "pos", "N6", "N7"],
+      "Parameters": [0]
+    }
+  ]
+}

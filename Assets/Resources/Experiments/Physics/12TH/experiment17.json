@@ -1,0 +1,111 @@
+{
+    "ExperimentTitle": "Class 12 Experiment 17",
+    "Aim": "To draw the characteristic curve of a Zener diode and to determine its reverse breakdown voltage",
+    "Background": "",
+    "MaterialsRequired": [
+        "p-n Zener Diode",
+        "Voltmeter",
+        "Microammeter",
+        "Resistance(125 ohm)",
+        "Plug Key",
+        "Rheostat(high resistance)",
+        "Connecting Wire",
+        "Variable DC Voltage Source"
+    ],
+    "Theory": "",
+    "Diagram": "Assets/Resources/Pictures/ExperimentPics/experiment17.png",
+    "Procedure": [
+        "Note the least count of the given voltmeter and microammeter.",
+        "The voltmeter and microammeter should read zero with zero applied voltage. If not, then correct the initial reading of the meter suitably.",
+        "Take care that Zener diode is in reverse bias mode and the terminal of the microammeter and voltmeter marked positive are connected to the higher potential side of the power supply.",
+        "Switch on the power supply.",
+        "Move the contact point of the potential divider to apply some reverse bias voltage (Vr). For low reverse bias, the current is negligibly small i.e., of the order of 10–8 A to 10–10 A and hence with milliammeter or microammeter, you will observe zero reading.",
+        "Slowly increase the voltage across the Zener diode in steps and record the value of reverse bias voltage Vr and also record the corresponding reverse current Ir from the reading of the microammeter. Take care that the reverse voltage Vr is increased in steps of 0.1 V."
+    ],
+    "Observations": [
+        "Note down the reading of the voltmeter and microammeter.",
+        "S.No.           Voltmeter Reading(Vr)(V)              Microammeter Reading(Ir)(microA)",
+        "1                                                                                     ",
+        "2                                                                                     ",
+        "10                                                                                    "
+    ],
+    "Components": [
+        {
+            "Name": "DC",
+            "Type": "VariableVoltageSource",
+            "Title": "VariableVoltageSource",
+            "Description": "A variable DC voltage source is a two-terminal device which can attain voltage values between a range of voltages.",
+            "Position": [-7.5, 0, 5],
+            "Rotation": [0,0,0],
+            "Scale": [3,3,3],
+            "Interfaces": ["pos", "0"],
+            "Parameters": [0.0,15.0]
+        },
+        {
+            "Name": "RS1",
+            "Type": "Rheostat",
+            "Title": "Rheostat",
+            "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
+            "Position": [-3.5, 1, 5],
+            "Rotation": [0,-90,0],
+            "Scale": [2,2,2],
+            "Interfaces": ["0", "asd", "Key2_out"],
+            "Parameters": [300] 
+        },
+        {
+            "Name": "Am1",
+            "Type": "Ammeter",
+            "Title": "Ammeter",
+            "Description": "An ammeter is an instrument used to measure the current in a circuit. Electric currents are measured in amperes (A). For direct measurement, the ammeter is connected in series with the circuit in which the current is to be measured.",
+            "Position": [-3, 0, 1.08],
+            "Rotation": [0,-90,0],
+            "Scale": [10,10,10],
+            "Interfaces": ["Key2_out", "cath"],
+            "Parameters": [1.0e6, 1]
+        },
+        {
+            "Name": "R1",
+            "Type": "Resistor",
+            "Title": "Resistor",
+            "Description": "A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. In electronic circuits, resistors are used to reduce current flow, adjust signal levels, to divide voltages, bias active elements, and terminate transmission lines, among other uses.",
+            "Position": [1.5, 0, 5],
+            "Rotation": [0,-90,0],
+            "Scale": [1,1,1],
+            "Interfaces": ["asd", "ane"],
+            "Parameters": [1, 0, 1, 0]
+        },
+        {
+            "Name": "dz",
+            "Type": "p-n Zener Diode",
+            "Title": "p-n Zener Diode",
+            "Description": "A Zener diode is a type of pn junction diode. Zener diodes are used in the breakdown region (yield region) by applying a voltage in the opposite direction to normal pn junction diodes.",
+            "Position": [0.3, 0, 0.9],
+            "Rotation": [0,90,0],
+            "Scale": [1,1,0.8],
+            "Interfaces": ["ane", "cath"],
+            "Parameters": [8.2,1]
+        },
+        {
+            "Name": "Vm1",
+            "Type": "Voltmeter",
+            "Title": "Voltmeter",
+            "Description": "A voltmeter is an instrument used for measuring electric potential difference between two points in an electric circuit. It is connected in parallel. It usually has a high resistance so that it takes negligible current from the circuit.",
+            "Position": [2, 0, 2.2],
+            "Rotation": [0,-90,0],
+            "Scale": [10,10,10],
+            "Interfaces": ["cath", "ane"],
+            "Parameters": [1, 1.0e8]
+        },
+        {
+            "Name": "K1",
+            "Type": "PlugKey",
+            "Title": "Plug Key",
+            "Description": "This is a plug key",
+            "Position": [-7.5, 0, 1.76],
+            "Rotation": [0,-180,0],
+            "Scale": [1.5,1.5,1.5],
+            "Interfaces": ["pos", "Key2_out"],
+            "Parameters": [3.0]
+        }
+    ]
+}

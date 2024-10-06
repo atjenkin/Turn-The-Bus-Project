@@ -1,0 +1,176 @@
+{
+    "ExperimentTitle": "Class 12 Experiment 18",
+    "Aim": "To study the characteristics of a common emitter n-p-n (or p-n-p) transistor and to find out the values of current and voltage gains.",
+    "Background": "",
+    "MaterialsRequired": [
+        "Transistor",
+        "Microammeter",
+        "Ammeter",
+        "Rheostat",
+        "Plug Key",
+        "Resistor",
+        "VariableVoltageSource",
+        "Connecting Wire"
+    ],
+    "Theory": "",
+    "Diagram": "Assets/Resources/Pictures/ExperimentPics/experiment18.png",
+    "Procedure": [
+        "Connect the circuit as shown in Fig. E 18.3. (Note that the baseemitter junction is forward biased and the collector-base junction is reverse biased. For example, in an n-p-n transistor; base is given a + ve voltage w.r.t. emitter. Also collector is given a high + ve voltage w.r.t. emitter.)",
+        "To obtain the input characteristics of the transistor, keep the value of the collector-emitter voltage VCE fixed. First adjust VCE = 0 V and then vary the base-emitter voltage VBE in steps of 0.1 V and for each value of VBE note the base current IB.",
+        "Repeat above step by keeping VCE fixed at three different values. You will observe that IB will continue to be zero for a number of observations i.e., till VBE = 0.6 to 0.7 V for silicon transistor and 0.2 to 0.3 V for germanium transistor. Thereafter, it will increase slowly and then rapidly, till IB is nearly 90per cent of maximum range of the microammeter.",
+        "To obtain the output characteristics of transistor, keep the base current IB at 10 µA (say). Note the value of collector current IC keeping VCE = 0 V.",
+        "Now increase the value of VCE very carefully in small steps. Note the corresponding values of IC. (At first the value of IC will increase very rapidly and then increase slowly to almost a constant value[Fig. E 18.4 (b)]. IB should be retained constant as noted earlier.",
+        "Repeat above two steps for three different values of IB i.e., say 20 µA, 30 µA, 40 µA. You will observe that when IB increases IC also increases."
+    ],
+    "Observations": [
+        "1. Range of the voltmeter used in the input circuit = ... V to ...V",
+        "2. Least count of the voltmeter used in the input circuit = ... V",
+        "3. Range of the voltmeter used in the output circuit = ...V to ...V",
+        "4. Least count of the voltmeter used in the output circuit = ... V",
+        "5. Range of the microammeter used in the input circuit = ... µA to ... µA",
+        "6. Least count of the microammeter used in the input circuit = ... µA",
+        "7. Range of the milliammeter used in the output circuit = ... mA to ...mA",
+        "8. Least count of the milliammeter used in the output circuit = ... mA",
+        "9. Specification of the transistor used =...",
+        "Table1: Variation in input current IB with input voltage VBE for fixed value of VCE",
+        "Sl. No. Input voltage Input current, IB(µA) at VBE = ... V VCE = ... V VCE = ...V VCE = ...V VCE = ...V",
+        "Table2: Variation in output current IC with output voltage VCE for fixed value of IB",
+        "Sl. No. Output voltage VCE Output current IC(mA) at VCE = ... V IB = ... µA IB = ...µA IB = ...µA IB =...µA",
+        "Table3: Variation in output current IC with input current IB for fixed value of VCE",
+        "Sl. No. Output current, IC Input current (mA) at IB = ... µA VCE= ... V VCE= ... V VCE= ... V = ... V"
+    ],
+    "Components": [
+        {
+            "Name": "DC1",
+            "Type": "VariableVoltageSource",
+            "Title": "Variable Voltage Source",
+            "Description": "A variable DC voltage source is a two-terminal device which can attain voltage values between a range of voltages.",
+            "Position": [-7.5, 0, 4.5],
+            "Rotation": [0,0,0],
+            "Scale": [3,3,3],
+            "Interfaces": ["pos", "0"],
+            "Parameters": [0.0,3.0]
+        },
+        {
+            "Name": "RS1",
+            "Type": "Rheostat",
+            "Title": "Rheostat",
+            "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
+            "Position": [-3.5, 1, 4.5],
+            "Rotation": [0,-90,0],
+            "Scale": [2,2,2],
+            "Interfaces": ["pos", "r1", "Key1_out"],
+            "Parameters": [500] 
+        },
+        {
+            "Name": "K1",
+            "Type": "PlugKey",
+            "Title": "Plug Key",
+            "Description": "This is a plug key",
+            "Position": [-7.5, 0, 1.26],
+            "Rotation": [0,-180,0],
+            "Scale": [1.5,1.5,1.5],
+            "Interfaces": ["0", "Key1_out"],
+            "Parameters": [3.0]
+        },
+        {
+            "Name": "Vm1",
+            "Type": "Voltmeter",
+            "Title": "Voltmeter",
+            "Description": "A voltmeter is an instrument used for measuring electric potential difference between two points in an electric circuit. It is connected in parallel. It usually has a high resistance so that it takes negligible current from the circuit.",
+            "Position": [-2.0, 0, 2.2],
+            "Rotation": [0,-90,0],
+            "Scale": [10,10,10],
+            "Interfaces": ["Amm_in", "Key1_out"],
+            "Parameters": [1, 1.0e8]
+        },
+        {
+            "Name": "R1",
+            "Type": "Resistor",
+            "Title": "Resistor",
+            "Description": "A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. In electronic circuits, resistors are used to reduce current flow, adjust signal levels, to divide voltages, bias active elements, and terminate transmission lines, among other uses.",
+            "Position": [1.5, 0, 4.5],
+            "Rotation": [0,-90,0],
+            "Scale": [1,1,1],
+            "Interfaces": ["r1", "Amm_in"],
+            "Parameters": [1, 0, 3, 0]
+        },
+        {
+            "Name": "Am1",
+            "Type": "Ammeter",
+            "Title": "Ammeter",
+            "Description": "An ammeter is an instrument used to measure the current in a circuit. Electric currents are measured in amperes (A). For direct measurement, the ammeter is connected in series with the circuit in which the current is to be measured.",
+            "Position": [1.5, 0, 6],
+            "Rotation": [0,-90,0],
+            "Scale": [10,10,10],
+            "Interfaces": ["Amm_in", "base"],
+            "Parameters": [1.0e6, 1]
+        },
+        {
+            "Name": "npn",
+            "Type": "Transistor",
+            "Title": "BC147 Transistor",
+            "Description": "A transistor is a semiconductor device used to amplify or switch electrical signals and power. The NPN transistor consists of two n-type semiconductor materials separated by a thin layer of p-type.",
+            "Position": [2.3, 4, 3.5],
+            "Rotation": [0,90,0],
+            "Scale": [2,2,2],
+            "Interfaces": ["coll", "base", "emm", "sub"],
+            "Parameters": [1.0e-2,50,2]
+        },
+        {
+            "Name": "Am2",
+            "Type": "Ammeter",
+            "Title": "Ammeter",
+            "Description": "An ammeter is an instrument used to measure the current in a circuit. Electric currents are measured in amperes (A). For direct measurement, the ammeter is connected in series with the circuit in which the current is to be measured.",
+            "Position": [5.5, 0, 8],
+            "Rotation": [0,-90,0],
+            "Scale": [10,10,10],
+            "Interfaces": ["Amm2_in", "coll"],
+            "Parameters": [1.0e3, 1]
+        },
+        {
+            "Name": "Vm2",
+            "Type": "Voltmeter",
+            "Title": "Voltmeter",
+            "Description": "A voltmeter is an instrument used for measuring electric potential difference between two points in an electric circuit. It is connected in parallel. It usually has a high resistance so that it takes negligible current from the circuit.",
+            "Position": [3, 0, 1],
+            "Rotation": [0,-90,0],
+            "Scale": [10,10,10],
+            "Interfaces": ["Amm2_in", "emm"],
+            "Parameters": [1, 1.0e8]
+        },
+        {
+            "Name": "RS2",
+            "Type": "Rheostat",
+            "Title": "Rheostat",
+            "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
+            "Position": [5.7, 1, 2.2],
+            "Rotation": [0,-180,0],
+            "Scale": [2,2,2],
+            "Interfaces": ["Key2_out", "Amm2_in", "pos1"],
+            "Parameters": [500] 
+        },
+        {
+            "Name": "DC2",
+            "Type": "VariableVoltageSource",
+            "Title": "Variable Voltage Source",
+            "Description": "A variable DC voltage source is a two-terminal device which can attain voltage values between a range of voltages.",
+            "Position": [9, 0, 4.5],
+            "Rotation": [0,0,0],
+            "Scale": [3,3,3],
+            "Interfaces": ["pos1", "neg"],
+            "Parameters": [0.0,15.0]
+        },
+        {
+            "Name": "K2",
+            "Type": "PlugKey",
+            "Title": "Plug Key",
+            "Description": "This is a plug key",
+            "Position": [9, 0, 2.2],
+            "Rotation": [0,-180,0],
+            "Scale": [1.5,1.5,1.5],
+            "Interfaces": ["neg", "Key2_out"],
+            "Parameters": [3.0]
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 2d533043e9ead934186a52dfae94a03b
+timeCreated: 1496617399
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 93852
+  packageName: InGame Graphs
+  packageVersion: 2.5
+  assetPath: Assets/InGame Graphs/Scripts/Graphic.cs
+  uploadId: 369826

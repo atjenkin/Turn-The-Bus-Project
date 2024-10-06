@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4b5959c385808644e945403e1514094b
+timeCreated: 1496626962
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 93852
+  packageName: InGame Graphs
+  packageVersion: 2.5
+  assetPath: Assets/InGame Graphs/Prefabs/line.prefab
+  uploadId: 369826

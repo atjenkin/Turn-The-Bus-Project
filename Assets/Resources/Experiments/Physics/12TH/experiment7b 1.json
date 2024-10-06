@@ -1,0 +1,99 @@
+
+{
+    "ExperimentTitle": "Class 12 Experiment 7",
+    "Aim": "To determine the internal resistance of a given primary cell using a potentiometer.",
+    "Background": "",
+    "MaterialsRequired": [
+        "Potentiometer",
+        "Leclanche Cell",
+        "Ammeter",
+        "Resistance box",
+        "Plug Key",
+        "Galvanometer",
+        "Rheostat",
+        "Connecting Wire"
+    ],
+    "Theory": "",
+    "Diagram": "Assets/Resources/Pictures/ExperimentPics/experiment5.png",
+    "Procedure": [
+        "Connect different electrical components as shown in the circuit (Fig. E 5.1). After checking the circuit connections, close key K1.",
+        "With keys K2 and K3 open and a protective high resistance P from the RBOX 2, find the position of the balance point. For final reading, short circuit the resistance P by closing the key K3 and find the balance length l0.",
+        "Take R = 10 Ω (from RBOX 1), close the key K2 and quickly measure the new balance length l. Open K2 as soon as this has been done.",
+        "Keep the readings in the ammeter constant throughout the above observation.",
+        "Reduce the value of R in equal steps of 1 Ω and for each value of R obtain the balance length l.",
+        "At the end of the experiment, open key K2 and repeat step 2 to find l0 again."
+    ],
+    "Observations": [
+        "l0 = ... cm (in the beginning of the experiment)",
+        "l0 = ... cm (at the end of the experiment)"
+    ],
+    "Components": [
+        {
+            "Name": "V1",
+            "Type": "VoltageSource",
+            "Title": "Voltage Source",
+            "Description": "A voltage source is a two-terminal device which can maintain a fixed voltage.",
+            "Position": [-7.5, 0, 6.64],
+            "Rotation": [0,0,0],
+            "Scale": [5,5,5],
+            "Interfaces": ["pos", "0"],
+            "Parameters": [10.0]
+        },
+        {
+            "Name": "K1",
+            "Type": "PlugKey",
+            "Title": "Plug Key",
+            "Description": "This is a plug key",
+            "Position": [-2, 0, 8.91],
+            "Rotation": [0,-90,0],
+            "Scale": [1.5,1.5,1.5], 
+            "Interfaces": ["key1_in", "0"],
+            "Parameters": [3.0]
+        },
+        {
+            "Name": "RS",
+            "Type": "Rheostat",
+            "Title": "Rheostat",
+            "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
+            "Position": [6, 2.45, 6.43],
+            "Rotation": [0,-90,0],
+            "Scale": [3,3,3],
+            "Interfaces": ["pos","gal_in","key1_in"],
+            "Parameters": [4.0e4] 
+        },
+        {
+            "Name": "Vm",
+            "Type": "Voltmeter",
+            "Title": "Voltmeter",
+            "Description": "A voltmeter is an instrument used for measuring electric potential difference between two points in an electric circuit. It is connected in parallel. It usually has a high resistance so that it takes negligible current from the circuit.",
+            "Position": [-1.16, 2.3, -2.8],
+            "Rotation": [0,-90,0],
+            "Scale": [10,10,10],
+            "Interfaces": ["gal_in", "key1_in"],
+            "Parameters": [1, 1.0e8]
+        },
+        {
+            "Name": "Gm",
+            "Type": "Galvanometer",
+            "Title": "Galvanometer",
+            "Description": "An ammeter is an instrument used to measure the current in a circuit. Electric currents are measured in amperes (A). For direct measurement, the ammeter is connected in series with the circuit in which the current is to be measured.",
+            "Position": [0.94, 0, 1],
+            "Rotation": [0,-89,0],
+            "Scale": [15,15,15],
+            "Interfaces": ["gm_in","gm_out"],
+            "Parameters": [1.0e3]
+        },
+        {
+            "Name": "R1",
+            "Type": "Resistor",
+            "Title": "Resistor",
+            "Description": "A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. In electronic circuits, resistors are used to reduce current flow, adjust signal levels, to divide voltages, bias active elements, and terminate transmission lines, among other uses.",
+            "Position": [-0.57, 2.3, 1.36],
+            "Rotation": [0,-90,0],
+            "Scale": [2,2,2],
+            "Interfaces": ["gal_out", "key1_in"],
+            "Parameters": [1, 0, 3, 0.1]
+        }
+        
+    ]
+}

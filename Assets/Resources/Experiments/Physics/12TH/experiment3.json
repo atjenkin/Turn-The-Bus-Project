@@ -1,0 +1,125 @@
+{
+    "LabTitle": "To determine resistivity of two / three wires by plotting a graph between potential difference versus current.",
+    "Aim": "To determine the resistance per cm of a given wire by plotting a graph for potential difference versus current.",
+    "Background": "We know that resistance is a measure of the opposition to the flow of electricity in a circuit. The potential difference helps to understand the amount of energy transferred between two points in a circuit. In this session, let us learn to determine the resistance per cm of a given wire by plotting a graph for potential difference versus current.",
+    "MaterialsRequired": [
+        "A wire of unknown resistance",
+        "Battery",
+        "Voltmeter",
+        "Milliammeter",
+        "Rheostat",
+        "Plug key",
+        "Connecting wires",
+        "Piece of sandpaper"
+    ],
+    "Theory": "",
+    "Diagram": "labDiagrams/labOne.png",
+    "Procedure": [
+        "Clean the ends of the connecting wire with the help of sandpaper to remove any insulating coating on them.",
+        "Connect the resistance, rheostat, battery, key, voltmeter, and ammeter as shown in the figure.",
+        "Make sure that the pointers in the voltmeter and milliammeter coincide with the zero mark on the measuring scale. If not, adjust the pointer to coincide with the zero mark by adjusting the screw provided at the base using a screwdriver.",
+        "Note the range and the least count of the given voltmeter and milliammeter.",
+        "Insert the key K and slide the rheostat to the end where the current flow is minimum.",
+        "Note the voltmeter and the milliammeter reading.",
+        "Remove the key K and allow the wire to cool. Again insert the key and slightly increase the voltage by moving the rheostat. Note down the milliammeter and voltmeter reading.",
+        "Repeat step 7 for four different adjustments of the rheostat. Document the readings in a tabular column."
+    ],
+    "Observations": [
+        "Range of ammeters = _ mA to _ mA",
+        "The Least count of ammeter = _ mA",
+        "Range of voltmeter = _ V to _ V",
+        "The Least count of voltmeter = _ V",
+        "The Least count of meter-scale = _ m",
+        "Length of the given wire, l = _ m"
+    ],
+    "Components": [
+        {
+            "Name": "V1",
+            "Type": "VoltageSource",
+            "Title": "Voltage Source",
+            "Description": "A voltage source is a two-terminal device which can maintain a fixed voltage.",
+            "Position": [-8.57, 0, 8],
+            "Rotation": [0,0,0],
+            "Scale": [5,5,5],
+            "Interfaces": ["pos", "0"],
+            "Parameters": [3000.0]
+        },
+        {
+            "Name": "K1",
+            "Type": "PlugKey",
+            "Title": "Plug Key",
+            "Description": "This is a plug key",
+            "Position": [-8.01, 0, 0],
+            "Rotation": [0,-90,0],
+            "Scale": [2,2,2],
+            "Interfaces": ["key_out", "pos"],
+            "Parameters": [3.0]
+        },
+        {
+            "Name": "Connect1",
+            "Type": "Connector",
+            "Title": "Rheostat",
+            "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
+            "Position": [-5.62, 2.45, 1.36],
+            "Rotation": [0,-90,0],
+            "Scale": [0.2,0.2,0.2],
+            "Interfaces": ["key_out", "r1_in","nill","nill2"],
+            "Parameters": [0] 
+        },
+        {
+            "Name": "R1",
+            "Type": "Resistor",
+            "Title": "Resistor",
+            "Description": "A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. In electronic circuits, resistors are used to reduce current flow, adjust signal levels, to divide voltages, bias active elements, and terminate transmission lines, among other uses.",
+            "Position": [-0.57, 2.3, 1.36],
+            "Rotation": [0,-90,0],
+            "Scale": [2,2,2],
+            "Interfaces": ["r1_in", "am_in"],
+            "Parameters": [1, 0, 3, 0.1]
+        },
+        {
+            "Name": "Connect2",
+            "Type": "Connector",
+            "Title": "Rheostat",
+            "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
+            "Position": [-5, 2.45, -1.61],
+            "Rotation": [0,-90,0],
+            "Scale": [0.2,0.2,0.2],
+            "Interfaces": ["r1_in", "nill3","c2_out","nill4"],
+            "Parameters": [0] 
+        },
+        {
+            "Name": "Vm",
+            "Type": "Voltmeter",
+            "Title": "Voltmeter",
+            "Description": "A voltmeter is an instrument used for measuring electric potential difference between two points in an electric circuit. It is connected in parallel. It usually has a high resistance so that it takes negligible current from the circuit.",
+            "Position": [-0.48, 2.3, -2],
+            "Rotation": [0,-90,0],
+            "Scale": [10,10,10],
+            "Interfaces": ["c2_out", "am_in"],
+            "Parameters": [1, 1.0e8]
+        },
+        {
+            "Name": "Am",
+            "Type": "Ammeter",
+            "Title": "Ammeter",
+            "Description": "An ammeter is an instrument used to measure the current in a circuit. Electric currents are measured in amperes (A). For direct measurement, the ammeter is connected in series with the circuit in which the current is to be measured.",
+            "Position": [5.87, 2.3, -1.82],
+            "Rotation": [0,-90,0],
+            "Scale": [10,10,10],
+            "Interfaces": ["am_in", "am_out"],
+            "Parameters": [1.0e3, 1.0e1]
+        },
+        {
+            "Name": "RS",
+            "Type": "Rheostat",
+            "Title": "Rheostat",
+            "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
+            "Position": [1.8, 2.45, 6.3],
+            "Rotation": [0,-90,0],
+            "Scale": [5,2.5,3.5],
+            "Interfaces": ["nill", "0", "am_out"],
+            "Parameters": [4.0e4] 
+        }
+    ]
+}
