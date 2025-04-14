@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: eb3cdc888ac5a4a438cf7b5c828740a0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 137867
+  packageName: UI Table
+  packageVersion: 1.19
+  assetPath: Assets/RuntimeGUITable/Scripts/CellContainers/CellContainer.cs
+  uploadId: 449470

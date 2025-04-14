@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2cda990e2423bbf4892e6590ba056729
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 137867
+  packageName: UI Table
+  packageVersion: 1.19
+  assetPath: Assets/RuntimeGUITable/Examples/Scenes/ExampleScene.unity
+  uploadId: 449470

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cf57a5658963bd94b9d7e0b163f1992e
+timeCreated: 1496617357
+licenseType: Store
+DefaultImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 93852
+  packageName: InGame Graphs
+  packageVersion: 2.5
+  assetPath: Assets/InGame Graphs/Graphic.unity
+  uploadId: 369826

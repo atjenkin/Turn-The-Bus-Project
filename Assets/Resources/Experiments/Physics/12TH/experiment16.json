@@ -1,0 +1,103 @@
+{
+  "ExperimentTitle": "To draw the I - V characteristic curves of a p-n junction in forward bias and reverse bias.",
+  "Aim": "To draw the I - V characteristic curves of a p-n junction in forward bias and reverse bias.",
+  "Background": "",
+  "MaterialsRequired": [
+    "p-n junction diode (OA-79 or 1N4007)",
+    "a resistor of value (3Ω, 1/2W)",
+    "one variable voltage power supply (0-12V)",
+    "voltmeter (0-12V)",
+    "milliammeter (0-200 mA)",
+    "a plug key",
+    "connecting wires",
+    "sand paper",
+    "microammeter (0-200 µA)"
+  ],
+  "Theory": "",
+  "Diagram": "Assets/Resources/Pictures/ExperimentPics/experiment16.png",
+  "Procedure": [
+    "1. Note the range and least count of the given voltmeter (V), milliammeter (mA) and the microammeter (µA).",
+    "2. Remove the insulating layers from the connecting wires and leads of diode using a sand paper.",
+    "3. Connect the variable voltage power supply, p-n junction diode, voltmeter, milliammeter, resistor and a plug key in a circuit as shown in Fig. E 16.1.",
+    "4. Initially when the key is open, you would note at this stage, that no current is flowing through the circuit. Now close the key.",
+    "5. Give a small voltage to the circuit by slight and gentle turning of the power supply knob. Note the voltmeter reading across the diode and the corresponding milliammeter reading to find the current I flowing through the diode.",
+    "6. Gradually, increase the applied voltage (in steps) in the circuit and note the corresponding voltmeter and milliammeter readings in Table E 16.1. The value of current flowing through the diode would be negligibly small till the voltage across the diode exceeds the value of its cut in or threshold voltage. After the cutin voltage, the variation in current will be rapid.",
+    "7. Once the threshold voltage is reached, vary the diode voltage very slowly (preferably in steps of 0.1V) noting the corresponding current I flowing through the diode. Continue increasing voltage till the current reaches the limit of the milliammeter.",
+    "8. Now disconnect the circuit and make the connections as shown in Fig. E 16.2 for the reverse bias characteristics. Connect p-side of p-n junction diode to the Fig. E 16.2 Reverse biasing for a p-n junction diode Fig. E 16.1 Forward biasing for a p-n junction diode 16 24/04/2018 122 LABORATORY MANUAL negative terminal of the power supply and replace milliameter with a microammeter. Gradually, increase the applied voltage (in steps) in the circuit and note the corresponding voltmeter and microammeter readings in Table E 16.2. In this part of experiment, with the given supply voltage you will get only flat portion of the reverse bias characteristic curve."
+  ],
+  "Observations": [
+    "p-n junction diode used (diode no.) = ...",
+    "Range of the voltmeter = ... V to ... V",
+    "Least count of the voltmeter scale = ... V",
+    "Range of the milliammeter = ... mA to ... mA",
+    "Least count of the milliammeter scale = ... mA"
+  ],
+  "Components": [
+    {
+      "Name": "VV1",
+      "Type": "VariableVoltage",
+      "Title": "VariableVoltage",
+      "Description": "VariableVoltage",
+      "Position": [-0.32, 2.3, -3.16],
+      "Rotation": [0, 0, 0],
+      "Scale": [5, 5, 5],
+      "Interfaces": ["pos", "0", "pos1", "0"],
+      "Parameters": [-1000, 1]
+    },
+    {
+      "Name": "K1",
+      "Type": "PlugKey",
+      "Title": "Plug Key",
+      "Description": "This is a plug key",
+      "Position": [-6.24, 0, -0.48],
+      "Rotation": [0, -90, 0],
+      "Scale": [3, 3, 3],
+      "Interfaces": ["ko", "pos"],
+      "Parameters": [3.0]
+    },
+    {
+      "Name": "Connector5",
+      "Type": "Connector",
+      "Title": "Connector",
+      "Description": "Use to connect wire.",
+      "Position": [7.62, 0.99, -1.07],
+      "Rotation": [0, 0, 0],
+      "Scale": [0.2, 0.2, 0.2],
+      "Interfaces": ["pos1", "ami", "N8", "N9"],
+      "Parameters": [0]
+    },
+    {
+      "Name": "Am1",
+      "Type": "Ammeter",
+      "Title": "Ammeter",
+      "Description": "An ammeter is an instrument used to measure the current in a circuit. Electric currents are measured in amperes (A). For direct measurement, the ammeter is connected in series with the circuit in which the current is to be measured.",
+      "Position": [7.75, 0, 5.04],
+      "Rotation": [0, -90, 0],
+      "Scale": [20, 20, 20],
+      "Interfaces": ["amo", "ami"],
+      "Parameters": [1.0e3, 1]
+    },
+    {
+      "Name": "Vm",
+      "Type": "Voltmeter",
+      "Title": "Voltmeter",
+      "Description": "A voltmeter is an instrument used for measuring electric potential difference between two points in an electric circuit. It is connected in parallel. It usually has a high resistance so that it takes negligible current from the circuit.",
+      "Position": [-0.83, 2.3, 3.61],
+      "Rotation": [0, -90, 0],
+      "Scale": [18, 18, 18],
+      "Interfaces": ["ko", "amo"],
+      "Parameters": [1, 1.0e28]
+    },
+    {
+      "Name": "D1",
+      "Type": "Diode",
+      "Title": "Diode",
+      "Description": "Diode",
+      "Position": [-0.45, 2.3, 1.65],
+      "Rotation": [0, -90, 0],
+      "Scale": [1, 2, 2],
+      "Interfaces": ["ko", "amo"],
+      "Parameters": ["nill"]
+    }
+  ]
+}

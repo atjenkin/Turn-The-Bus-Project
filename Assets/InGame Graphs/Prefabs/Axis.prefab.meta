@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 80ab358efcc784f4997e08f11cd16798
+timeCreated: 1497143570
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 93852
+  packageName: InGame Graphs
+  packageVersion: 2.5
+  assetPath: Assets/InGame Graphs/Prefabs/Axis.prefab
+  uploadId: 369826
