@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8fa57b19b9d24a14289ac36ad3cff2b9
+timeCreated: 1498090088
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 93852
+  packageName: InGame Graphs
+  packageVersion: 2.5
+  assetPath: Assets/InGame Graphs/Prefabs/AxisMark.prefab
+  uploadId: 369826

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 5999bc1b15a534b9d8ce5f5a9d82b834
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 137867
+  packageName: UI Table
+  packageVersion: 1.19
+  assetPath: Assets/RuntimeGUITable/Scripts/ScrollTableContainer.cs
+  uploadId: 449470

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6b3f785474d276943b5035eccd2a34d1
+timeCreated: 1498157362
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 93852
+  packageName: InGame Graphs
+  packageVersion: 2.5
+  assetPath: Assets/InGame Graphs/Prefabs/Label.prefab
+  uploadId: 369826

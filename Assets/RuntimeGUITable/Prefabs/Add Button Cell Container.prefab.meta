@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8e744db8b504949ffb572cb79b46b32a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 137867
+  packageName: UI Table
+  packageVersion: 1.19
+  assetPath: Assets/RuntimeGUITable/Prefabs/Add Button Cell Container.prefab
+  uploadId: 449470
