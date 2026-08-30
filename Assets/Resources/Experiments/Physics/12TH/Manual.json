@@ -1,0 +1,151 @@
+{
+  "Experiments": [
+    {
+      "ExperimentNumber": 1,
+      "ExperimentType": "ElectricalLab",
+      "ExperimentTitle": "Experiment 1 : Ohm's Law with Wire of Unknown Resistance",
+      "ExperimentPic": "experiment1.png",
+      "ExperimentJSON": "Experiments/Physics/12TH/experiment1"
+    },
+    {
+      "ExperimentNumber": 2,
+      "ExperimentType": "ElectricalLab",
+      "ExperimentTitle": "Experiment 2 : To determine the resistance of a given wire using a metre bridge",
+      "ExperimentPic": "experiment2.png",
+      "ExperimentJSON": "Experiments/Physics/12TH/experiment2"
+    },
+    {
+      "ExperimentNumber": 3.1,
+      "ExperimentType": "ElectricalLab",
+      "ExperimentTitle": "To verify the laws of combination of resistances (series) using a metre bridge",
+      "ExperimentPic": "experiment3.png",
+      "ExperimentJSON": "Experiments/Physics/12TH/experiment3_series"
+    },
+    {
+      "ExperimentNumber": 3.2,
+      "ExperimentType": "ElectricalLab",
+      "ExperimentTitle": "To verify the laws of combination of resistances (parallel) using a metre bridge",
+      "ExperimentPic": "experiment3p.png",
+      "ExperimentJSON": "Experiments/Physics/12TH/experiment3_parallel"
+    },
+    {
+      "ExperimentNumber": 4,
+      "ExperimentType": "ElectricalLab",
+      "ExperimentTitle": "To compare the emf of two given primary cells (Daniel and Leclanche cells) using a potentiometer",
+      "ExperimentPic": "experiment4.png",
+      "ExperimentJSON": "Experiments/Physics/12TH/experiment4"
+    },
+    {
+      "ExperimentNumber": 5,
+      "ExperimentType": "ElectricalLab",
+      "ExperimentTitle": "To Determine the Internal Resistance of a given primary cell using a potentiometer",
+      "ExperimentPic": "experiment5.png",
+      "ExperimentJSON": "Experiments/Physics/12TH/experiment5"
+    },
+    {
+      "ExperimentNumber": 6,
+      "ExperimentType": "ElectricalLab",
+      "ExperimentTitle": "To determine the resistance of a galvanometer by half-deflection method and to find its figure of merit.",
+      "ExperimentPic": "experiment6.png",
+      "ExperimentJSON": "Experiments/Physics/12TH/experiment6"
+    },
+    {
+      "ExperimentNumber": 7.1,
+      "ExperimentType": "ElectricalLab",
+      "ExperimentTitle": "To convert the given galvanometer into an ammeter of a desired range (say 0 to 30 mA).",
+      "ExperimentPic": "experiment7.png",
+      "ExperimentJSON": "Experiments/Physics/12TH/experiment7b"
+    },
+    {
+      "ExperimentNumber": 7.2,
+      "ExperimentType": "ElectricalLab",
+      "ExperimentTitle": "To convert the given galvanometer into a voltmeter of desired range (say 0 to 3 V).",
+      "ExperimentPic": "experiment7.png",
+      "ExperimentJSON": "Experiments/Physics/12TH/experiment7a"
+    },
+    {
+      "ExperimentNumber": 8,
+      "ExperimentType": "my8",
+      "ExperimentTitle": "To determine the frequency of alternating current using a sonometer and an electromagnet",
+      "ExperimentPic": "experiment8.png",
+      "ExperimentJSON": "-"
+    },
+    {
+      "ExperimentNumber": 9,
+      "ExperimentType": "OpticalLab9",
+      "ExperimentTitle": "To find the value of ‘v’ for different values of ‘u’ in case of concave mirror and to find the focal length",
+      "ExperimentPic": "experiment9.png",
+      "ExperimentJSON": "-"
+    },
+    {
+      "ExperimentNumber": 10,
+      "ExperimentType": "OpticalLab10",
+      "ExperimentTitle": "To find the focal length of a convex lens by plotting graphs between,‘u’ and ‘v’ or ‘1/u’ and ‘1/v’.",
+      "ExperimentPic": "experiment10.png",
+      "ExperimentJSON": "-"
+    },
+    {
+      "ExperimentNumber": 11,
+      "ExperimentType": "OpticalLab11",
+      "ExperimentTitle": "To find the focal length of a convex mirror using a convex lens.",
+      "ExperimentPic": "experiment11.png",
+      "ExperimentJSON": "-"
+    },
+    {
+      "ExperimentNumber": 12,
+      "ExperimentType": "OpticalLab12",
+      "ExperimentTitle": "To find the focal length of a concave lens with the help of a convex lens",
+      "ExperimentPic": "experiment12.png",
+      "ExperimentJSON": "-"
+    },
+    {
+      "ExperimentNumber": 13,
+      "ExperimentType": "my3",
+      "ExperimentTitle": "To determine the angle of minimum deviation for a given glass prism, by plotting a graph between the angle of incidence and angle of deviation",
+      "ExperimentPic": "experiment13.png",
+      "ExperimentJSON": "-"
+    },
+    {
+      "ExperimentNumber": 14,
+      "ExperimentType": "OpticalLab14",
+      "ExperimentTitle": "To determine refractive index of a glass slab using a travelling microscope.",
+      "ExperimentPic": "experiment14.png",
+      "ExperimentJSON": "-"
+    },
+    {
+      "ExperimentNumber": 15,
+      "ExperimentType": "OpticalLab15",
+      "ExperimentTitle": "To determine the refractive index of a liquid (water) using (i) concave mirror, (ii) convex lens and a plane mirror.",
+      "ExperimentPic": "experiment15.png",
+      "ExperimentJSON": "-"
+    },
+    {
+      "ExperimentNumber": 16.1,
+      "ExperimentType": "ElectricalLab",
+      "ExperimentTitle": "To draw the I - V characteristic curves of a p-n junction in forward bias.",
+      "ExperimentPic": "experiment16.png",
+      "ExperimentJSON": "Experiments/Physics/12TH/experiment16"
+    },
+    {
+      "ExperimentNumber": 16.2,
+      "ExperimentType": "ElectricalLab",
+      "ExperimentTitle": "To draw the I - V characteristic curves of a p-n junction in reverse bias.",
+      "ExperimentPic": "experiment16.png",
+      "ExperimentJSON": "Experiments/Physics/12TH/experiment16_reverse"
+    },
+    {
+      "ExperimentNumber": 17,
+      "ExperimentType": "ElectricalLab",
+      "ExperimentTitle": "To draw the characteristic curve of a Zener diode and to determine its reverse breakdown voltage.",
+      "ExperimentPic": "experiment17.png",
+      "ExperimentJSON": "Experiments/Physics/12TH/experiment17"
+    },
+    {
+      "ExperimentNumber": 18,
+      "ExperimentType": "ElectricalLab",
+      "ExperimentTitle": "To study the characteristics of a common emitter n-p-n (or p-n-p) transistor and to find out the values of current and voltage gains.",
+      "ExperimentPic": "experiment18.png",
+      "ExperimentJSON": "Experiments/Physics/12TH/experiment18"
+    }
+  ]
+}

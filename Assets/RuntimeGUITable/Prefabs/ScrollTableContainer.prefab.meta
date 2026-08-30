@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 756fb1ec2766d46b4b394d2d44fc092e
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 137867
+  packageName: UI Table
+  packageVersion: 1.19
+  assetPath: Assets/RuntimeGUITable/Prefabs/ScrollTableContainer.prefab
+  uploadId: 449470

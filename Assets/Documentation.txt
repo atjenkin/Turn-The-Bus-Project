@@ -1,0 +1,17 @@
+./Assets
+-Editor / Predefine (Useless)
+
+-Resources :
+ -Pictures : for project pictures
+
+-Scenes : all Scenes of the Project
+ -Laboratory Scenes : Lab Experiments
+ -ExperimentNavigation : to navigate to different experiments
+
+-TextMesh Pro : to use text mesh pro UI / Predefine
+
+-TutorialInfo / Predefine (Useless)
+
+-Readme / Predefine (Useless)
+
+-Documentation : Explanation of whole project

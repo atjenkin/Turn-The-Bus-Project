@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: ed6cb8c1a10024cac9a275b9f6935db2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 137867
+  packageName: UI Table
+  packageVersion: 1.19
+  assetPath: Assets/RuntimeGUITable/Scripts/Cells/Label/LabelCellStyle.cs
+  uploadId: 449470

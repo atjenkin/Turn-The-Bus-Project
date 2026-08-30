@@ -1,0 +1,174 @@
+{
+  "ExperimentTitle": "Class 12 Experiment 5",
+  "Aim": "To determine the internal resistance of a given primary cell using a potentiometer.",
+  "Background": "",
+  "MaterialsRequired": [
+    "Potentiometer",
+    "Leclanche Cell",
+    "Ammeter",
+    "Resistance box",
+    "Plug Key",
+    "Galvanometer",
+    "Rheostat",
+    "Connecting Wire"
+  ],
+  "Theory": "",
+  "Diagram": "Assets/Resources/Pictures/ExperimentPics/experiment5.png",
+  "Procedure": [
+    "Connect different electrical components as shown in the circuit (Fig. E 5.1). After checking the circuit connections, close key K1.",
+    "With keys K2 and K3 open and a protective high resistance P from the RBOX 2, find the position of the balance point. For final reading, short circuit the resistance P by closing the key K3 and find the balance length l0.",
+    "Take R = 10 Ω (from RBOX 1), close the key K2 and quickly measure the new balance length l. Open K2 as soon as this has been done.",
+    "Keep the readings in the ammeter constant throughout the above observation.",
+    "Reduce the value of R in equal steps of 1 Ω and for each value of R obtain the balance length l.",
+    "At the end of the experiment, open key K2 and repeat step 2 to find l0 again."
+  ],
+  "Observations": [
+    "l0 = ... cm (in the beginning of the experiment)",
+    "l0 = ... cm (at the end of the experiment)"
+  ],
+  "Components": [
+    {
+      "Name": "V1",
+      "Type": "VoltageSource",
+      "Title": "(E)Voltage Source",
+      "Description": "Auxiliary battery for the potentiometer wire. Its emf should be greater than the emf of the primary cell.",
+      "Position": [-10.15, 0, 8.98],
+      "Rotation": [0, 0, 0],
+      "Scale": [5, 5, 5],
+      "Interfaces": ["pos", "0"],
+      "Parameters": [1.55]
+    },
+    {
+      "Name": "Connector3",
+      "Type": "Connector",
+      "Title": "Connector",
+      "Description": "Use to connect wire.",
+      "Position": [-7.85, 0.99, 5.84],
+      "Rotation": [0, 0, 0],
+      "Scale": [0.2, 0.2, 0.2],
+      "Interfaces": ["pos", "c3_out", "c4_out", "nill1"],
+      "Parameters": [0]
+    },
+    {
+      "Name": "RS1",
+      "Type": "Rheostat",
+      "Title": "(AJ = l) Meter Bridge",
+      "Description": "Potentiometer wire used to find the balancing length.",
+      "Position": [-3.5, 1, -2.0],
+      "Rotation": [0, -90, 0],
+      "Scale": [7.59, 3.52, 4.95],
+      "Interfaces": ["c3_out", "Amm", "c2"],
+      "Parameters": [100]
+    },
+    {
+      "Name": "Connector1",
+      "Type": "Connector",
+      "Title": "Connector",
+      "Description": "Use to connect wire.",
+      "Position": [10.11, 0.99, 9.65],
+      "Rotation": [0, 0, 0],
+      "Scale": [0.2, 0.2, 0.2],
+      "Interfaces": ["0", "c1", "N0", "N1"],
+      "Parameters": [0]
+    },
+    {
+      "Name": "Connector2",
+      "Type": "Connector",
+      "Title": "Connector",
+      "Description": "Use to connect wire.",
+      "Position": [9.24, 0.99, -2.66],
+      "Rotation": [0, 0, 0],
+      "Scale": [0.2, 0.2, 0.2],
+      "Interfaces": ["c1", "c2", "N2", "N3"],
+      "Parameters": [0]
+    },
+    {
+      "Name": "Am1",
+      "Type": "CurrentMeasure",
+      "Title": "Galvanometer",
+      "Description": "A galvanometer is a sensitive instrument used to detect small currents in a circuit and locate the balance point.",
+      "Position": [-9.0, 0, 1.25],
+      "Rotation": [0, -90, 0],
+      "Scale": [15, 15, 15],
+      "Interfaces": ["cell_neg_out", "Amm"],
+      "Parameters": [1.0e6, 1000, 0.05]
+    },
+    {
+      "Name": "K1",
+      "Type": "PlugKey",
+      "Title": "(K1)Plug Key",
+      "Description": "Main key for the potentiometer circuit.",
+      "Position": [5.7, 0, 4.06],
+      "Rotation": [0, -180, 0],
+      "Scale": [3, 3, 3],
+      "Interfaces": ["c2", "0"],
+      "Parameters": [3.0]
+    },
+    {
+      "Name": "K2",
+      "Type": "PlugKey",
+      "Title": "(K2)Plug Key",
+      "Description": "Key used to connect the external resistance load while finding l.",
+      "Position": [-4.0, 0, 4.0],
+      "Rotation": [0, -180, 0],
+      "Scale": [3, 3, 3],
+      "Interfaces": ["c4_out", "rb1_out"],
+      "Parameters": [3.0]
+    },
+    {
+      "Name": "K3",
+      "Type": "PlugKey",
+      "Title": "(K3)Plug Key",
+      "Description": "Key used to short circuit protective resistance RBOX2 while taking final l0 reading.",
+      "Position": [2.5, 0, 1.8],
+      "Rotation": [0, -180, 0],
+      "Scale": [3, 3, 3],
+      "Interfaces": ["rb2_in", "c2"],
+      "Parameters": [3.0]
+    },
+    {
+      "Name": "V2",
+      "Type": "VoltageSource",
+      "Title": "(E1)Voltage Source",
+      "Description": "Primary cell whose internal resistance is measured.",
+      "Position": [-9.0, 0, 4.0],
+      "Rotation": [0, 0, 0],
+      "Scale": [4, 4, 4],
+      "Interfaces": ["c4_out", "asd"],
+      "Parameters": [1.5]
+    },
+    {
+      "Name": "R1",
+      "Type": "Resistor",
+      "Title": "Internal Resistance",
+      "Description": "Internal resistance of the primary cell, set near the expected result.",
+      "Position": [-5.0, 0, 2.0],
+      "Rotation": [0, -90, 0],
+      "Scale": [0.66, 2, 2],
+      "Interfaces": ["asd", "cell_neg_out"],
+      "Parameters": [0, 7, 0, 0]
+    },
+    {
+  "Name": "RS2",
+  "Type": "Resistor",
+  "Title": "(R_Box1) Resistance Box",
+  "Description": "External resistance R used in the calculation r = ((l0 - l) / l) * R.",
+  "Position": [-3.25, 1, 9.0],
+  "Rotation": [0, -90, 0],
+  "Scale":  [0.66, 2, 2],
+  "Interfaces":  ["rb1_out",  "cell_neg_out"],
+  "Parameters": [5, 0, 0, 0]
+    },
+    {
+      "Name": "RS3",
+      "Type": "Rheostat",
+      "Title": "(R_Box2) Resistance Box",
+      "Description": "Protective high resistance box P, about 0–10 kΩ.",
+      "Position": [4.0, 1, 7.0],
+      "Rotation": [0, -90, 0],
+      "Scale": [5, 5, 5],
+      "Interfaces": ["rb2_in", "c2", "NILL2"],
+      "Parameters": [1000]
+    }
+  ]
+}

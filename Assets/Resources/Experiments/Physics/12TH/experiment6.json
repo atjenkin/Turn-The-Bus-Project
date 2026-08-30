@@ -1,0 +1,132 @@
+{
+  "ExperimentTitle": "Class 12 Experiment 6",
+  "Aim": "To determine the resistance of a galvanometer by half-deflection method and to find its figure of merit.",
+  "Background": "",
+  "MaterialsRequired": [
+    "Potentiometer",
+    "Leclanche Cell",
+    "Ammeter",
+    "Resistance box",
+    "Plug Key",
+    "Galvanometer",
+    "Rheostat",
+    "Connecting Wire"
+  ],
+  "Theory": "",
+  "Diagram": "Assets/Resources/Pictures/ExperimentPics/experiment5.png",
+  "Procedure": [
+    "Connect different electrical components as shown in the circuit (Fig. E 5.1). After checking the circuit connections, close key K1.",
+    "With keys K2 and K3 open and a protective high resistance P from the RBOX 2, find the position of the balance point. For final reading, short circuit the resistance P by closing the key K3 and find the balance length l0.",
+    "Take R = 10 Ω (from RBOX 1), close the key K2 and quickly measure the new balance length l. Open K2 as soon as this has been done.",
+    "Keep the readings in the ammeter constant throughout the above observation.",
+    "Reduce the value of R in equal steps of 1 Ω and for each value of R obtain the balance length l.",
+    "At the end of the experiment, open key K2 and repeat step 2 to find l0 again."
+  ],
+  "Observations": [
+    "l0 = ... cm (in the beginning of the experiment)",
+    "l0 = ... cm (at the end of the experiment)"
+  ],
+  "Components": [
+    {
+      "Name": "V1",
+      "Type": "VoltageSource",
+      "Title": "Voltage Source",
+      "Description": "A voltage source is a two-terminal device which can maintain a fixed voltage.",
+      "Position": [-9.87, 0, 9.17],
+      "Rotation": [0, 0, 0],
+      "Scale": [5, 5, 5],
+      "Interfaces": ["pos", "0"],
+      "Parameters": [20.0]
+    },
+    {
+      "Name": "Connect1",
+      "Type": "Connector",
+      "Title": "Connector",
+      "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
+      "Position": [-8.4, 2.45, 1.36],
+      "Rotation": [0, -90, 0],
+      "Scale": [0.2, 0.2, 0.2],
+      "Interfaces": ["pos", "gm_in", "rh2_in", "nill2"],
+      "Parameters": [0]
+    },
+    {
+      "Name": "Am1",
+      "Type": "CurrentMeasure",
+      "Title": "Galvanometer",
+      "Description": "Measures the current in the circuit to ensure consistency during the experiment, vital for accurate internal resistance calculation.",
+      "Position": [-1.26, 0, 3],
+      "Rotation": [0, -90, 0],
+      "Scale": [15, 15, 15],
+      "Interfaces": ["gm_in", "gm_out"],
+      "Parameters": [1.0e3, 1, 0.01]
+    },
+    {
+      "Name": "W1",
+      "Type": "WireResistance",
+      "Title": "(R1)Resistor",
+      "Description": "A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. In electronic circuits, resistors are used to reduce current flow, adjust signal levels, to divide voltages, bias active elements, and terminate transmission lines, among other uses.",
+      "Position": [-1.26, 0, 3],
+      "Rotation": [0, -90, 0],
+      "Scale": [1, 1, 1],
+      "Interfaces": ["gm_out", "w1_out"],
+      "Parameters": [1e-3, 1e-2, 0.1]
+    },
+    {
+      "Name": "RS1",
+      "Type": "Rheostat",
+      "Title": "R(Box)_1",
+      "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
+      "Position": [-0.78, 2.45, 7.11],
+      "Rotation": [0, -90, 0],
+      "Scale": [6.11, 3.58, 3.67],
+      "Interfaces": ["0", "key1_out", "nill"],
+      "Parameters": [100]
+    },
+    {
+      "Name": "Connect2",
+      "Type": "Connector",
+      "Title": "Rheostat",
+      "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
+      "Position": [6.15, 0, 3.76],
+      "Rotation": [0, -90, 0],
+      "Scale": [0.2, 0.2, 0.2],
+      "Interfaces": ["w1_out", "key2_out", "key1_in", "nill3"],
+      "Parameters": [0]
+    },
+    {
+      "Name": "RS2",
+      "Type": "Rheostat",
+      "Title": "R(Box)_2",
+      "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
+      "Position": [-1.88, 1, -1.67],
+      "Rotation": [0, -90, 0],
+      "Scale": [6.06, 3.88, 4.5],
+      "Interfaces": ["rh2_in", "rh2_out", "nill4"],
+      "Parameters": [10]
+    },
+
+    {
+      "Name": "K2",
+      "Type": "PlugKey",
+      "Title": "Key_2",
+      "Description": "This is a plug key",
+      "Position": [7.37, 0, 0.15],
+      "Rotation": [0, -180, 0],
+      "Scale": [2.52, 2.91, 2.08],
+      "Interfaces": ["key2_out", "rh2_out"],
+      "Parameters": [3.0]
+    },
+
+    {
+      "Name": "K1",
+      "Type": "PlugKey",
+      "Title": "Key_1",
+      "Description": "This is a plug key",
+      "Position": [8.16, 0, 6.82],
+      "Rotation": [0, -180, 0],
+      "Scale": [2.72, 2.72, 2.27],
+      "Interfaces": ["key1_out", "key1_in"],
+      "Parameters": [3.0]
+    }
+  ]
+}

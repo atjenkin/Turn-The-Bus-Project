@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 8bc890cbd81f44997987943a5f3da04c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 137867
+  packageName: UI Table
+  packageVersion: 1.19
+  assetPath: Assets/RuntimeGUITable/Scripts/Cells/Image/ImageCellStyle.cs
+  uploadId: 449470

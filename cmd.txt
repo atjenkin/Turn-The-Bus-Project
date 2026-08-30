@@ -1,0 +1,2 @@
+ adb shell am start -a android.intent.action.VIEW -d "ttblab://physics/12th/experiment?id=3.1"
+

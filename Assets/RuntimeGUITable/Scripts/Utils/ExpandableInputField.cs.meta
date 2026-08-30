@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: ca622aeed3df843c1be6657198984480
+timeCreated: 1557321476
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 137867
+  packageName: UI Table
+  packageVersion: 1.19
+  assetPath: Assets/RuntimeGUITable/Scripts/Utils/ExpandableInputField.cs
+  uploadId: 449470

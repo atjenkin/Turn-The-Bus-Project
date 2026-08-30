@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0c5bdf6b801f441da8f463d7b4780341
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 137867
+  packageName: UI Table
+  packageVersion: 1.19
+  assetPath: Assets/RuntimeGUITable/Prefabs/Text Cell.prefab
+  uploadId: 449470

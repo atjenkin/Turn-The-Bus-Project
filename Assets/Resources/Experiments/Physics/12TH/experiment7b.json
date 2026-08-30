@@ -1,0 +1,130 @@
+{
+  "ExperimentTitle": "Class 12 Experiment 7",
+  "Aim": "To convert the given galvanometer (of known resistance and figure of merit) into a voltmeter of desired range (say 0 to 3 V) and to verify the same",
+  "Background": "",
+  "MaterialsRequired": [
+    "Potentiometer",
+    "Leclanche Cell",
+    "Ammeter",
+    "Resistance box",
+    "Plug Key",
+    "Galvanometer",
+    "Rheostat",
+    "Connecting Wire"
+  ],
+  "Theory": "",
+  "Diagram": "Assets/Resources/Pictures/ExperimentPics/experiment5.png",
+  "Procedure": [
+    "Connect different electrical components as shown in the circuit (Fig. E 5.1). After checking the circuit connections, close key K1.",
+    "With keys K2 and K3 open and a protective high resistance P from the RBOX 2, find the position of the balance point. For final reading, short circuit the resistance P by closing the key K3 and find the balance length l0.",
+    "Take R = 10 Ω (from RBOX 1), close the key K2 and quickly measure the new balance length l. Open K2 as soon as this has been done.",
+    "Keep the readings in the ammeter constant throughout the above observation.",
+    "Reduce the value of R in equal steps of 1 Ω and for each value of R obtain the balance length l.",
+    "At the end of the experiment, open key K2 and repeat step 2 to find l0 again."
+  ],
+  "Observations": [
+    "l0 = ... cm (in the beginning of the experiment)",
+    "l0 = ... cm (at the end of the experiment)"
+  ],
+  "Components": [
+    {
+      "Name": "V1",
+      "Type": "VoltageSource",
+      "Title": "Voltage Source",
+      "Description": "A voltage source is a two-terminal device which can maintain a fixed voltage.",
+      "Position": [-9.3, 0, 7.48],
+      "Rotation": [0, 0, 0],
+      "Scale": [5, 5, 5],
+      "Interfaces": ["pos", "0"],
+      "Parameters": [10.0]
+    },
+    {
+      "Name": "Am",
+      "Type": "CurrentMeasure",
+      "Title": "Ammeter",
+      "Description": "Measures the current in the circuit to ensure consistency during the experiment, vital for accurate internal resistance calculation.",
+      "Position": [-5.56, 0, 0.09],
+      "Rotation": [0, -90, 0],
+      "Scale": [15, 15, 15],
+      "Interfaces": ["pos", "gm_in"],
+      "Parameters": [1.0e3, 1, 0.01]
+    },
+    {
+      "Name": "RS",
+      "Type": "Rheostat",
+      "Title": "Rheostat",
+      "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
+      "Position": [4.11, 1.6, 6.43],
+      "Rotation": [0, -90, 0],
+      "Scale": [6.62, 3.03, 4.1],
+      "Interfaces": ["key1_in", "c3_out", "nill"],
+      "Parameters": [100.0]
+    },
+    {
+      "Name": "Connect2",
+      "Type": "Connector",
+      "Title": "Connector",
+      "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
+      "Position": [4.63, 2.45, -2.02],
+      "Rotation": [0, -90, 0],
+      "Scale": [0.2, 0.2, 0.2],
+      "Interfaces": ["gm_out", "c3_out", "c4_out", "nill2"],
+      "Parameters": [0]
+    },
+    {
+      "Name": "Connect1",
+      "Type": "Connector",
+      "Title": "Connector",
+      "Description": "The most common way to vary the resistance in a circuit continuously is to use a rheostat. It is basically used to adjust magnitude of current in a circuit by changing length.",
+      "Position": [-1.66, 2.45, -1.94],
+      "Rotation": [0, -90, 0],
+      "Scale": [0.2, 0.2, 0.2],
+      "Interfaces": ["gm_in", "c1_out", "c2_out", "nill1"],
+      "Parameters": [0]
+    },
+    {
+      "Name": "Gm",
+      "Type": "CurrentMeasure",
+      "Title": "Galvanometer",
+      "Description": "Measures the current in the circuit to ensure consistency during the experiment, vital for accurate internal resistance calculation.",
+      "Position": [1.35, 0, 0.19],
+      "Rotation": [0, -90, 0],
+      "Scale": [15, 15, 15],
+      "Interfaces": ["c1_out", "c1"],
+      "Parameters": [1.0e3, 1, 0.01]
+    },
+    {
+      "Name": "W2",
+      "Type": "WireResistance",
+      "Title": "(R1)Resistor",
+      "Description": "A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. In electronic circuits, resistors are used to reduce current flow, adjust signal levels, to divide voltages, bias active elements, and terminate transmission lines, among other uses.",
+      "Position": [1.35, 0, 0.19],
+      "Rotation": [0, -90, 0],
+      "Scale": [1, 1, 1],
+      "Interfaces": ["c1", "gm_out"],
+      "Parameters": [1e-3, 1e-2, 0.1]
+    },
+    {
+      "Name": "W1",
+      "Type": "WireResistance",
+      "Title": "(R1)Resistor",
+      "Description": "A resistor is a passive two-terminal electrical component that implements electrical resistance as a circuit element. In electronic circuits, resistors are used to reduce current flow, adjust signal levels, to divide voltages, bias active elements, and terminate transmission lines, among other uses.",
+      "Position": [1.12, 2.3, -3.41],
+      "Rotation": [0, -90, 0],
+      "Scale": [0.48, 1.14, 0.44],
+      "Interfaces": ["c2_out", "c4_out"],
+      "Parameters": [1e-3, 1e-2, 0.1]
+    },
+    {
+      "Name": "K1",
+      "Type": "PlugKey",
+      "Title": "Plug Key",
+      "Description": "This is a plug key",
+      "Position": [-5.95, 0, 7.02],
+      "Rotation": [0, -90, 0],
+      "Scale": [3, 3, 3],
+      "Interfaces": ["key1_in", "0"],
+      "Parameters": [3.0]
+    }
+  ]
+}
